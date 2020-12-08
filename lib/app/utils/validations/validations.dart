@@ -1,0 +1,30 @@
+bool emailValidation(String email) {
+  bool emailValid = RegExp(
+    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+  ).hasMatch(email);
+  return emailValid;
+}
+
+String emailValidationText(String email) {
+  if (emailValidation(email)) {
+    return null;
+  }
+  if (!isNotEmptyValidation(email)) {
+    return "Este campo é requerido!";
+  } else {
+    return "E-mail inválido!";
+  }
+}
+
+bool isNotEmptyValidation(String field) {
+  bool fieldValid = (field != null && field != '');
+  return fieldValid;
+}
+
+String isNotEmptyValidationText(String field) {
+  if (isNotEmptyValidation(field)) {
+    return null;
+  } else {
+    return "Este campo é requerido!";
+  }
+}
