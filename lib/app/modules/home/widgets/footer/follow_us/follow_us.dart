@@ -55,7 +55,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
               controller.urlLauncher
                   .launchUrl('https://f-team.dev/desenvolvimento');
             },
-            child: SelectableText(
+            child: Text(
               'Powered by F-team',
               style: TextStyles.roboto(16, fontWeight: FontWeight.bold),
             ),
