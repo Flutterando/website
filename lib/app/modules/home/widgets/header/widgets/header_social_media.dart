@@ -64,6 +64,11 @@ class _HeaderSocialMediaState
                   urlLink: LinksUrl.discord,
                   followersNumber: followersNumber['discord'],
                 ),
+                socialMediaIcon(
+                  IconUrls.telegram,
+                  urlLink: LinksUrl.telegram,
+                  followersNumber: followersNumber['telegram'],
+                )
               ],
             ),
           )
