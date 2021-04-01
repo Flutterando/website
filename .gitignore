@@ -12,6 +12,7 @@
 .history
 .env
 .svn/
+pubspec.lock
 
 # IntelliJ related
 *.iml
