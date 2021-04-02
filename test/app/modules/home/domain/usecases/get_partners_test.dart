@@ -4,7 +4,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_partners.dar
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/domain/repositories/partners_repository.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
 class PartnersRepositoryMock extends Mock implements PartnersRepository {}
 
@@ -12,16 +12,14 @@ main() {
   final repository = PartnersRepositoryMock();
   final usecase = GetPartnersImpl(repository);
   test('Should return a list of partners images url', () {
-    when(repository.get()).thenAnswer((_) => Right(<ResultPartners>[]));
+    when(() => repository.get()).thenAnswer((_) => Right(<ResultPartners>[]));
     final result = usecase();
-    expect(result, isA<Right>());
-    expect(result.getOrElse(() => null), isA<List<ResultPartners>>());
+    expect(result.fold(id, id), isA<List<ResultPartners>>());
   });
 
   test('Should return a FailureGetPartners in case of requisition error', () {
-    when(repository.get()).thenAnswer((_) => Left(FailureGetPartners()));
+    when(() => repository.get()).thenAnswer((_) => Left(FailureGetPartners()));
     final result = usecase();
-    expect(result, isA<Left>());
     expect(result.fold(id, id), isA<FailureGetPartners>());
   });
 }

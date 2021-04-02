@@ -84,8 +84,11 @@ class _PackageTileState extends ModularState<PackageTile, PackagesController> {
                   height: maxWidth / 8 * fontScale,
                   width: double.infinity,
                   color: PrimaryColors.dark,
-                  child: FlatButton(
-                    color: PrimaryColors.dark,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
+                    ),
+                    // color: PrimaryColors.dark,
                     onPressed: () {
                       controller.urlLauncher.launchUrl(package.url);
                     },

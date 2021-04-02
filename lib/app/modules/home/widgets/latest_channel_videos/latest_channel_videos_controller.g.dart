@@ -8,8 +8,8 @@ part of 'latest_channel_videos_controller.dart';
 
 final $LatestChannelVideosController = BindInject(
   (i) => LatestChannelVideosController(i<ScreenSize>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

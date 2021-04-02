@@ -24,13 +24,13 @@ class SendContactImpl implements SendContact {
 
   String verifyFields(Contact contact) {
     String messageError = '';
-    if (contact.name == null || contact.name == '') {
+    if (contact.name.isEmpty || contact.name == '') {
       messageError += "O campo nome não pode estar vazio!\n";
     }
     if (!emailValidation(contact.email)) {
       messageError += "O campo email não esta formatado corretamente!\n";
     }
-    if (contact.message == null || contact.message == '') {
+    if (contact.message.isEmpty || contact.message == '') {
       messageError = "O campo mensagem não pode estar vazio!\n";
     }
     return messageError;

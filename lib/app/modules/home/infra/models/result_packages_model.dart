@@ -23,7 +23,7 @@ class ResultPackagesModel implements ResultPackage {
   }
 
   factory ResultPackagesModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    if (map.isEmpty) return ResultPackagesModel("", "", "", "", "");
 
     return ResultPackagesModel(
       map['name'],

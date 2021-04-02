@@ -8,8 +8,8 @@ part of 'app_controller.dart';
 
 final $AppController = BindInject(
   (i) => AppController(),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

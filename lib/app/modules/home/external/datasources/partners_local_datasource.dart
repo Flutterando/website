@@ -10,7 +10,7 @@ class PartnersLocalDatasource implements PartnersDatasource {
   List<ResultPartnersModel> getPartners() {
     final response = partners.get();
     final listPartners =
-        response.map((String e) => ResultPartnersModel(e)).toList();
+        response.map((String photo) => ResultPartnersModel(photoUrl: photo)).toList();
     return listPartners;
   }
 }

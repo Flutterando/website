@@ -20,13 +20,13 @@ class ResultMeetupsModel implements ResultMeetups {
   }
 
   factory ResultMeetupsModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    if (map.isEmpty) return ResultMeetupsModel("", "", "", "");
 
     return ResultMeetupsModel(
-      map['photoUrl'],
-      map['title'],
-      map['linkUrl'],
-      map['date'],
+      map['photoUrl'] ??= "",
+      map['title'] ??= "",
+      map['linkUrl'] ??= "",
+      map['date'] ??= "",
     );
   }
 

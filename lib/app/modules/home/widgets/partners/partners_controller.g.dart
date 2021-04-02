@@ -8,8 +8,8 @@ part of 'partners_controller.dart';
 
 final $PartnersController = BindInject(
   (i) => PartnersController(i<ScreenSize>(), i<GetPartners>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

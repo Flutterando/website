@@ -1,9 +1,9 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 part 'packages_controller.g.dart';
 
@@ -19,10 +19,10 @@ abstract class _PackagesControllerBase with Store {
   }
 
   @observable
-  ObservableList<ResultPackage> packages;
+  ObservableList<ResultPackage> packages = <ResultPackage>[].asObservable();
 
   @observable
-  String error;
+  String error = "";
 
   @action
   fetchPackages() {

@@ -6,13 +6,10 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      navigatorKey: Modular.navigatorKey,
       title: 'Flutterando',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      onGenerateRoute: Modular.generateRoute,
-    );
+    ).modular();
   }
 }

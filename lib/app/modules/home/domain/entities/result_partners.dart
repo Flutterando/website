@@ -1,6 +1,6 @@
 class ResultPartners {
   final String photoUrl;
   ResultPartners({
-    this.photoUrl,
+    required this.photoUrl,
   });
 }

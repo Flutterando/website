@@ -9,8 +9,8 @@ part of 'packages_controller.dart';
 final $PackagesController = BindInject(
   (i) =>
       PackagesController(i<ScreenSize>(), i<GetPackages>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

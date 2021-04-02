@@ -13,8 +13,8 @@ class AlertAnimate extends StatefulWidget {
 
 class _AlertAnimateState extends State<AlertAnimate>
     with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {

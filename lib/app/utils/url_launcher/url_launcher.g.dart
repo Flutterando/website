@@ -8,6 +8,6 @@ part of 'url_launcher.dart';
 
 final $UrlLauncher = BindInject(
   (i) => UrlLauncher(),
-  singleton: false,
-  lazy: true,
+  isSingleton: false,
+  isLazy: true,
 );

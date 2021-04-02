@@ -8,8 +8,8 @@ part of 'navbar_controller.dart';
 
 final $NavbarController = BindInject(
   (i) => NavbarController(i<ScreenSize>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

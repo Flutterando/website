@@ -37,12 +37,16 @@ class _MeetupTileState
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                         color: Colors.blue,
                       ),
+                      
                       // width: constraints.maxWidth,
                       // height: constraints.maxWidth * 0.65,
+                      // child: showImage("https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"),
+
                       child: FadeInImage.memoryNetwork(
                         placeholder: kTransparentImage,
                         image: widget.meetup.photoUrl,
-                      )),
+                      ),
+                    ),
                 ),
                 SizedBox(height: constraints.maxWidth / 40),
                 Container(

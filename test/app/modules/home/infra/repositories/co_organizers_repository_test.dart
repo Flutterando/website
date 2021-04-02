@@ -5,7 +5,7 @@ import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/co_organizers_datasource.dart';
 import 'package:flutterando/app/modules/home/infra/models/result_co_organizers_model.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/co_organizers_repository_impl.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
 class CoOrganizersDatasourceMock extends Mock
     implements CoOrganizersDatasource {}
@@ -14,15 +14,15 @@ main() {
   final datasource = CoOrganizersDatasourceMock();
   final repository = CoOrganizersRepositoryImpl(datasource);
   test('Should return a list of ResultCoOrganizers', () {
-    when(datasource.getCoOrganizers())
+    when(() => datasource.getCoOrganizers())
         .thenAnswer((_) => <ResultCoOrganizersModel>[]);
     final result = repository.get();
 
-    expect(result | null, isA<List<ResultCoOrganizers>>());
+    expect(result.fold(id, id), isA<List<ResultCoOrganizers>>());
   });
 
   test('Should return a DatasourceError when datasource fail', () {
-    when(datasource.getCoOrganizers()).thenThrow(Exception());
+    when(() => datasource.getCoOrganizers()).thenThrow(Exception());
     final result = repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });

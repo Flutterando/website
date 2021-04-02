@@ -8,8 +8,8 @@ part of 'header_controller.dart';
 
 final $HeaderController = BindInject(
   (i) => HeaderController(i<ScreenSize>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

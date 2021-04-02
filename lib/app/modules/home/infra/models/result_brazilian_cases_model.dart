@@ -8,10 +8,10 @@ class ResultBrazilianCasesModel implements ResultBrazilianCases {
   final String description;
   final String url;
   ResultBrazilianCasesModel({
-    this.imageUrl,
-    this.title,
-    this.description,
-    this.url,
+    required this.imageUrl,
+    required this.title,
+    required this.description,
+    required this.url,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,13 +24,13 @@ class ResultBrazilianCasesModel implements ResultBrazilianCases {
   }
 
   factory ResultBrazilianCasesModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    if (map.isEmpty) return ResultBrazilianCasesModel(imageUrl: "", title: "", description: "", url: "");
 
     return ResultBrazilianCasesModel(
-      imageUrl: map['imageUrl'],
-      title: map['title'],
-      description: map['description'],
-      url: map['url'],
+      imageUrl: map['imageUrl'] ??= "",
+      title: map['title'] ??= "",
+      description: map['description'] ??= "",
+      url: map['url'] ??= "",
     );
   }
 

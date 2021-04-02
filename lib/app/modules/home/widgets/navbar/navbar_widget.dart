@@ -34,7 +34,7 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
                 ),
               ),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () async {
                 await controller.urlLauncher.launchUrl(
                   'https://forum.flutterando.com.br/',
@@ -47,7 +47,7 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               ),
             ),
             SizedBox(width: 2 * fontScale),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 controller.urlLauncher.launchUrl(
                   'https://linktr.ee/flutterando',

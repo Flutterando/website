@@ -1,9 +1,9 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_meetups.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 part 'latest_meetups_controller.g.dart';
 
@@ -20,10 +20,10 @@ abstract class _LatestMeetupsControllerBase with Store {
   }
 
   @observable
-  ObservableList<ResultMeetups> meetups;
+  ObservableList<ResultMeetups> meetups = <ResultMeetups>[].asObservable();
 
   @observable
-  String error;
+  String error = "";
 
   @action
   fetchMeetups() {

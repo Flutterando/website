@@ -1,5 +1,4 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_modular/flutter_modular_annotations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'url_launcher.g.dart';

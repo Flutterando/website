@@ -45,13 +45,13 @@ class _CoOrganizersState
           SizedBox(height: 50 * fontScale),
           Observer(
             builder: (_) {
-              if (controller.error != null) {
+              if (controller.error.isNotEmpty) {
                 return SelectableText(
                   'Erro ao processar conteúdo',
                   style: TextStyles.roboto(30 * fontScale),
                 );
               }
-              if (controller.coOrganizers == null) {
+              if (controller.coOrganizers.isEmpty) {
                 return Center(
                   child: CircularProgressIndicator(),
                 );

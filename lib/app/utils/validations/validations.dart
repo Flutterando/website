@@ -5,9 +5,9 @@ bool emailValidation(String email) {
   return emailValid;
 }
 
-String emailValidationText(String email) {
-  if (emailValidation(email)) {
-    return null;
+String? emailValidationText(String? email) {
+  if (emailValidation(email!)) {
+    return "";
   }
   if (!isNotEmptyValidation(email)) {
     return "Este campo é requerido!";
@@ -17,13 +17,13 @@ String emailValidationText(String email) {
 }
 
 bool isNotEmptyValidation(String field) {
-  bool fieldValid = (field != null && field != '');
+  bool fieldValid = (field != '');
   return fieldValid;
 }
 
-String isNotEmptyValidationText(String field) {
-  if (isNotEmptyValidation(field)) {
-    return null;
+String? isNotEmptyValidationText(String? field) {
+  if (isNotEmptyValidation(field!)) {
+    return "";
   } else {
     return "Este campo é requerido!";
   }

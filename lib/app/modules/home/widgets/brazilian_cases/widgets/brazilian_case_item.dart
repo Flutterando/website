@@ -66,7 +66,7 @@ class _BrazilianCaseItemState
                   borderRadius: BorderRadius.all(Radius.circular(4)),
                 ),
                 height: 36 * fontScale,
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     controller.urlLauncher.launchUrl(brazilianCase.url);
                   },

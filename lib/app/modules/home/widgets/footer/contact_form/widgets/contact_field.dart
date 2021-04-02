@@ -5,14 +5,14 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 class ContactField extends StatelessWidget {
   final String title;
   final int maxLines;
-  final Function(String) validator;
+  final String? Function(String?)? validator;
   final TextEditingController controller;
 
   const ContactField({
-    this.title,
-    this.maxLines,
-    this.controller,
-    this.validator,
+    required this.title,
+    required this.maxLines,
+    required this.controller,
+    required this.validator,
   });
 
   @override
@@ -32,7 +32,7 @@ class ContactField extends StatelessWidget {
       return TextFormField(
         controller: controller,
         maxLines: maxLines,
-        validator: validator ?? validator,
+        validator: validator,
         style: TextStyles.roboto(16),
         decoration: new InputDecoration(
           filled: true,
