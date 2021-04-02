@@ -42,7 +42,6 @@ dependencies:
   transparent_image: ^2.0.0
   # fdottedline: ^1.0.1
   flutter_dotenv: ^4.0.0-nullsafety.0
-  cached_network_image: ^3.0.0
   flutter:
     sdk: flutter
 
