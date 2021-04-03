@@ -13,9 +13,9 @@ class _ScrollBarWidgetState extends State<ScrollBarWidget> {
   ScrollController _scrollController;
   _ScrollBarWidgetState(this._scrollController);
   double _offset = 0;
-  double _scrollFactor;
+  late double _scrollFactor;
   double sizeCursor = 40;
-  double heightScreen;
+  late double heightScreen;
   _scrollListener() {
     setState(() {
       _scrollFactor = _scrollController.position.maxScrollExtent /

@@ -8,6 +8,6 @@ part of 'screen_size.dart';
 
 final $ScreenSize = BindInject(
   (i) => ScreenSize(),
-  singleton: false,
-  lazy: true,
+  isSingleton: false,
+  isLazy: true,
 );

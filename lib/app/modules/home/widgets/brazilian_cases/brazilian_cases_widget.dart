@@ -55,13 +55,13 @@ class _BrazilianCasesWidgetState
           SizedBox(height: 40 * fontScale),
           Observer(
             builder: (_) {
-              if (controller.error != null) {
+              if (controller.error.isNotEmpty) {
                 return SelectableText(
                   'Erro ao processar conteúdo',
                   style: TextStyles.roboto(30 * fontScale),
                 );
               }
-              if (controller.brazilianCases == null) {
+              if (controller.brazilianCases.isEmpty) {
                 return Center(
                   child: CircularProgressIndicator(),
                 );

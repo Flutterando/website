@@ -9,8 +9,8 @@ part of 'co_organizers_controller.dart';
 final $CoOrganizersController = BindInject(
   (i) => CoOrganizersController(
       i<ScreenSize>(), i<GetCoOrganizers>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

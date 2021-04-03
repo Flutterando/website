@@ -4,10 +4,13 @@ import 'package:flutterando/app/modules/home/domain/entities/send_contact/contac
 import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/send_contact_datasource.dart';
+import 'package:flutterando/app/modules/home/infra/models/send_contact/contact_model.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/send_contact_repository_impl.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
 class SendContactDatasourceMock extends Mock implements SendContactDatasource {}
+
+class ContactModelFake extends Fake implements ContactModel {}
 
 main() {
   final contact = Contact(
@@ -15,22 +18,22 @@ main() {
     message: 'messageTest',
     name: 'nameTest',
   );
-  final resultContact = ResultContact(
-    'Succesfull Test!',
-  );
+
+  setUpAll(() {
+    registerFallbackValue<ContactModel>(ContactModelFake());
+  });
 
   final datasource = SendContactDatasourceMock();
   final repository = SendContactRepositoryImpl(datasource);
   test('Should return a ResultContact succesfull', () async {
-    when(datasource.sendContact(any)).thenAnswer((_) async => resultContact);
+    when(() => datasource.sendContact(any())).thenAnswer((_) async => ResultContact("Succesfull Test!"));
     final result = await repository.send(contact);
-
-    expect(result | null, isA<ResultContact>());
+    expect(result.fold(id, id), isA<ResultContact>());
   });
 
   test('Should return a SendContactExternalError when datasource fail',
       () async {
-    when(datasource.sendContact(any)).thenThrow(Exception());
+    when(() => datasource.sendContact(any())).thenThrow(Exception());
     final result = await repository.send(contact);
     expect(result.fold(id, id), isA<SendContactExternalError>());
   });

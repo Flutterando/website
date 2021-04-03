@@ -5,7 +5,7 @@ import 'package:flutterando/app/modules/home/domain/entities/send_contact/result
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
 import 'package:flutterando/app/modules/home/domain/repositories/send_contact_repository.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
 class SendContactRepositoryMock extends Mock implements SendContactRepository {}
 
@@ -21,11 +21,10 @@ main() {
     final resultContact = ResultContact(
       'Succesfull Test!',
     );
-    when(repository.send(contact))
+    when(() => repository.send(contact))
         .thenAnswer((_) async => Right(resultContact));
     final result = await usecase(contact);
-    expect(result, isA<Right>());
-    expect(result.getOrElse(() => null), isA<ResultContact>());
+    expect(result.fold(id, id), isA<ResultContact>());
   });
 
   test('Should return a InvalidContactError in case of invalid contact',
@@ -36,7 +35,6 @@ main() {
       message: 'test without name and email fields',
     );
     final result = await usecase(contact);
-    expect(result, isA<Left>());
     expect(result.fold(id, id), isA<InvalidContactError>());
   });
 }

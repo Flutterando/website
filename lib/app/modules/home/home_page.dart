@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_cases_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
-import 'package:flutterando/app/modules/home/widgets/header/header_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_widget.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/packages/packages_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/widgets/scroll_bar/scroll_bar_widget.dart';
+
 import 'home_controller.dart';
+import 'widgets/brazilian_cases/brazilian_cases_widget.dart';
+import 'widgets/co_organizers/co_organizers_widget.dart';
+import 'widgets/footer/footer.dart';
+import 'widgets/header/header_widget.dart';
+import 'widgets/latest_channel_videos/latest_channel_videos_widget.dart';
+import 'widgets/latest_meetups/latest_meetups_widget.dart';
+import 'widgets/packages/packages_widget.dart';
+import 'widgets/partners/partners_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,14 +20,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
+    _scrollController  = ScrollController();
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,20 +36,20 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         children: [
           Align(
             alignment: Alignment.bottomCenter,
-            child: SingleChildScrollView(
-              controller: _scrollController,
-              child: Column(
-                children: [
-                  HeaderWidget(),
-                  LatestMeetupsWidget(),
-                  LatestChannelVideosWidget(),
-                  CoOrganizers(),
-                  PackagesWidget(),
-                  BrazilianCasesWidget(),
-                  PartnersWidget(),
-                  Footer(),
-                ],
-              ),
+              child: SingleChildScrollView(
+                controller: _scrollController,
+                child: Column(
+                  children: [
+                    HeaderWidget(),
+                    LatestMeetupsWidget(),
+                    LatestChannelVideosWidget(),
+                    CoOrganizers(),
+                    PackagesWidget(),
+                    BrazilianCasesWidget(),
+                    PartnersWidget(),
+                    Footer(),
+                  ]
+                ),
             ),
           ),
           Align(

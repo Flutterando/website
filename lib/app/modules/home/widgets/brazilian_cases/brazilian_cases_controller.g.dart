@@ -9,8 +9,8 @@ part of 'brazilian_cases_controller.dart';
 final $BrazilianCasesController = BindInject(
   (i) => BrazilianCasesController(
       i<ScreenSize>(), i<GetBrazilianCases>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

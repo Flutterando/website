@@ -15,17 +15,9 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends ModularState<ContactForm, FooterController> {
-  TextEditingController _name;
-  TextEditingController _email;
-  TextEditingController _message;
-
-  @override
-  initState() {
-    super.initState();
-    _name = TextEditingController();
-    _email = TextEditingController();
-    _message = TextEditingController();
-  }
+  TextEditingController _name = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _message = TextEditingController();
 
   @override
   void dispose() {
@@ -78,14 +70,14 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
                 height: 38 * fontScale,
                 child: Observer(
                   builder: (_) {
-                    if (controller.messageError != null) {
+                    if (controller.messageError.isNotEmpty) {
                       return AlertAnimate(
                         controller.messageError,
                         Colors.red,
                         fontScale,
                       );
                     }
-                    if (controller.resultContact != null) {
+                    if (controller.resultContact.message.isNotEmpty) {
                       return AlertAnimate(
                         controller.resultContact.message,
                         Colors.green,
@@ -98,7 +90,7 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
                       );
                     }
                     return SendButton(() async {
-                      if (_formKey.currentState.validate()) {
+                      if (_formKey.currentState!.validate()) {
                         final contact = Contact(
                           name: _name.text,
                           email: _email.text,

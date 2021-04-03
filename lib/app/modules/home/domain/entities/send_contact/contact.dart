@@ -3,5 +3,5 @@ class Contact {
   final String email;
   final String message;
 
-  Contact({this.name, this.email, this.message});
+  Contact({required this.name, required this.email, required this.message});
 }

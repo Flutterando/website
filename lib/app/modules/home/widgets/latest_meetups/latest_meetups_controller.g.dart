@@ -9,8 +9,8 @@ part of 'latest_meetups_controller.dart';
 final $LatestMeetupsController = BindInject(
   (i) => LatestMeetupsController(
       i<ScreenSize>(), i<GetMeetups>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

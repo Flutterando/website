@@ -21,13 +21,13 @@ class ResultCoOrganizersModel implements ResultCoOrganizers {
   }
 
   factory ResultCoOrganizersModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    if (map.isEmpty) return ResultCoOrganizersModel("", "", "", "");
 
     return ResultCoOrganizersModel(
-      map['name'],
-      map['pathImage'],
-      map['linkedin'],
-      map['status'],
+      map['name'] ??= "",
+      map['pathImage'] ??= "",
+      map['linkedin'] ??= "",
+      map['status'] ??= "",
     );
   }
 

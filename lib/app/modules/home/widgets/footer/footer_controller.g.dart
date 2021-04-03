@@ -8,8 +8,8 @@ part of 'footer_controller.dart';
 
 final $FooterController = BindInject(
   (i) => FooterController(i<ScreenSize>(), i<SendContact>(), i<UrlLauncher>()),
-  singleton: true,
-  lazy: true,
+  isSingleton: true,
+  isLazy: true,
 );
 
 // **************************************************************************

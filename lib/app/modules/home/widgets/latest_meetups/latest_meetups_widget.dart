@@ -52,7 +52,7 @@ class _LatestMeetupsWidgetState
           SizedBox(height: 40 * fontScale),
           Observer(
             builder: (_) {
-              if (controller.meetups != null) {
+              if (controller.meetups.isNotEmpty) {
                 return GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

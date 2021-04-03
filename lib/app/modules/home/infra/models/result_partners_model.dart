@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
 
-class ResultPartnersModel extends ResultPartners {
+class ResultPartnersModel implements ResultPartners {
   final String photoUrl;
 
-  ResultPartnersModel(this.photoUrl);
+  ResultPartnersModel({required this.photoUrl});
 
   Map<String, dynamic> toMap() {
     return {
@@ -14,10 +14,10 @@ class ResultPartnersModel extends ResultPartners {
   }
 
   factory ResultPartnersModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
+    if (map.isEmpty) return ResultPartnersModel(photoUrl: "");
 
     return ResultPartnersModel(
-      map['photoUrl'],
+      photoUrl: map['photoUrl'] ??= "",
     );
   }
 

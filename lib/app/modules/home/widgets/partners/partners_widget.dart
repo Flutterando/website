@@ -52,13 +52,13 @@ class _PartnersWidgetState
             ),
             Observer(
               builder: (_) {
-                if (controller.error != null) {
+                if (controller.error.isNotEmpty) {
                   return SelectableText(
                     'Erro ao processar conteúdo',
                     style: TextStyles.roboto(30 * fontScale),
                   );
                 }
-                if (controller.partners == null) {
+                if (controller.partners.isEmpty) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );

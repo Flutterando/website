@@ -78,7 +78,7 @@ class _HeaderSocialMediaState
   }
 
   Widget socialMediaIcon(String urlIcon,
-      {String urlLink, String followersNumber}) {
+      {required String urlLink, required String followersNumber}) {
     return InkWell(
       child: Container(
         width: 95,

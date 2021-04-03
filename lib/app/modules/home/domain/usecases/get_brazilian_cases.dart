@@ -10,6 +10,7 @@ abstract class GetBrazilianCases {
 class GetBrazilianCasesImpl implements GetBrazilianCases {
   final BrazilianCasesRepository repository;
   GetBrazilianCasesImpl(this.repository);
+  
   @override
   Either<FailureGetBrazilianCases, List<ResultBrazilianCases>> call() {
     return repository.get();
