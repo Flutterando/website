@@ -8,9 +8,9 @@ class PackagesRepositoryImpl implements PackagesRepository {
   PackagesDatasource datasource;
   PackagesRepositoryImpl(this.datasource);
   @override
-  Either<FailureGetPackages, List<ResultPackage>> get() {
+  Future<Either<FailureGetPackages, List<ResultPackage>>> get() async {
     try {
-      final result = datasource.getPackages();
+      final result = await datasource.getPackages();
       return Right(result);
     } catch (e) {
       return Left(DatasourceError());

@@ -16,7 +16,7 @@ main() {
   final _requestOptionsMock = RequestOptionsMock();
 
   test('Should return a list of ResultMeetupsModel', () async {
-    when(() => dio.get(any())).thenAnswer((_) async => Response(data: meetupsDataMock, requestOptions: _requestOptionsMock, statusCode: 201));
+    when(() => dio.get(any())).thenAnswer((_) async => Response(data: meetupsDataMock, requestOptions: _requestOptionsMock, statusCode: 200));
     final result = await datasource.getMeetups();
     expect(result, isA<List<ResultMeetupsModel>>());
   });

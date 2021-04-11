@@ -11,15 +11,15 @@ class PackagesRepositoryMock extends Mock implements PackagesRepository {}
 main() {
   final repository = PackagesRepositoryMock();
   final usecase = GetPackagesImpl(repository);
-  test('Should return a list of packages', () {
-    when(() => repository.get()).thenAnswer((_) => Right(<ResultPackage>[]));
-    final result = usecase();
+  test('Should return a list of packages', () async {
+    when(() => repository.get()).thenAnswer((_) async => Right(<ResultPackage>[]));
+    final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultPackage>>());
   });
 
-  test('Should return a FailureGetPackages in case of requisition error', () {
-    when(() => repository.get()).thenAnswer((_) => Left(FailureGetPackages()));
-    final result = usecase();
+  test('Should return a FailureGetPackages in case of requisition error', () async {
+    when(() => repository.get()).thenAnswer((_) async => Left(FailureGetPackages()));
+    final result = await usecase();
     expect(result.fold(id, id), isA<FailureGetPackages>());
   });
 }

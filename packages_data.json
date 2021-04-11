@@ -1,4 +1,3 @@
-final packagesDataMock = """ 
 [
     {
       "name": "flutter_modular",
@@ -33,4 +32,3 @@ final packagesDataMock = """
       "url": "https://pub.dev/packages/koin"
     }
 ]
-""";
