@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/data/youtube_data.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/widgets/channel_video_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
@@ -52,19 +52,27 @@ class _LatestChannelVideosWidgetState extends ModularState<
             ),
           ),
           SizedBox(height: 40 * fontScale),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: latestVideos.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 1.01,
-                crossAxisCount: numberGridRowItems,
-                crossAxisSpacing: 15 * fontScale,
-                mainAxisSpacing: 15 * fontScale),
-            itemBuilder: (_, index) {
-              return GridTile(
-                child: ChannelVideoTile(latestVideos[index]),
-              );
+          Observer(
+            builder: (_) {
+              if(controller.youtube.isNotEmpty) {
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: controller.youtube.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 1.01,
+                      crossAxisCount: numberGridRowItems,
+                      crossAxisSpacing: 15 * fontScale,
+                      mainAxisSpacing: 15 * fontScale),
+                  itemBuilder: (_, index) {
+                    return GridTile(
+                      child: ChannelVideoTile(controller.youtube[index]),
+                    );
+                  },
+                );
+              }
+
+              return Container();
             },
           ),
           SizedBox(height: 50 * fontScale)

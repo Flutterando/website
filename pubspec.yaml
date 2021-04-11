@@ -40,10 +40,10 @@ dependencies:
   mobx: ^2.0.0
   flutter_modular: ^3.0.2+1 
   transparent_image: ^2.0.0
-  # fdottedline: ^1.0.1
   flutter_dotenv: ^4.0.0-nullsafety.0
   flutter:
     sdk: flutter
+  # fdottedline: ^1.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

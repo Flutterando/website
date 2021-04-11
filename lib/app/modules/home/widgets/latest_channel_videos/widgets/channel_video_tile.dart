@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
@@ -7,7 +8,7 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ChannelVideoTile extends StatefulWidget {
-  final Map<String, dynamic> video;
+  final ResultYoutube video;
   ChannelVideoTile(this.video);
 
   @override
@@ -22,7 +23,7 @@ class _ChannelVideoTileState
       builder: (_, constraints) {
         return InkWell(
           onTap: () {
-            controller.urlLauncher.launchUrl(widget.video['linkUrl']);
+            controller.urlLauncher.launchUrl(widget.video.linkUrl);
           },
           child: Container(
             decoration: BoxDecoration(
@@ -43,7 +44,7 @@ class _ChannelVideoTileState
                   height: constraints.maxWidth * 0.57,
                   child: FadeInImage.memoryNetwork(
                     placeholder: kTransparentImage,
-                    image: widget.video['imgUrl'],
+                    image: widget.video.imgUrl,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -53,7 +54,7 @@ class _ChannelVideoTileState
                       horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
-                    widget.video['title'],
+                    widget.video.title,
                     maxLines:
                         (controller.screen.isDesktopXl(context: context) ||
                                 controller.screen.isDesktopLg(context: context))
@@ -71,7 +72,7 @@ class _ChannelVideoTileState
                       horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
-                    widget.video['date'],
+                    widget.video.date,
                     style: TextStyles.roboto(
                       fontSize(controller.screen, context),
                       fontWeight: FontWeight.bold,
