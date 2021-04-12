@@ -12,18 +12,18 @@ class MeetupsDatasourceMock extends Mock implements MeetupsDatasource {}
 main() {
   final datasource = MeetupsDatasourceMock();
   final repository = MeetupsRepositoryImpl(datasource);
-  test('Should return a list of ResultMeetups', () {
+  test('Should return a list of ResultMeetups', () async {
     when(() => datasource.getMeetups()).thenAnswer(
-      (_) => <ResultMeetupsModel>[],
+      (_) async => <ResultMeetupsModel>[],
     );
-    final result = repository.get();
+    final result = await repository.get();
 
     expect(result.fold(id, id), isA<List<ResultMeetups>>());
   });
 
-  test('Should return a DatasourceError when datasource fail', () {
+  test('Should return a DatasourceError when datasource fail', () async {
     when(() => datasource.getMeetups()).thenThrow(Exception());
-    final result = repository.get();
+    final result = await repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });
 }

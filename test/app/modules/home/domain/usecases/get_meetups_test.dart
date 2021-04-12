@@ -11,15 +11,15 @@ class GetMeetupsRepositoryMock extends Mock implements MeetupsRepository {}
 main() {
   final repository = GetMeetupsRepositoryMock();
   final usecase = GetMeetupsImpl(repository);
-  test('Should return a list of meetups', () {
-    when(() => repository.get()).thenAnswer((_) => Right(<ResultMeetups>[]));
-    final result = usecase();
+  test('Should return a list of meetups', () async {
+    when(() => repository.get()).thenAnswer((_) async => Right(<ResultMeetups>[]));
+    final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultMeetups>>());
   });
 
-  test('Should return a FailureGetMeetups in case of requisition error', () {
-    when(() => repository.get()).thenAnswer((_) => Left(FailureGetMeetups()));
-    final result = usecase();
+  test('Should return a FailureGetMeetups in case of requisition error', () async {
+    when(() => repository.get()).thenAnswer((_) async => Left(FailureGetMeetups()));
+    final result = await usecase();
     expect(result.fold(id, id), isA<FailureGetMeetups>());
   });
 }

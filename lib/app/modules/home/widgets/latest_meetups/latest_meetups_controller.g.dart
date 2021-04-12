@@ -50,18 +50,12 @@ mixin _$LatestMeetupsController on _LatestMeetupsControllerBase, Store {
     });
   }
 
-  final _$_LatestMeetupsControllerBaseActionController =
-      ActionController(name: '_LatestMeetupsControllerBase');
+  final _$fetchMeetupsAsyncAction =
+      AsyncAction('_LatestMeetupsControllerBase.fetchMeetups');
 
   @override
-  dynamic fetchMeetups() {
-    final _$actionInfo = _$_LatestMeetupsControllerBaseActionController
-        .startAction(name: '_LatestMeetupsControllerBase.fetchMeetups');
-    try {
-      return super.fetchMeetups();
-    } finally {
-      _$_LatestMeetupsControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future fetchMeetups() {
+    return _$fetchMeetupsAsyncAction.run(() => super.fetchMeetups());
   }
 
   @override

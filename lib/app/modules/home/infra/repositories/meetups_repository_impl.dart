@@ -8,9 +8,9 @@ class MeetupsRepositoryImpl implements MeetupsRepository {
   final MeetupsDatasource datasource;
   MeetupsRepositoryImpl(this.datasource);
   @override
-  Either<FailureGetMeetups, List<ResultMeetups>> get() {
+  Future<Either<FailureGetMeetups, List<ResultMeetups>>> get() async {
     try {
-      final result = datasource.getMeetups();
+      final result = await datasource.getMeetups();
       return Right(result);
     } catch (e) {
       return Left(DatasourceError());

@@ -26,8 +26,9 @@ abstract class _LatestMeetupsControllerBase with Store {
   String error = "";
 
   @action
-  fetchMeetups() {
-    usecase().fold(
+  fetchMeetups() async {
+    var response = await usecase();
+    response.fold(
       (l) => error = l.toString(),
       (r) => meetups = r.asObservable(),
     );
