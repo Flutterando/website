@@ -56,9 +56,9 @@ main() {
     expect(result.getOrElse(() => []), isA<List<ResultCoOrganizers>>());
   });
 
-  test('Should return a list of Packages', () {
+  test('Should return a list of Packages', () async {
     final usecase = Modular.get<GetPackages>();
-    final result = usecase();
+    final result = await usecase();
     expect(result.getOrElse(() => []), isA<List<ResultPackage>>());
   });
 

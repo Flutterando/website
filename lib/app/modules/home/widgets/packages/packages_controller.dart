@@ -25,10 +25,13 @@ abstract class _PackagesControllerBase with Store {
   String error = "";
 
   @action
-  fetchPackages() {
-    usecase.call().fold(
+  fetchPackages() async {
+    var response = await usecase.call();
+    response.fold(
           (l) => error = l.toString(),
           (r) => packages = r.asObservable(),
         );
+
+    packages.clear();
   }
 }

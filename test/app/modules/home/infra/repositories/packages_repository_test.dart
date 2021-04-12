@@ -12,16 +12,15 @@ class PackagesDatasourceMock extends Mock implements PackagesDatasource {}
 main() {
   final datasource = PackagesDatasourceMock();
   final repository = PackagesRepositoryImpl(datasource);
-  test('Should return a list of ResultPackages', () {
-    when(() => datasource.getPackages()).thenAnswer((_) => <ResultPackagesModel>[]);
-    final result = repository.get();
-
+  test('Should return a list of ResultPackages', () async {
+    when(() => datasource.getPackages()).thenAnswer((_) async => <ResultPackagesModel>[]);
+    final result = await repository.get();
     expect(result.fold(id, id), isA<List<ResultPackage>>());
   });
 
-  test('Should return a DatasourceError when datasource fail', () {
+  test('Should return a DatasourceError when datasource fail', () async {
     when(() => datasource.getPackages()).thenThrow(Exception());
-    final result = repository.get();
+    final result = await repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/packages/widgets/package_tile.dart';
@@ -49,19 +50,27 @@ class _PackagesWidgetState
             ),
           ),
           SizedBox(height: 40 * fontScale),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: controller.packages.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 0.72,
-                crossAxisCount: numberGridRowItems,
-                crossAxisSpacing: 15 * fontScale,
-                mainAxisSpacing: 15 * fontScale),
-            itemBuilder: (_, index) {
-              return GridTile(
-                child: PackageTile(controller.packages[index]),
-              );
+          Observer(
+            builder: (_) {
+              if(controller.packages.isNotEmpty) {
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: controller.packages.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 0.72,
+                      crossAxisCount: numberGridRowItems,
+                      crossAxisSpacing: 15 * fontScale,
+                      mainAxisSpacing: 15 * fontScale),
+                  itemBuilder: (_, index) {
+                    return GridTile(
+                      child: PackageTile(controller.packages[index]),
+                    );
+                  },
+                );
+              }
+
+              return Container();
             },
           ),
           SizedBox(height: 55 * fontScale),
