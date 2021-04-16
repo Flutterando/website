@@ -50,18 +50,12 @@ mixin _$PackagesController on _PackagesControllerBase, Store {
     });
   }
 
-  final _$_PackagesControllerBaseActionController =
-      ActionController(name: '_PackagesControllerBase');
+  final _$fetchPackagesAsyncAction =
+      AsyncAction('_PackagesControllerBase.fetchPackages');
 
   @override
-  dynamic fetchPackages() {
-    final _$actionInfo = _$_PackagesControllerBaseActionController.startAction(
-        name: '_PackagesControllerBase.fetchPackages');
-    try {
-      return super.fetchPackages();
-    } finally {
-      _$_PackagesControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future fetchPackages() {
+    return _$fetchPackagesAsyncAction.run(() => super.fetchPackages());
   }
 
   @override

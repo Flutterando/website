@@ -8,10 +8,13 @@ class FailureGetMeetups implements Exception {}
 
 class FailureGetBrazilianCases implements Exception {}
 
+class FailureGetYoutube implements Exception {}
+
 class DatasourceError
     implements
         FailureGetPartners,
         FailureGetCoOrganizers,
         FailureGetPackages,
         FailureGetBrazilianCases,
+        FailureGetYoutube,
         FailureGetMeetups {}
