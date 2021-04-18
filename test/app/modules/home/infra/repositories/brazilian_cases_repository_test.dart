@@ -13,17 +13,17 @@ class BrazilianCasesDatasourceMock extends Mock
 main() {
   final datasource = BrazilianCasesDatasourceMock();
   final repository = BrazilianCasesRepositoryImpl(datasource);
-  test('Should return a list of ResultBrazilianCases', () {
+  test('Should return a list of ResultBrazilianCases', () async {
     when(() => datasource.getBrazilianCases())
-        .thenAnswer((_) => <ResultBrazilianCasesModel>[]);
-    final result = repository.get();
+        .thenAnswer((_) async => <ResultBrazilianCasesModel>[]);
+    final result = await repository.get();
 
     expect(result.fold(id, id), isA<List<ResultBrazilianCases>>());
   });
 
-  test('Should return a DatasourceError when datasource fail', () {
+  test('Should return a DatasourceError when datasource fail', () async {
     when(() => datasource.getBrazilianCases()).thenThrow(Exception());
-    final result = repository.get();
+    final result = await repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });
 }

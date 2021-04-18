@@ -1,6 +1,5 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/data/brazilian_cases_data.dart';
 import 'package:flutterando/app/data/partners_data.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
@@ -9,7 +8,7 @@ import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_youtube.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
-import 'package:flutterando/app/modules/home/external/datasources/brazilian_cases_local_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasources/brazilian_cases_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/meetups_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/partners_local_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/send_contact_server_datasource.dart';
@@ -70,8 +69,8 @@ class HomeModule extends Module {
         Bind((i) => GetPackagesImpl(i())),
 
         //binds brazilianCases
-        Bind((i) => BrazilianCasesData()),
-        Bind((i) => BrazilianCasesLocalDatasource(i())),
+        // Bind((i) => BrazilianCasesData()),
+        Bind((i) => BrazilianCasesRemoteDatasource(i())),
         Bind((i) => BrazilianCasesRepositoryImpl(i())),
         Bind((i) => GetBrazilianCasesImpl(i())),
 

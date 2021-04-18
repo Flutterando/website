@@ -11,11 +11,11 @@ class CoOrganizersRemoteDatasource implements CoOrganizersDatasource {
 
   @override
   Future<List<ResultCoOrganizersModel>> getCoOrganizers() async {
-    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/coorganizers_data.json?token=ADXZNKNR4LS55ZLBTOIM2YTAPS7YC');
+    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/coorganizers_data.json?token=ADXZNKLXIEPR3TS3IBEWGVDAPTDYY');
     if(response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
-      var listMeetups = jsonList.map((e) => ResultCoOrganizersModel.fromMap(e)).toList();
-      return listMeetups;
+      var listCoOrganizers = jsonList.map((e) => ResultCoOrganizersModel.fromMap(e)).toList();
+      return listCoOrganizers;
     }
 
     return <ResultCoOrganizersModel>[];

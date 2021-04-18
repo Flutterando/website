@@ -4,7 +4,7 @@ import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/domain/repositories/brazilian_cases_repository.dart';
 
 abstract class GetBrazilianCases {
-  Either<FailureGetBrazilianCases, List<ResultBrazilianCases>> call();
+  Future<Either<FailureGetBrazilianCases, List<ResultBrazilianCases>>> call();
 }
 
 class GetBrazilianCasesImpl implements GetBrazilianCases {
@@ -12,7 +12,7 @@ class GetBrazilianCasesImpl implements GetBrazilianCases {
   GetBrazilianCasesImpl(this.repository);
   
   @override
-  Either<FailureGetBrazilianCases, List<ResultBrazilianCases>> call() {
-    return repository.get();
+  Future<Either<FailureGetBrazilianCases, List<ResultBrazilianCases>>> call() async {
+    return await repository.get();
   }
 }
