@@ -1,6 +1,5 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/data/partners_data.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_meetups.dart';
@@ -10,7 +9,7 @@ import 'package:flutterando/app/modules/home/domain/usecases/get_youtube.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/external/datasources/brazilian_cases_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/meetups_remote_datasource.dart';
-import 'package:flutterando/app/modules/home/external/datasources/partners_local_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasources/partners_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/send_contact_server_datasource.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/brazilian_cases_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/co_organizers_repository_impl.dart';
@@ -52,8 +51,8 @@ class HomeModule extends Module {
         //clean arch
 
         //binds partners
-        Bind((i) => PartnersData()),
-        Bind((i) => PartnersLocalDatasource(i())),
+        // Bind((i) => PartnersData()),
+        Bind((i) => PartnersRemoteDatasource(i())),
         Bind((i) => PartnersRepositoryImpl(i())),
         Bind((i) => GetPartnersImpl(i())),
 

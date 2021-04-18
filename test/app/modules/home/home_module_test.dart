@@ -44,9 +44,9 @@ main() {
     expect(usecaseSendContact, isA<SendContactImpl>());
   });
 
-  test('Should return a list of ResultPartners', () {
+  test('Should return a list of ResultPartners', () async {
     final usecase = Modular.get<GetPartners>();
-    final result = usecase();
+    final result = await usecase();
     expect(result.getOrElse(() => []), isA<List<ResultPartners>>());
   });
 

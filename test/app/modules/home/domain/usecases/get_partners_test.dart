@@ -11,15 +11,15 @@ class PartnersRepositoryMock extends Mock implements PartnersRepository {}
 main() {
   final repository = PartnersRepositoryMock();
   final usecase = GetPartnersImpl(repository);
-  test('Should return a list of partners images url', () {
-    when(() => repository.get()).thenAnswer((_) => Right(<ResultPartners>[]));
-    final result = usecase();
+  test('Should return a list of partners images url', () async {
+    when(() => repository.get()).thenAnswer((_) async => Right(<ResultPartners>[]));
+    final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultPartners>>());
   });
 
-  test('Should return a FailureGetPartners in case of requisition error', () {
-    when(() => repository.get()).thenAnswer((_) => Left(FailureGetPartners()));
-    final result = usecase();
+  test('Should return a FailureGetPartners in case of requisition error', () async {
+    when(() => repository.get()).thenAnswer((_) async => Left(FailureGetPartners()));
+    final result = await usecase();
     expect(result.fold(id, id), isA<FailureGetPartners>());
   });
 }
