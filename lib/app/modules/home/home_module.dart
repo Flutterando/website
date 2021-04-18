@@ -1,7 +1,6 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/data/brazilian_cases_data.dart';
-import 'package:flutterando/app/data/co_organizers_data.dart';
 import 'package:flutterando/app/data/partners_data.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
@@ -11,7 +10,6 @@ import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_youtube.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/external/datasources/brazilian_cases_local_datasource.dart';
-import 'package:flutterando/app/modules/home/external/datasources/co_organizers_local_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/meetups_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/partners_local_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/send_contact_server_datasource.dart';
@@ -24,6 +22,7 @@ import 'package:flutterando/app/modules/home/infra/repositories/youtube_reposito
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 
 import 'domain/repositories/youtube_repository.dart';
+import 'external/datasources/co_organizers_remote_datasource.dart';
 import 'external/datasources/packages_remote_datasource.dart';
 import 'external/datasources/youtube_remote_datasource.dart';
 import 'home_controller.dart';
@@ -60,8 +59,8 @@ class HomeModule extends Module {
         Bind((i) => GetPartnersImpl(i())),
 
         //binds co_organizers
-        Bind((i) => CoOrganizersData()),
-        Bind((i) => CoOrganizersLocalDatasource(i())),
+        // Bind((i) => CoOrganizersData()),
+        Bind((i) => CoOrganizersRemoteDatasource(i())),
         Bind((i) => CoOrganizersRepositoryImpl(i())),
         Bind((i) => GetCoOrganizersImpl(i())),
 

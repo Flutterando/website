@@ -12,15 +12,15 @@ class CoOrganizersRepositoryMock extends Mock
 main() {
   final repository = CoOrganizersRepositoryMock();
   final usecase = GetCoOrganizersImpl(repository);
-  test('Should return a list of co-organizers', () {
-    when(() => repository.get()).thenAnswer((_) => Right(<ResultCoOrganizers>[]));
-    final result = usecase();
+  test('Should return a list of co-organizers', () async {
+    when(() => repository.get()).thenAnswer((_) async => Right(<ResultCoOrganizers>[]));
+    final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultCoOrganizers>>());
   });
 
-  test('Should return a FailureGetPartners in case of requisition error', () {
-    when(() => repository.get()).thenAnswer((_) => Left(FailureGetCoOrganizers()));
-    final result = usecase();
+  test('Should return a FailureGetPartners in case of requisition error', () async {
+    when(() => repository.get()).thenAnswer((_) async => Left(FailureGetCoOrganizers()));
+    final result = await usecase();
     expect(result.fold(id, id), isA<FailureGetCoOrganizers>());
   });
 }

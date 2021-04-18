@@ -8,9 +8,9 @@ class CoOrganizersRepositoryImpl implements CoOrganizersRepository {
   final CoOrganizersDatasource datasource;
   CoOrganizersRepositoryImpl(this.datasource);
   @override
-  Either<FailureGetCoOrganizers, List<ResultCoOrganizers>> get() {
+  Future<Either<FailureGetCoOrganizers, List<ResultCoOrganizers>>> get() async {
     try {
-      final result = datasource.getCoOrganizers();
+      final result = await datasource.getCoOrganizers();
       return Right(result);
     } catch (e) {
       return Left(DatasourceError());
