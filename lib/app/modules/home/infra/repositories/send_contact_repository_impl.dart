@@ -12,8 +12,7 @@ class SendContactRepositoryImpl implements SendContactRepository {
   SendContactRepositoryImpl(this.datasource);
   
   @override
-  Future<Either<FailureSendContact, ResultContact>> send(
-      Contact contact) async {
+  Future<Either<FailureSendContact, ResultContact>> send(Contact contact) async {
     try {
       final contactModel = ContactModel.fromContact(contact);
       final result = await datasource.sendContact(contactModel);

@@ -24,10 +24,10 @@ abstract class _PartnersControllerBase with Store {
 
   @action
   fetchPartners() async {
-    var response = await usecase.call();
-    response.fold(
-          (l) => error = l.toString(),
-          (r) => partners = r.asObservable(),
-        );
+    // var response = await usecase.call();
+    // response.fold(
+    //       (l) => error = l.toString(),
+    //       (r) => partners = r.asObservable(),
+    //     );
   }
 }

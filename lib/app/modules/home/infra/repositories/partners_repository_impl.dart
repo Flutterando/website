@@ -13,8 +13,8 @@ class PartnersRepositoryImpl implements PartnersRepository {
     try {
       final result = await datasource.getPartners();
       return Right(result);
-    } on DatasourceError catch (e) {
-      return Left(e);
+    } catch (e) {
+      return Left(DatasourceError());
     }
   }
 }

@@ -33,8 +33,8 @@ class _SendButtonState extends ModularState<SendButton, FooterController> {
                 TextStyles.roboto(12 * fontScale, fontWeight: FontWeight.bold),
           ),
         ),
-        onTap: () {
-          widget.sendContact();
+        onTap: () async {
+          await widget.sendContact();
         },
       ),
     );
