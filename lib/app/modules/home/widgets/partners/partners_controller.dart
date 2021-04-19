@@ -23,10 +23,11 @@ abstract class _PartnersControllerBase with Store {
   String error = "";
 
   @action
-  fetchPartners() {
-    usecase.call().fold(
-          (l) => error = l.toString(),
-          (r) => partners = r.asObservable(),
-        );
+  fetchPartners() async {
+    // var response = await usecase.call();
+    // response.fold(
+    //       (l) => error = l.toString(),
+    //       (r) => partners = r.asObservable(),
+    //     );
   }
 }

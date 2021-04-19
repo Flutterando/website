@@ -9,12 +9,12 @@ class PartnersRepositoryImpl implements PartnersRepository {
 
   PartnersRepositoryImpl(this.datasource);
   @override
-  Either<FailureGetPartners, List<ResultPartners>> get() {
+  Future<Either<FailureGetPartners, List<ResultPartners>>> get() async {
     try {
-      final result = datasource.getPartners();
+      final result = await datasource.getPartners();
       return Right(result);
-    } on DatasourceError catch (e) {
-      return Left(e);
+    } catch (e) {
+      return Left(DatasourceError());
     }
   }
 }

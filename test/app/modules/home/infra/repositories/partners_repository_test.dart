@@ -12,15 +12,15 @@ class PartnersDatasourceMock extends Mock implements PartnersDatasource {}
 main() {
   final datasource = PartnersDatasourceMock();
   final repository = PartnersRepositoryImpl(datasource);
-  test('Should return a list of ResultPartners', () {
-    when(() => datasource.getPartners()).thenAnswer((_) => <ResultPartnersModel>[]);
-    final result = repository.get();
+  test('Should return a list of ResultPartners', () async {
+    when(() => datasource.getPartners()).thenAnswer((_) async => <ResultPartnersModel>[]);
+    final result = await repository.get();
     expect(result.fold(id, id), isA<List<ResultPartners>>());
   });
 
-  test('Should return a DatasourceError when datasource fail', () {
+  test('Should return a DatasourceError when datasource fail', () async {
     when(() => datasource.getPartners()).thenThrow(DatasourceError());
-    final result = repository.get();
+    final result = await repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });
 }

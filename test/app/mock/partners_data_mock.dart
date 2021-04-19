@@ -1,3 +1,19 @@
-const String _fteam = 'assets/images/partners/f-team-logo--branco.png';
-const String _adventista = 'assets/images/partners/adventista.png';
-const List<String> imagesPathMock = [_fteam, _adventista];
+var partnersDataMock = """ 
+[
+  {
+    "photoUrl": "assets/images/partners/fteam_icon.png"
+  },
+  {
+    "photoUrl": "assets/images/partners/adventista.png"
+  },
+  {
+    "photoUrl": "assets/images/partners/google_startups.png"
+  },
+  {
+    "photoUrl": "assets/images/partners/pupz.png"
+  },
+  {
+    "photoUrl": "assets/images/partners/quem_contrata.png"
+  }
+]
+""";

@@ -3,5 +3,5 @@ import 'package:flutterando/app/modules/home/domain/entities/result_partners.dar
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 
 abstract class PartnersRepository {
-  Either<FailureGetPartners, List<ResultPartners>> get();
+  Future<Either<FailureGetPartners, List<ResultPartners>>> get();
 }

@@ -7,7 +7,7 @@ bool emailValidation(String email) {
 
 String? emailValidationText(String? email) {
   if (emailValidation(email!)) {
-    return "";
+    return null;
   }
   if (!isNotEmptyValidation(email)) {
     return "Este campo é requerido!";
@@ -23,7 +23,7 @@ bool isNotEmptyValidation(String field) {
 
 String? isNotEmptyValidationText(String? field) {
   if (isNotEmptyValidation(field!)) {
-    return "";
+    return null;
   } else {
     return "Este campo é requerido!";
   }

@@ -13,8 +13,7 @@ class SendContactImpl implements SendContact {
   final SendContactRepository repository;
   SendContactImpl(this.repository);
   @override
-  Future<Either<FailureSendContact, ResultContact>> call(
-      Contact contact) async {
+  Future<Either<FailureSendContact, ResultContact>> call(Contact contact) async {
     String fieldsError = verifyFields(contact);
     if (fieldsError != '') {
       return Left(InvalidContactError(message: fieldsError));

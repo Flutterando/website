@@ -26,8 +26,9 @@ abstract class _BrazilianCasesControllerBase with Store {
   String error = "";
 
   @action
-  fetchBrazilianCases() {
-    usecase().fold(
+  fetchBrazilianCases() async {
+    var response = await usecase();
+    response.fold(
       (l) => error = l.toString(),
       (r) => brazilianCases = r.asObservable(),
     );

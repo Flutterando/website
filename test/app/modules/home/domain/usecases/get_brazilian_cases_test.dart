@@ -12,15 +12,15 @@ main() {
   final BrazilianCasesRepository repository = BrazilianCasesRepositoryMock();
   final usecase = GetBrazilianCasesImpl(repository);
 
-  test('Should return a list of brazilian cases', () {
-    when(() => repository.get()).thenAnswer((_) => Right(<ResultBrazilianCases>[]));
-    final result = usecase();
+  test('Should return a list of brazilian cases', () async {
+    when(() => repository.get()).thenAnswer((_) async => Right(<ResultBrazilianCases>[]));
+    final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultBrazilianCases>>());
   });
 
-  test('Should return a FailureGetBrazilianCases in case of requisition error', () {
-    when(() => repository.get()).thenAnswer((_) => Left(FailureGetBrazilianCases()));
-    final result = usecase();
+  test('Should return a FailureGetBrazilianCases in case of requisition error', () async {
+    when(() => repository.get()).thenAnswer((_) async => Left(FailureGetBrazilianCases()));
+    final result = await usecase();
     expect(result.fold(id, id), isA<FailureGetBrazilianCases>());
   });
 }

@@ -51,18 +51,12 @@ mixin _$CoOrganizersController on _CoOrganizersControllerBase, Store {
     });
   }
 
-  final _$_CoOrganizersControllerBaseActionController =
-      ActionController(name: '_CoOrganizersControllerBase');
+  final _$fetchPartnersAsyncAction =
+      AsyncAction('_CoOrganizersControllerBase.fetchPartners');
 
   @override
-  dynamic fetchPartners() {
-    final _$actionInfo = _$_CoOrganizersControllerBaseActionController
-        .startAction(name: '_CoOrganizersControllerBase.fetchPartners');
-    try {
-      return super.fetchPartners();
-    } finally {
-      _$_CoOrganizersControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future fetchPartners() {
+    return _$fetchPartnersAsyncAction.run(() => super.fetchPartners());
   }
 
   @override

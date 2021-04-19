@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 import 'package:flutter_modular/flutter_modular.dart';
@@ -8,17 +9,22 @@ import 'package:flutterando/app/app_module.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
+import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
+import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/home_module.dart';
+import 'package:hasura_connect/hasura_connect.dart';
 import 'package:mocktail/mocktail.dart';
 
 class DioMock extends Mock implements Dio {}
+class HasuraConnectSpy extends Mock implements HasuraConnect {}
 
 main() {
   final dio = DioMock();
+  final connection = HasuraConnectSpy();
 
   initModules([
     AppModule(),
@@ -44,15 +50,15 @@ main() {
     expect(usecaseSendContact, isA<SendContactImpl>());
   });
 
-  test('Should return a list of ResultPartners', () {
+  test('Should return a list of ResultPartners', () async {
     final usecase = Modular.get<GetPartners>();
-    final result = usecase();
+    final result = await usecase();
     expect(result.getOrElse(() => []), isA<List<ResultPartners>>());
   });
 
-  test('Should return a list of ResultCoOrganizers', () {
+  test('Should return a list of ResultCoOrganizers', () async {
     final usecase = Modular.get<GetCoOrganizers>();
-    final result = usecase();
+    final result = await usecase();
     expect(result.getOrElse(() => []), isA<List<ResultCoOrganizers>>());
   });
 
@@ -63,21 +69,18 @@ main() {
   });
 
   test('Should send a contact', () async {
-    // final contact = Contact(
-    //   name: 'test name',
-    //   email: 'test@test.com',
-    //   message: 'this is a contact test',
-    // );
-
-    when(() => dio.post("url", queryParameters: {"":""}))
-        .thenAnswer((_) async => Response(data: {}, statusCode: 201, requestOptions: RequestOptions(path: "")));
-
-    // var contactNew = ContactModel(name: "Flutterando", message:"Hi!", email: "flutterando@flutterando.com.br");
-    // when(() => dio.get(any(), queryParameters: contactNew.toMap()))
-    //     .thenAnswer((_) async => Response(data: {}, statusCode: 201, requestOptions: _requestOptionsMock));
-
-    // final usecase = Modular.get<SendContact>();
-    // final result = await usecase(contact);
-    // expect(result.fold(id, id), isA<ResultContact>());
+    final contact = Contact(
+      name: 'test name',
+      email: 'test@test.com',
+      message: 'this is a contact test',
+    );
+    when(() => connection.mutation(any(), variables: any(named: 'variables'))).thenAnswer((invocation) async => {"data": 
+      {"insert_mail_box": 
+        {"affected_rows": 1}
+      }
+    });
+    final usecase = Modular.get<SendContact>();
+    final result = await usecase(contact);
+    expect(result.fold(id, id), isA<ResultContact>());
   });
 }

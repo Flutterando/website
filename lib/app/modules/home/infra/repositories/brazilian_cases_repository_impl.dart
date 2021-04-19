@@ -8,9 +8,9 @@ class BrazilianCasesRepositoryImpl implements BrazilianCasesRepository {
   final BrazilianCasesDatasource datasource;
   BrazilianCasesRepositoryImpl(this.datasource);
   @override
-  Either<FailureGetBrazilianCases, List<ResultBrazilianCases>> get() {
+  Future<Either<FailureGetBrazilianCases, List<ResultBrazilianCases>>> get() async {
     try {
-      final result = datasource.getBrazilianCases();
+      final result = await datasource.getBrazilianCases();
       return Right(result);
     } catch (e) {
       return Left(DatasourceError());

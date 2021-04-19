@@ -51,18 +51,13 @@ mixin _$BrazilianCasesController on _BrazilianCasesControllerBase, Store {
     });
   }
 
-  final _$_BrazilianCasesControllerBaseActionController =
-      ActionController(name: '_BrazilianCasesControllerBase');
+  final _$fetchBrazilianCasesAsyncAction =
+      AsyncAction('_BrazilianCasesControllerBase.fetchBrazilianCases');
 
   @override
-  dynamic fetchBrazilianCases() {
-    final _$actionInfo = _$_BrazilianCasesControllerBaseActionController
-        .startAction(name: '_BrazilianCasesControllerBase.fetchBrazilianCases');
-    try {
-      return super.fetchBrazilianCases();
-    } finally {
-      _$_BrazilianCasesControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future fetchBrazilianCases() {
+    return _$fetchBrazilianCasesAsyncAction
+        .run(() => super.fetchBrazilianCases());
   }
 
   @override

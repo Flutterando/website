@@ -13,17 +13,17 @@ class CoOrganizersDatasourceMock extends Mock
 main() {
   final datasource = CoOrganizersDatasourceMock();
   final repository = CoOrganizersRepositoryImpl(datasource);
-  test('Should return a list of ResultCoOrganizers', () {
+  test('Should return a list of ResultCoOrganizers', () async {
     when(() => datasource.getCoOrganizers())
-        .thenAnswer((_) => <ResultCoOrganizersModel>[]);
-    final result = repository.get();
+        .thenAnswer((_) async => <ResultCoOrganizersModel>[]);
+    final result = await repository.get();
 
     expect(result.fold(id, id), isA<List<ResultCoOrganizers>>());
   });
 
-  test('Should return a DatasourceError when datasource fail', () {
+  test('Should return a DatasourceError when datasource fail', () async {
     when(() => datasource.getCoOrganizers()).thenThrow(Exception());
-    final result = repository.get();
+    final result = await repository.get();
     expect(result.fold(id, id), isA<DatasourceError>());
   });
 }
