@@ -1,9 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import '../../../../utils/url_launcher/url_launcher.dart';
+import '../../domain/entities/result_package.dart';
+import '../../domain/usecases/get_packages.dart';
 
 part 'packages_controller.g.dart';
 

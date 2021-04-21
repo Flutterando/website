@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
+import '../../domain/entities/result_co_organizers.dart';
 
 class ResultCoOrganizersModel implements ResultCoOrganizers {
   final String name;

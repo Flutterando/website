@@ -1,7 +1,8 @@
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
-import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobx/mobx.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import '../../../../utils/url_launcher/url_launcher.dart';
 
 part 'latest_channel_videos_controller.g.dart';
 

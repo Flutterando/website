@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
+import '../../domain/entities/result_meetups.dart';
 
 class ResultMeetupsModel implements ResultMeetups {
   final String photoUrl;

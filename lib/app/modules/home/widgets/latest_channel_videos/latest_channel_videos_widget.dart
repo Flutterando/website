@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/data/youtube_data.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/widgets/channel_video_tile.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../data/youtube_data.dart';
+import '../../../../utils/colors/colors.dart';
+import '../../../../utils/grids/number_grid_row_items_by_screen_size.dart';
+import '../../../../utils/text_styles/text_styles.dart';
+import 'latest_channel_videos_controller.dart';
+import 'widgets/channel_video_tile.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
   @override

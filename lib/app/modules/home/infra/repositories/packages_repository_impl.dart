@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/packages_repository.dart';
-import 'package:flutterando/app/modules/home/infra/datasources/packages_datasource.dart';
+
+import '../../domain/entities/result_package.dart';
+import '../../domain/errors/errors.dart';
+import '../../domain/repositories/packages_repository.dart';
+import '../datasources/packages_datasource.dart';
 
 class PackagesRepositoryImpl implements PackagesRepository {
   PackagesDatasource datasource;

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/co_organizers/widgets/co_organizer_item.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../utils/text_styles/text_styles.dart';
+import 'co_organizers_controller.dart';
+import 'widgets/co_organizer_item.dart';
 
 class CoOrganizers extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
+import '../../domain/entities/result_package.dart';
 
 class ResultPackagesModel implements ResultPackage {
   final String name;

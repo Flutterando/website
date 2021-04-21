@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/contact_form/widgets/contact_field.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/contact_form/widgets/send_button.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
-import 'package:flutterando/app/utils/validations/validations.dart';
-import 'package:flutterando/app/utils/widgets/alert/alert_animate.dart';
+
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../../../utils/validations/validations.dart';
+import '../../../../../utils/widgets/alert/alert_animate.dart';
+import '../../../domain/entities/send_contact/contact.dart';
+import '../footer_controller.dart';
+import 'widgets/contact_field.dart';
+import 'widgets/send_button.dart';
 
 class ContactForm extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
-import 'package:flutterando/app/data/partners_data.dart';
-import 'package:flutterando/app/modules/home/infra/datasources/partners_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_partners_model.dart';
+import '../../../../data/partners_data.dart';
+import '../../infra/datasources/partners_datasource.dart';
+import '../../infra/models/result_partners_model.dart';
 
 class PartnersLocalDatasource implements PartnersDatasource {
   final PartnersData partners;
@@ -9,8 +9,9 @@ class PartnersLocalDatasource implements PartnersDatasource {
   @override
   List<ResultPartnersModel> getPartners() {
     final response = partners.get();
-    final listPartners =
-        response.map((String photo) => ResultPartnersModel(photoUrl: photo)).toList();
+    final listPartners = response
+        .map((String photo) => ResultPartnersModel(photoUrl: photo))
+        .toList();
     return listPartners;
   }
 }

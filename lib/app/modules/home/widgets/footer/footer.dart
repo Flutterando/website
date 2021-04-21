@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/contact_form/contact_form.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/follow_us/follow_us.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import 'contact_form/contact_form.dart';
+import 'follow_us/follow_us.dart';
+import 'footer_controller.dart';
 
 class Footer extends StatefulWidget {
   @override

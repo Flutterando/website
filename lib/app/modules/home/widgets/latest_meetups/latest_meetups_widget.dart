@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_meetups/widgets/meetup_tile.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../utils/colors/colors.dart';
+import '../../../../utils/grids/number_grid_row_items_by_screen_size.dart';
+import '../../../../utils/text_styles/text_styles.dart';
+import 'latest_meetups_controller.dart';
+import 'widgets/meetup_tile.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
   @override

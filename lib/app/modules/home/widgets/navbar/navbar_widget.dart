@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/navbar/navbar_controller.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/images/images.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../utils/colors/colors.dart';
+import '../../../../utils/images/images.dart';
+import '../../../../utils/text_styles/text_styles.dart';
+import 'navbar_controller.dart';
 
 class NavbarWidget extends StatefulWidget {
   @override

@@ -1,13 +1,14 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
+import '../../../domain/entities/send_contact/contact.dart';
 
 class ContactModel implements Contact {
   final String name;
   final String email;
   final String message;
 
-  ContactModel({required this.name, required this.email, required this.message});
+  ContactModel(
+      {required this.name, required this.email, required this.message});
 
   Map<String, dynamic> toMap() {
     return {
@@ -28,7 +29,8 @@ class ContactModel implements Contact {
   }
 
   factory ContactModel.fromContact(Contact contact) {
-    if (contact.email.isEmpty) return ContactModel(name: "", email: "", message: "");
+    if (contact.email.isEmpty)
+      return ContactModel(name: "", email: "", message: "");
 
     return ContactModel(
       name: contact.name,

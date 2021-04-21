@@ -1,6 +1,6 @@
-import 'package:flutterando/app/data/co_organizers_data.dart';
-import 'package:flutterando/app/modules/home/infra/datasources/co_organizers_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_co_organizers_model.dart';
+import '../../../../data/co_organizers_data.dart';
+import '../../infra/datasources/co_organizers_datasource.dart';
+import '../../infra/models/result_co_organizers_model.dart';
 
 class CoOrganizersLocalDatasource implements CoOrganizersDatasource {
   final CoOrganizersData coOrganizers;

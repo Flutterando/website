@@ -1,6 +1,6 @@
-import 'package:flutterando/app/data/meetups_data.dart';
-import 'package:flutterando/app/modules/home/infra/datasources/meetups_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_meetups_model.dart';
+import '../../../../data/meetups_data.dart';
+import '../../infra/datasources/meetups_datasource.dart';
+import '../../infra/models/result_meetups_model.dart';
 
 class MeetupsLocalDatasource implements MeetupsDatasource {
   final MeetupsData meetups;

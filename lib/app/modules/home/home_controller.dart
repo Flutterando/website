@@ -1,6 +1,7 @@
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobx/mobx.dart';
+
+import '../../utils/screen/screen_size.dart';
 
 part 'home_controller.g.dart';
 

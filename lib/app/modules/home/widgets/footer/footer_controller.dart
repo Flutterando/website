@@ -1,11 +1,12 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import '../../../../utils/url_launcher/url_launcher.dart';
+import '../../domain/entities/send_contact/contact.dart';
+import '../../domain/entities/send_contact/result_contact.dart';
+import '../../domain/errors/errors_send_contact.dart';
+import '../../domain/usecases/send_contact.dart';
 
 part 'footer_controller.g.dart';
 

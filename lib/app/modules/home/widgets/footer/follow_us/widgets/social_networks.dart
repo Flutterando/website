@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/icons/icons.dart';
-import 'package:flutterando/app/utils/url_launcher/urls.dart';
+
+import '../../../../../../utils/icons/icons.dart';
+import '../../../../../../utils/url_launcher/urls.dart';
+import '../../footer_controller.dart';
 
 class SocialNetworks extends StatefulWidget {
   final double fontScale;

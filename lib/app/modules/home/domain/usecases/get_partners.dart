@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/partners_repository.dart';
+
+import '../entities/result_partners.dart';
+import '../errors/errors.dart';
+import '../repositories/partners_repository.dart';
 
 abstract class GetPartners {
   Either<FailureGetPartners, List<ResultPartners>> call();

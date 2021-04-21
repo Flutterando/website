@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_controller.dart';
+
+import '../partners_controller.dart';
 
 class PartnerLogo extends StatefulWidget {
   final String photoUrl;

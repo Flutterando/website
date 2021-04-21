@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../../../utils/colors/colors.dart';
+import '../../../../../../utils/text_styles/text_styles.dart';
 
 class ContactField extends StatelessWidget {
   final String title;

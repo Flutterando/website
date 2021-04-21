@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/header/widgets/header_social_media.dart';
-import 'package:flutterando/app/utils/images/images.dart';
+
+import '../../../../utils/images/images.dart';
+import 'header_controller.dart';
+import 'widgets/header_social_media.dart';
 
 class HeaderWidget extends StatefulWidget {
   @override

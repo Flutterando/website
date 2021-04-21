@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/meetups_repository.dart';
-import 'package:flutterando/app/modules/home/infra/datasources/meetups_datasource.dart';
+
+import '../../domain/entities/result_meetups.dart';
+import '../../domain/errors/errors.dart';
+import '../../domain/repositories/meetups_repository.dart';
+import '../datasources/meetups_datasource.dart';
 
 class MeetupsRepositoryImpl implements MeetupsRepository {
   final MeetupsDatasource datasource;

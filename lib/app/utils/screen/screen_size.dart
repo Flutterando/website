@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
+
+import '../grids/number_grid_row_items_by_screen_size.dart';
 
 part 'screen_size.g.dart';
 

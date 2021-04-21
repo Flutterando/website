@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import '../../../../../utils/colors/colors.dart';
+import '../../../../../utils/screen/screen_size.dart';
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../latest_channel_videos_controller.dart';
 
 class ChannelVideoTile extends StatefulWidget {
   final Map<String, dynamic> video;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
+import '../../domain/entities/result_partners.dart';
 
 class ResultPartnersModel implements ResultPartners {
   final String photoUrl;

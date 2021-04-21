@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/widgets/partner_logo.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../utils/colors/colors.dart';
+import '../../../../utils/text_styles/text_styles.dart';
+import 'partners_controller.dart';
+import 'widgets/partner_logo.dart';
 
 class PartnersWidget extends StatefulWidget {
   @override

@@ -1,8 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import '../../domain/entities/result_partners.dart';
+import '../../domain/usecases/get_partners.dart';
 
 part 'partners_controller.g.dart';
 

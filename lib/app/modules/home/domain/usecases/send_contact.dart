@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
-import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/send_contact_repository.dart';
-import 'package:flutterando/app/utils/validations/validations.dart';
+
+import '../../../../utils/validations/validations.dart';
+import '../entities/send_contact/contact.dart';
+import '../entities/send_contact/result_contact.dart';
+import '../errors/errors_send_contact.dart';
+import '../repositories/send_contact_repository.dart';
 
 abstract class SendContact {
   Future<Either<FailureSendContact, ResultContact>> call(Contact contact);

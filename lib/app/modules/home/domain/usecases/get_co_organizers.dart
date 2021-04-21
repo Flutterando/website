@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/co_organizers_repository.dart';
+
+import '../entities/result_co_organizers.dart';
+import '../errors/errors.dart';
+import '../repositories/co_organizers_repository.dart';
 
 abstract class GetCoOrganizers {
   Either<FailureGetCoOrganizers, List<ResultCoOrganizers>> call();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../text_styles/text_styles.dart';
 
 class Alert extends StatelessWidget {
   final String message;

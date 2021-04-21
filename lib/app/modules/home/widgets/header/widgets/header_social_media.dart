@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/data/followers_number.dart';
-import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
-import 'package:flutterando/app/utils/icons/icons.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
-import 'package:flutterando/app/utils/url_launcher/urls.dart';
+
+import '../../../../../data/followers_number.dart';
+import '../../../../../utils/icons/icons.dart';
+import '../../../../../utils/screen/screen_size.dart';
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../../../utils/url_launcher/urls.dart';
+import '../header_controller.dart';
 
 class HeaderSocialMedia extends StatefulWidget {
   final ScreenSize screenSize;
@@ -37,41 +39,43 @@ class _HeaderSocialMediaState
             style: TextStyles.roboto(16, fontWeight: FontWeight.normal),
           ),
           SizedBox(height: 20),
-          Container(
-            width: double.infinity,
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              runSpacing: 30,
-              spacing: 30,
-              children: [
-                socialMediaIcon(
-                  IconUrls.youtube,
-                  urlLink: LinksUrl.youtube,
-                  followersNumber: followersNumber['youtube'],
-                ),
-                socialMediaIcon(
-                  IconUrls.instagram,
-                  urlLink: LinksUrl.instagram,
-                  followersNumber: followersNumber['instagram'],
-                ),
-                socialMediaIcon(
-                  IconUrls.twitter,
-                  urlLink: LinksUrl.twitter,
-                  followersNumber: followersNumber['twitter'],
-                ),
-                socialMediaIcon(
-                  IconUrls.discord,
-                  urlLink: LinksUrl.discord,
-                  followersNumber: followersNumber['discord'],
-                ),
-                socialMediaIcon(
-                  IconUrls.telegram,
-                  urlLink: LinksUrl.telegram,
-                  followersNumber: followersNumber['telegram'],
-                )
-              ],
-            ),
-          )
+          Observer(builder: (context) {
+            return Container(
+              width: double.infinity,
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                runSpacing: 30,
+                spacing: 30,
+                children: [
+                  socialMediaIcon(
+                    IconUrls.youtube,
+                    urlLink: LinksUrl.youtube,
+                    followersNumber: followersNumber['youtube'],
+                  ),
+                  socialMediaIcon(
+                    IconUrls.instagram,
+                    urlLink: LinksUrl.instagram,
+                    followersNumber: controller.followers ?? '',
+                  ),
+                  socialMediaIcon(
+                    IconUrls.twitter,
+                    urlLink: LinksUrl.twitter,
+                    followersNumber: followersNumber['twitter'],
+                  ),
+                  socialMediaIcon(
+                    IconUrls.discord,
+                    urlLink: LinksUrl.discord,
+                    followersNumber: followersNumber['discord'],
+                  ),
+                  socialMediaIcon(
+                    IconUrls.telegram,
+                    urlLink: LinksUrl.telegram,
+                    followersNumber: followersNumber['telegram'],
+                  )
+                ],
+              ),
+            );
+          })
         ],
       ),
     );

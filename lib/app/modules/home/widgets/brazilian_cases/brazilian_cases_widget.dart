@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_cases_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/brazilian_cases/widgets/brazilian_case_item.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../utils/colors/colors.dart';
+import '../../../../utils/grids/number_grid_row_items_by_screen_size.dart';
+import '../../../../utils/text_styles/text_styles.dart';
+import 'brazilian_cases_controller.dart';
+import 'widgets/brazilian_case_item.dart';
 
 class BrazilianCasesWidget extends StatefulWidget {
   @override

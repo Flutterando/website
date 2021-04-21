@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
-import 'package:flutterando/app/modules/home/domain/repositories/packages_repository.dart';
+
+import '../entities/result_package.dart';
+import '../errors/errors.dart';
+import '../repositories/packages_repository.dart';
 
 abstract class GetPackages {
   Either<FailureGetPackages, List<ResultPackage>> call();

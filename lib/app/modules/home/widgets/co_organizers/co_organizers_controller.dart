@@ -1,9 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../utils/screen/screen_size.dart';
+import '../../../../utils/url_launcher/url_launcher.dart';
+import '../../domain/entities/result_co_organizers.dart';
+import '../../domain/usecases/get_co_organizers.dart';
 
 part 'co_organizers_controller.g.dart';
 
@@ -20,7 +21,8 @@ abstract class _CoOrganizersControllerBase with Store {
   }
 
   @observable
-  ObservableList<ResultCoOrganizers> coOrganizers = <ResultCoOrganizers>[].asObservable();
+  ObservableList<ResultCoOrganizers> coOrganizers =
+      <ResultCoOrganizers>[].asObservable();
 
   @observable
   String error = "";

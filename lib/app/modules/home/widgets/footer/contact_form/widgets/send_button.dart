@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../../../utils/colors/colors.dart';
+import '../../../../../../utils/text_styles/text_styles.dart';
+import '../../footer_controller.dart';
 
 class SendButton extends StatefulWidget {
   final Function sendContact;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutterando/app/modules/home/domain/entities/result_brazilian_cases.dart';
+import '../../domain/entities/result_brazilian_cases.dart';
 
 class ResultBrazilianCasesModel implements ResultBrazilianCases {
   final String imageUrl;
@@ -24,7 +24,9 @@ class ResultBrazilianCasesModel implements ResultBrazilianCases {
   }
 
   factory ResultBrazilianCasesModel.fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultBrazilianCasesModel(imageUrl: "", title: "", description: "", url: "");
+    if (map.isEmpty)
+      return ResultBrazilianCasesModel(
+          imageUrl: "", title: "", description: "", url: "");
 
     return ResultBrazilianCasesModel(
       imageUrl: map['imageUrl'] ??= "",

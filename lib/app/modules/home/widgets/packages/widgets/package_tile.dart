@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
-import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/icons/icons.dart';
-import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../../utils/colors/colors.dart';
+import '../../../../../utils/icons/icons.dart';
+import '../../../../../utils/screen/screen_size.dart';
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../../../domain/entities/result_package.dart';
+import '../packages_controller.dart';
 
 class PackageTile extends StatefulWidget {
   final ResultPackage package;
@@ -86,7 +87,8 @@ class _PackageTileState extends ModularState<PackageTile, PackagesController> {
                   color: PrimaryColors.dark,
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
+                      backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => PrimaryColors.dark),
                     ),
                     // color: PrimaryColors.dark,
                     onPressed: () {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/follow_us/widgets/social_networks.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/images/images.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+
+import '../../../../../utils/images/images.dart';
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../footer_controller.dart';
+import 'widgets/social_networks.dart';
 
 class FollowUs extends StatefulWidget {
   @override

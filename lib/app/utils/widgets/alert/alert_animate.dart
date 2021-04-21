@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app/utils/widgets/alert/alert.dart';
+
+import 'alert.dart';
 
 class AlertAnimate extends StatefulWidget {
   final String message;
