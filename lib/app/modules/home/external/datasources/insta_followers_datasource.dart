@@ -12,7 +12,11 @@ class InstaFollowersDatasourceImpl implements InstaFollowersDatasource {
 
   @override
   Future<ResultInstaFollowers> getInstaFollowers() async {
-    var response = await dio.get(LinksUrl.instagramFollowersData);
+    var response = await dio
+        .get(LinksUrl.instagramFollowersData)
+        .catchError((DioError error) {
+      print(error.response?.data);
+    });
 
     if (response.statusCode == 200) {
       return ResultInstaFollowersModel(userFollowerNumber: response.data);

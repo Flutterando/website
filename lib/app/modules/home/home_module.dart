@@ -22,6 +22,7 @@ import 'package:flutterando/app/modules/home/infra/repositories/partners_reposit
 import 'package:flutterando/app/modules/home/infra/repositories/send_contact_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/youtube_repository_impl.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
+import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 import 'domain/repositories/youtube_repository.dart';
@@ -99,6 +100,8 @@ class HomeModule extends Module {
         Bind((i) => GetInstaFollowersImpl(i.get())),
         Bind((i) => InstaFollowersRepositoryImpl(i.get())),
         Bind((i) => InstaFollowersDatasourceImpl(i.get())),
+
+        Bind((i) => ScreenStateStore(), isSingleton: false),
       ];
 
   @override
