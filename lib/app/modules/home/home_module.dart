@@ -1,23 +1,28 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_co_organizers.dart';
+import 'package:flutterando/app/modules/home/domain/usecases/get_insta_followers.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_youtube.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/external/datasources/brazilian_cases_remote_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasources/insta_followers_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/meetups_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/partners_remote_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasources/send_contact_server_datasource.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/brazilian_cases_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/co_organizers_repository_impl.dart';
+import 'package:flutterando/app/modules/home/infra/repositories/insta_followers_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/packages_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/partners_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/send_contact_repository_impl.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/youtube_repository_impl.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
+import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 import 'domain/repositories/youtube_repository.dart';
@@ -37,7 +42,6 @@ import 'widgets/packages/packages_controller.dart';
 import 'widgets/partners/partners_controller.dart';
 
 class HomeModule extends Module {
-
   @override
   List<Bind> get binds => [
         $NavbarController,
@@ -52,6 +56,7 @@ class HomeModule extends Module {
 
         //clean arch
         Bind((i) => HasuraConnect(env["urlSendContact"]!)),
+        Bind((i) => Dio()),
 
         //binds partners
         // Bind((i) => PartnersData()),
@@ -91,7 +96,12 @@ class HomeModule extends Module {
         Bind<YoutubeDatasource>((i) => YoutubeRemoteDatasource(i.get())),
         Bind<YoutubeRepository>((i) => YoutubeRepositoryImpl(i.get())),
         Bind<GetYoutube>((i) => GetYoutubeImpl(i.get())),
-        
+
+        Bind((i) => GetInstaFollowersImpl(i.get())),
+        Bind((i) => InstaFollowersRepositoryImpl(i.get())),
+        Bind((i) => InstaFollowersDatasourceImpl(i.get())),
+
+        Bind((i) => ScreenStateStore(), isSingleton: false),
       ];
 
   @override

@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'header_controller.dart';
+part of 'screen_state_store.dart';
 
 // **************************************************************************
 // InjectionGenerator
 // **************************************************************************
 
-final $HeaderController = BindInject(
-  (i) => HeaderController(i<ScreenSize>(), i<UrlLauncher>(),
-      i<ScreenStateStore>(), i<GetInstaFollowers>()),
+final $ScreenStateStore = BindInject(
+  (i) => ScreenStateStore(),
   isSingleton: true,
   isLazy: true,
 );
@@ -19,19 +18,26 @@ final $HeaderController = BindInject(
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$HeaderController on _HeaderControllerBase, Store {
-  final _$getInstaFollowersAsyncAction =
-      AsyncAction('_HeaderControllerBase.getInstaFollowers');
+mixin _$ScreenStateStore on _ScreenStateStoreBase, Store {
+  final _$stateAtom = Atom(name: '_ScreenStateStoreBase.state');
 
   @override
-  Future<void> getInstaFollowers() {
-    return _$getInstaFollowersAsyncAction.run(() => super.getInstaFollowers());
+  ScreenState get state {
+    _$stateAtom.reportRead();
+    return super.state;
+  }
+
+  @override
+  set state(ScreenState value) {
+    _$stateAtom.reportWrite(value, super.state, () {
+      super.state = value;
+    });
   }
 
   @override
   String toString() {
     return '''
-
+state: ${state}
     ''';
   }
 }
