@@ -33,7 +33,7 @@ abstract class _HeaderControllerBase with Store {
     final result = await _getInstaFollowers();
     result.fold(
       (l) {
-        print("erro em getInstaFollowers: ${l.toString()}");
+        print("erro em getInstaFollowers: ${l.message}");
         socialMediaState.onError();
       },
       (r) {

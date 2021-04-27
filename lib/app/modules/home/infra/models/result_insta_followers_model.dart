@@ -5,9 +5,10 @@ class ResultInstaFollowersModel extends ResultInstaFollowers {
     required int userFollowerNumber,
   }) : super(followersNumber: userFollowerNumber);
 
-  factory ResultInstaFollowersModel.fromMap(Map<String, dynamic> json,
-          {userFollowerNumber}) =>
-      ResultInstaFollowersModel(
-          userFollowerNumber:
-              json["graphql"]['user']['edge_followed_by']['count'] ?? 0);
+  factory ResultInstaFollowersModel.fromMap(Map<String, dynamic> json) {
+    return ResultInstaFollowersModel(
+      userFollowerNumber:
+          json["graphql"]['user']['edge_followed_by']['count'] ?? 0,
+    );
+  }
 }
