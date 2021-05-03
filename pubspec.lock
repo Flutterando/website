@@ -334,9 +334,11 @@ packages:
   localization:
     dependency: "direct dev"
     description:
-      name: localization
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: fix_support_web
+      resolved-ref: "11c9a386d1c4b2b1d1c3e12c0f31e969529d2c67"
+      url: "https://github.com/raphaelbarbosaqwerty/localization"
+    source: git
     version: "0.2.0-nullsafety"
   logging:
     dependency: transitive

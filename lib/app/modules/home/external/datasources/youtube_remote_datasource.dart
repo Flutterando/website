@@ -11,7 +11,7 @@ class YoutubeRemoteDatasource implements YoutubeDatasource {
   
   @override
   Future<List<ResultYoutubeModel>> getYoutube() async {
-    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/youtube_data.json');
+    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/tree/main/data/youtube_data.json');
     if(response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listYoutube = jsonList.map((e) => ResultYoutubeModel.fromMap(e)).toList();
