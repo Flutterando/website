@@ -6,6 +6,7 @@ import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/widge
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
   @override
@@ -37,8 +38,7 @@ class _LatestChannelVideosWidgetState extends ModularState<
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            //"title_video_channel".i18n(),
-            'Últimos vídeos do canal',
+            "title_video_channel".i18n(),
             style: TextStyles.notoSans(
               25 * fontScale,
               fontWeight: FontWeight.bold,
@@ -46,8 +46,7 @@ class _LatestChannelVideosWidgetState extends ModularState<
           ),
           SizedBox(height: 28),
           SelectableText(
-            //"subtitle_video_channel".i18n(),
-            'Fique por dentro do nosso conteúdo mais recente',
+            "subtitle_video_channel".i18n(),
             style: TextStyles.roboto(
               11 * fontScale,
               fontWeight: FontWeight.normal,

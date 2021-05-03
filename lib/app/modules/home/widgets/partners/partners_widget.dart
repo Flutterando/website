@@ -5,6 +5,7 @@ import 'package:flutterando/app/modules/home/widgets/partners/partners_controlle
 import 'package:flutterando/app/modules/home/widgets/partners/widgets/partner_logo.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class PartnersWidget extends StatefulWidget {
   @override
@@ -31,8 +32,7 @@ class _PartnersWidgetState
         child: Column(
           children: [
             SelectableText(
-              //"title_partners".i18n(),
-              'Parceiros',
+              "title_partners".i18n(),
               style: TextStyles.notoSans(
                 25 * fontScale,
                 fontWeight: FontWeight.bold,
@@ -42,8 +42,7 @@ class _PartnersWidgetState
               height: 20,
             ),
             SelectableText(
-              //"subtitle_partners".i18n(),
-              'Estas são as empresas que apoiam nossa comunidade',
+              "subtitle_partners".i18n(),
               style: TextStyles.roboto(
                 11 * fontScale,
                 fontWeight: FontWeight.normal,

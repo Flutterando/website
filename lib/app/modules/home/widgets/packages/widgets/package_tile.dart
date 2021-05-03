@@ -6,6 +6,7 @@ import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class PackageTile extends StatefulWidget {
   final ResultPackage package;
@@ -94,8 +95,7 @@ class _PackageTileState extends ModularState<PackageTile, PackagesController> {
                       controller.urlLauncher.launchUrl(package.url);
                     },
                     child: Text(
-                      //"button_packages".i18n();
-                      'Acessar',
+                      "button_packages".i18n(),
                       style: TextStyles.roboto(12 * fontScale),
                     ),
                   ),

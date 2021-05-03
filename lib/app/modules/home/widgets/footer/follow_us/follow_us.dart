@@ -4,6 +4,7 @@ import 'package:flutterando/app/modules/home/widgets/footer/follow_us/widgets/so
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 import 'package:flutterando/app/utils/images/images.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class FollowUs extends StatefulWidget {
   @override
@@ -31,8 +32,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           ),
           SizedBox(height: 38 * fontScale),
           SelectableText(
-            //"footer_social_media".i18n(),
-            'Siga-nos nas redes sociais',
+            "footer_social_media".i18n(),
             style:
                 TextStyles.roboto(16 * fontScale, fontWeight: FontWeight.bold),
           ),
@@ -40,8 +40,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           SocialNetworks(fontScale),
           SizedBox(height: 60),
           SelectableText(
-            //"footer_contact".i18n(),
-            'Contato',
+            "footer_contact".i18n(),
             style: TextStyles.notoSans(24 * fontScale,
                 fontWeight: FontWeight.bold),
           ),

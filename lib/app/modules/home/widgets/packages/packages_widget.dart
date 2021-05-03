@@ -6,6 +6,7 @@ import 'package:flutterando/app/modules/home/widgets/packages/widgets/package_ti
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class PackagesWidget extends StatefulWidget {
   @override
@@ -35,8 +36,7 @@ class _PackagesWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            //"title_packages".i18n(),
-            'Pacotes brasileiros',
+            "title_packages".i18n(),
             style: TextStyles.notoSans(
               25 * fontScale,
               fontWeight: FontWeight.bold,
@@ -44,8 +44,7 @@ class _PackagesWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
-            //"subtitle_packages".i18n(),
-            'Faça o download dos pacotes brasileiros',
+            "subtitle_packages".i18n(),
             style: TextStyles.roboto(
               11 * fontScale,
               fontWeight: FontWeight.normal,
