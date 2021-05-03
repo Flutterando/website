@@ -243,7 +243,7 @@ packages:
       name: flutter_modular
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.3"
+    version: "3.2.0"
   flutter_modular_annotations:
     dependency: transitive
     description:
@@ -332,7 +332,7 @@ packages:
     source: hosted
     version: "4.0.1"
   localization:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       path: "."
       ref: fix_support_web
@@ -452,6 +452,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.26.0"
   shelf:
     dependency: transitive
     description:
