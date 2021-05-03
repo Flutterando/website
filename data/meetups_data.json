@@ -1,6 +1,13 @@
 [
     {
       "photoUrl":
+          "https://i.ytimg.com/vi/Bs0z_gIWM_o/maxresdefault.jpg?v=6090314f",
+      "title": "Keynote Flutter Modular",
+      "linkUrl": "https://www.youtube.com/watch?v=Bs0z_gIWM_o",
+      "date": "segunda-feira, 03 de maio de 2021 20:00 até 21:30"
+    },
+     {
+      "photoUrl":
           "https://secure.meetupstatic.com/photos/event/5/2/e/d/highres_493581229.jpeg",
       "title": "Flutter LATAM Conf 3º Edição 2020",
       "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/274649309/",
