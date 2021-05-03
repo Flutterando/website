@@ -37,6 +37,7 @@ class _LatestChannelVideosWidgetState extends ModularState<
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
+            //"title_video_channel".i18n(),
             'Últimos vídeos do canal',
             style: TextStyles.notoSans(
               25 * fontScale,
@@ -45,6 +46,7 @@ class _LatestChannelVideosWidgetState extends ModularState<
           ),
           SizedBox(height: 28),
           SelectableText(
+            //"subtitle_video_channel".i18n(),
             'Fique por dentro do nosso conteúdo mais recente',
             style: TextStyles.roboto(
               11 * fontScale,
@@ -54,7 +56,7 @@ class _LatestChannelVideosWidgetState extends ModularState<
           SizedBox(height: 40 * fontScale),
           Observer(
             builder: (_) {
-              if(controller.youtube.isNotEmpty) {
+              if (controller.youtube.isNotEmpty) {
                 return GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

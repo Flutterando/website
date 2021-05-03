@@ -28,6 +28,7 @@ class _SendButtonState extends ModularState<SendButton, FooterController> {
           width: double.infinity,
           height: 28 * fontScale,
           child: Text(
+            //"form_button".i18n(),
             'Enviar',
             style:
                 TextStyles.roboto(12 * fontScale, fontWeight: FontWeight.bold),

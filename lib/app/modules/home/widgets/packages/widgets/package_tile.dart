@@ -86,13 +86,15 @@ class _PackageTileState extends ModularState<PackageTile, PackagesController> {
                   color: PrimaryColors.dark,
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
+                      backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => PrimaryColors.dark),
                     ),
                     // color: PrimaryColors.dark,
                     onPressed: () {
                       controller.urlLauncher.launchUrl(package.url);
                     },
                     child: Text(
+                      //"button_packages".i18n();
                       'Acessar',
                       style: TextStyles.roboto(12 * fontScale),
                     ),

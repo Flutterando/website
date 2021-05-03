@@ -35,6 +35,7 @@ class _LatestMeetupsWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
+            //"title_meetups".i18n();
             'Últimos meetups',
             style: TextStyles.notoSans(
               25 * fontScale,
@@ -43,6 +44,7 @@ class _LatestMeetupsWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
+            //"subtitle_meetups".i18n();
             'Fique por dentro dos nossos últimos encontros',
             style: TextStyles.roboto(
               11 * fontScale,

@@ -77,6 +77,7 @@ flutter:
     - assets/images/partners/
     - assets/images/co_organizers/
     - assets/images/brazilian_cases/
+    - assets/lang/
     - .env
   #   - images/a_dot_ham.jpeg
 

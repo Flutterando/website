@@ -31,6 +31,7 @@ class _PartnersWidgetState
         child: Column(
           children: [
             SelectableText(
+              //"title_partners".i18n(),
               'Parceiros',
               style: TextStyles.notoSans(
                 25 * fontScale,
@@ -41,6 +42,7 @@ class _PartnersWidgetState
               height: 20,
             ),
             SelectableText(
+              //"subtitle_partners".i18n(),
               'Estas são as empresas que apoiam nossa comunidade',
               style: TextStyles.roboto(
                 11 * fontScale,

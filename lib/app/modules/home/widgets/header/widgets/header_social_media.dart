@@ -19,6 +19,7 @@ class HeaderSocialMedia extends StatelessWidget {
       child: Column(
         children: [
           SelectableText(
+            //"title_header".i18n(),
             'A maior comunidade de Flutter do Brasil',
             style: TextStyles.notoSans(
                 (screenSize.isMobile(context: context) ||
@@ -29,6 +30,7 @@ class HeaderSocialMedia extends StatelessWidget {
           ),
           SizedBox(height: 40),
           SelectableText(
+            //"subtitle_header".i18n(),
             'A Flutterando é a maior comunidade de Flutter no Brasil. Pensou em Flutter, pensou na Flutterando. Faça parte da nossa comunidade!',
             style: TextStyles.roboto(16, fontWeight: FontWeight.normal),
           ),

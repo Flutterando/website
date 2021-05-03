@@ -28,6 +28,7 @@ class _CoOrganizersState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
+            //"title_coorganizers".i18n(),
             'Coorganizadores',
             style: TextStyles.notoSans(
               25 * fontScale,
@@ -36,6 +37,7 @@ class _CoOrganizersState
           ),
           SizedBox(height: 32 * fontScale),
           SelectableText(
+            //"subtitle_coorganizers".i18n(),
             'Conheça a turma que faz a comunidade acontecer',
             style: TextStyles.roboto(
               11 * fontScale,

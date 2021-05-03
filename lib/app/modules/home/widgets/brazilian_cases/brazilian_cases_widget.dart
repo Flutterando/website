@@ -38,6 +38,7 @@ class _BrazilianCasesWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
+            //"title_cases".i18n(),
             'Cases brasileiros',
             style: TextStyles.notoSans(
               25 * fontScale,
@@ -46,6 +47,7 @@ class _BrazilianCasesWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
+            //"subtitle_cases".i18n(),
             'Veja como empresas brasileiras estão tendo sucesso com o Flutter em suas aplicações',
             style: TextStyles.roboto(
               11 * fontScale,

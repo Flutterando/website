@@ -31,6 +31,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           ),
           SizedBox(height: 38 * fontScale),
           SelectableText(
+            //"footer_social_media".i18n(),
             'Siga-nos nas redes sociais',
             style:
                 TextStyles.roboto(16 * fontScale, fontWeight: FontWeight.bold),
@@ -39,6 +40,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           SocialNetworks(fontScale),
           SizedBox(height: 60),
           SelectableText(
+            //"footer_contact".i18n(),
             'Contato',
             style: TextStyles.notoSans(24 * fontScale,
                 fontWeight: FontWeight.bold),

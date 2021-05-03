@@ -35,6 +35,7 @@ class _PackagesWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
+            //"title_packages".i18n(),
             'Pacotes brasileiros',
             style: TextStyles.notoSans(
               25 * fontScale,
@@ -43,6 +44,7 @@ class _PackagesWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
+            //"subtitle_packages".i18n(),
             'Faça o download dos pacotes brasileiros',
             style: TextStyles.roboto(
               11 * fontScale,
@@ -52,7 +54,7 @@ class _PackagesWidgetState
           SizedBox(height: 40 * fontScale),
           Observer(
             builder: (_) {
-              if(controller.packages.isNotEmpty) {
+              if (controller.packages.isNotEmpty) {
                 return GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

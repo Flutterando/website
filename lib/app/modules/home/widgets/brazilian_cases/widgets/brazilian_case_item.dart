@@ -74,6 +74,7 @@ class _BrazilianCaseItemState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
+                        //"button_cases".i18n(),
                         'Ver mais',
                         style: TextStyles.roboto(
                           fontSize(screen, 17, context),

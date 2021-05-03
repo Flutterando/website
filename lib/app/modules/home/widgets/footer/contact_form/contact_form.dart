@@ -42,6 +42,7 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                //"form_title".i18n(),
                 'Entre em contato conosco',
                 style: TextStyles.notoSans(
                   18 * fontScale,
@@ -49,18 +50,21 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
                 ),
               ),
               ContactField(
+                //"form_name".i18n(),
                 title: 'Nome',
                 maxLines: 1,
                 controller: _name,
                 validator: isNotEmptyValidationText,
               ),
               ContactField(
+                //"form_email".i18n(),
                 title: 'Email',
                 maxLines: 1,
                 controller: _email,
                 validator: emailValidationText,
               ),
               ContactField(
+                //"form_your_message".i18n(),
                 title: 'Sua mensagem',
                 maxLines: 5,
                 controller: _message,
