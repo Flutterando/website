@@ -34,7 +34,7 @@ class _CoOrganizerItemState
           SizedBox(height: 26 * fontScale),
           CircleAvatar(
             radius: 30 * fontScale,
-            child: Image.asset(
+            child: Image.network(
               coOrganizer.pathImage,
               height: 56 * fontScale,
               fit: BoxFit.fitHeight,

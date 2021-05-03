@@ -31,7 +31,5 @@ abstract class _LatestChannelVideosControllerBase with Store {
     response.fold(
       (l) => error = l.toString(), 
       (r) => youtube = r.asObservable());
-
-    print(youtube);
   }
 }
