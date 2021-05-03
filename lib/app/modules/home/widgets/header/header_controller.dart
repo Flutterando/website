@@ -1,10 +1,10 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_insta_followers.dart';
+import 'package:flutterando/app/modules/home/domain/usecases/get_insta_followers.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/get_insta_followers.dart';
 
 part 'header_controller.g.dart';
 
@@ -23,9 +23,7 @@ abstract class _HeaderControllerBase with Store {
     this.urlLauncher,
     this.socialMediaState,
     this._getInstaFollowers,
-  ) {
-    getInstaFollowers();
-  }
+  );
 
   @action
   Future<void> getInstaFollowers() async {

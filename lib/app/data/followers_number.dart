@@ -1,7 +1,7 @@
 Map<String, dynamic> followersNumber = {
-  'youtube': '30.6',
-  'instagram': '11.5',
-  'twitter': '3.6',
-  'discord': '3.2',
-  'telegram': '8.'
+  'youtube': '36.3',
+  'instagram': '12.4',
+  'twitter': '4.6',
+  'discord': '4.2',
+  'telegram': '8.4'
 };

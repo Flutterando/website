@@ -9,7 +9,7 @@ class PackagesRemoteDatasource implements PackagesDatasource {
   PackagesRemoteDatasource(this.dio);
   @override
   Future<List<ResultPackagesModel>> getPackages() async {
-    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/packages_data.json');
+    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/tree/main/data/packages_data.json');
     if(response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listPackages = jsonList.map((e) => ResultPackagesModel.fromMap(e)).toList();

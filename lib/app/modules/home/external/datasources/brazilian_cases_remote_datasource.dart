@@ -11,7 +11,7 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
 
   @override
   Future<List<ResultBrazilianCasesModel>> getBrazilianCases() async {
-    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/brazilian_cases_data.json');
+    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/tree/main/data/brazilian_cases_data.json');
     if(response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listBrazilianCases = jsonList.map((e) => ResultBrazilianCasesModel.fromMap(e)).toList();
