@@ -1,62 +1,62 @@
 [
     {
       "name": "Jacob Moura",
-      "pathImage": "assets/images/co_organizers/jacob_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/jacob_circle.png",
       "linkedin": "https://www.linkedin.com/in/jacob-moura/",
       "status": "Founder"
     },
     {
       "name": "Matheus Perez",
-      "pathImage": "assets/images/co_organizers/mateus_perez_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_perez_circle.png",
       "linkedin": "https://www.linkedin.com/in/matheusperez/",
       "status": "Founder"
     },
     {
       "name": "Bwolf",
-      "pathImage": "assets/images/co_organizers/bwolf_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/bwolf_circle.png",
       "linkedin": "https://www.linkedin.com/in/bwolfdev/",
       "status": "Co-organizer"
     },
     {
       "name": "Ian Oliveira",
-      "pathImage": "assets/images/co_organizers/ian_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/ian_circle.png",
       "linkedin": "https://www.linkedin.com/in/ian-oliveira-0701a2130/",
       "status": "Co-organizer"
     },
     {
       "name": "Mateus Gerônimo",
-      "pathImage": "assets/images/co_organizers/mateus_geronimo_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_geronimo_circle.png",
       "linkedin": "https://www.linkedin.com/in/mateus-geronimo-rosa-106b6714b/",
       "status": "Co-organizer"
     },
     {
       "name": "Kelven Galvão",
-      "pathImage": "assets/images/co_organizers/kelven_galvao.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/kelven_galvao.png",
       "linkedin": "https://www.linkedin.com/in/irvine5k/",
       "status": "Co-organizer"
     },
     {
       "name": "Kevlin Ossada",
-      "pathImage": "assets/images/co_organizers/toshi_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/toshi_circle.png",
       "linkedin": "https://www.linkedin.com/in/toshiossada/",
       "status": "Co-organizer"
     },
     {
       "name": "Mateus Cordeiro",
-      "pathImage": "assets/images/co_organizers/mateus_felipe_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_felipe_circle.png",
       "linkedin": "https://www.linkedin.com/in/mateusfccp/",
       "status": "Co-organizer"
     },
     {
       "name": "Deivid Rodrigues",
-      "pathImage": "assets/images/co_organizers/deivinho_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/deivinho_circle.png",
       "linkedin":
           "https://www.linkedin.com/in/deivid-willyan-rodrigues-fabiano-19776abb/",
       "status": "Co-organizer"
     },
     {
       "name": "Adby Santos",
-      "pathImage": "assets/images/co_organizers/adby_circle.png",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/adby_circle.png",
       "linkedin":
           "https://www.linkedin.com/in/adby-santos-a31a70158/",
       "status": "Co-organizer"
