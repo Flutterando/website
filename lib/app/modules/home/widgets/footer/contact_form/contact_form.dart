@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.da
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:flutterando/app/utils/validations/validations.dart';
 import 'package:flutterando/app/utils/widgets/alert/alert_animate.dart';
+import 'package:localization/localization.dart';
 
 import 'widgets/contact_field.dart';
 
@@ -42,26 +43,26 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Entre em contato conosco',
+                "form_title".i18n(),
                 style: TextStyles.notoSans(
                   18 * fontScale,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               ContactField(
-                title: 'Nome',
+                title: "form_name".i18n(),
                 maxLines: 1,
                 controller: _name,
                 validator: isNotEmptyValidationText,
               ),
               ContactField(
-                title: 'Email',
+                title: "form_email".i18n(),
                 maxLines: 1,
                 controller: _email,
                 validator: emailValidationText,
               ),
               ContactField(
-                title: 'Sua mensagem',
+                title: "form_your_message".i18n(),
                 maxLines: 5,
                 controller: _message,
                 validator: isNotEmptyValidationText,

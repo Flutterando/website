@@ -1,0 +1,26 @@
+{
+    "title_header": "The biggest Flutter community of Brazil",
+    "subtitle_header": "Flutterando is the largest Flutter community in Brazil. Think about Flutter, think about Flutterando. Be part of our community!",
+    "title_meetups": "Last meetups",
+    "subtitle_meetups": "Keep an eye on our last meetings",
+    "title_video_channel":"Latest channel videos",
+    "subtitle_video_channel":"Stay on top of our latest content",
+    "title_coorganizers":"Coorganizers",
+    "subtitle_coorganizers":"Know the team that makes the community happen",
+    "title_packages":"Brasilian Packages",
+    "subtitle_packages":"Download the Brasilian Packages",
+    "button_packages":"Access",
+    "title_cases":"Brasilian Cases",
+    "subtitle_cases":"See how Brazilian companies are having success with Flutter in their aplications",
+    "button_cases": "See More",
+    "title_partners":"Partners",
+    "subtitle_partners":"These are the companies that support our community",
+    "form_title":"Contact us",
+    "form_name":"Name",
+    "form_email":"Email",
+    "form_your_message":"Message",
+    "form_button":"Submit",
+    "footer_social_media":"Follow us on social media",
+    "footer_contact":"Contact"
+}
+

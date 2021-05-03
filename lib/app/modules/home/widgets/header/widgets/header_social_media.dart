@@ -8,6 +8,7 @@ import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/state/screen_state.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
+import 'package:localization/localization.dart';
 
 class HeaderSocialMedia extends StatelessWidget {
   final headerController = Modular.get<HeaderController>();
@@ -19,7 +20,7 @@ class HeaderSocialMedia extends StatelessWidget {
       child: Column(
         children: [
           SelectableText(
-            'A maior comunidade de Flutter do Brasil',
+            "title_header".i18n(),
             style: TextStyles.notoSans(
                 (screenSize.isMobile(context: context) ||
                         screenSize.isWatch(context: context))
@@ -29,7 +30,7 @@ class HeaderSocialMedia extends StatelessWidget {
           ),
           SizedBox(height: 40),
           SelectableText(
-            'A Flutterando é a maior comunidade de Flutter no Brasil. Pensou em Flutter, pensou na Flutterando. Faça parte da nossa comunidade!',
+            "subtitle_header".i18n(),
             style: TextStyles.roboto(16, fontWeight: FontWeight.normal),
           ),
           SizedBox(height: 20),

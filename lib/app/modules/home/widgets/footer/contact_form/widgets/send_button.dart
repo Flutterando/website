@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class SendButton extends StatefulWidget {
   final Function sendContact;
@@ -28,7 +29,7 @@ class _SendButtonState extends ModularState<SendButton, FooterController> {
           width: double.infinity,
           height: 28 * fontScale,
           child: Text(
-            'Enviar',
+            "form_button".i18n(),
             style:
                 TextStyles.roboto(12 * fontScale, fontWeight: FontWeight.bold),
           ),

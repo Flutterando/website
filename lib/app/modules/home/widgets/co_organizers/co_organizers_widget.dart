@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/co_organizers/widgets/co_organizer_item.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class CoOrganizers extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _CoOrganizersState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            'Coorganizadores',
+            "title_coorganizers".i18n(),
             style: TextStyles.notoSans(
               25 * fontScale,
               fontWeight: FontWeight.bold,
@@ -36,7 +37,7 @@ class _CoOrganizersState
           ),
           SizedBox(height: 32 * fontScale),
           SelectableText(
-            'Conheça a turma que faz a comunidade acontecer',
+            "subtitle_coorganizers".i18n(),
             style: TextStyles.roboto(
               11 * fontScale,
               fontWeight: FontWeight.normal,

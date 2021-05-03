@@ -6,6 +6,7 @@ import 'package:flutterando/app/modules/home/widgets/brazilian_cases/widgets/bra
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class BrazilianCasesWidget extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _BrazilianCasesWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            'Cases brasileiros',
+            "title_cases".i18n(),
             style: TextStyles.notoSans(
               25 * fontScale,
               fontWeight: FontWeight.bold,
@@ -46,7 +47,7 @@ class _BrazilianCasesWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
-            'Veja como empresas brasileiras estão tendo sucesso com o Flutter em suas aplicações',
+            "subtitle_cases".i18n(),
             style: TextStyles.roboto(
               11 * fontScale,
               fontWeight: FontWeight.normal,

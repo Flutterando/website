@@ -6,6 +6,7 @@ import 'package:flutterando/app/modules/home/widgets/latest_meetups/widgets/meet
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:localization/localization.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _LatestMeetupsWidgetState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            'Últimos meetups',
+            "title_meetups".i18n(),
             style: TextStyles.notoSans(
               25 * fontScale,
               fontWeight: FontWeight.bold,
@@ -43,7 +44,7 @@ class _LatestMeetupsWidgetState
           ),
           SizedBox(height: 28),
           SelectableText(
-            'Fique por dentro dos nossos últimos encontros',
+            "subtitle_meetups".i18n(),
             style: TextStyles.roboto(
               11 * fontScale,
               fontWeight: FontWeight.normal,
