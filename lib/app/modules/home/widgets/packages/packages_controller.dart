@@ -31,7 +31,5 @@ abstract class _PackagesControllerBase with Store {
           (l) => error = l.toString(),
           (r) => packages = r.asObservable(),
         );
-
-    packages.clear();
   }
 }
