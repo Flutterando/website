@@ -57,7 +57,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
                   .launchUrl('https://f-team.dev/desenvolvimento');
             },
             child: Text(
-              'Powered by F-team',
+              'Powered by F-Team',
               style: TextStyles.roboto(16, fontWeight: FontWeight.bold),
             ),
           ),
@@ -68,7 +68,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           ),
           SizedBox(height: 34),
           SelectableText(
-            'Copyright © Flutterando 2020 - Todos os direitos reservados',
+            'Copyright © Flutterando 2021 - Todos os direitos reservados',
             style: TextStyles.roboto(9 * fontScale),
           )
         ],
