@@ -15,7 +15,19 @@
       "name": "Bwolf",
       "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/bwolf_circle.png",
       "linkedin": "https://www.linkedin.com/in/bwolfdev/",
-      "status": "Co-organizer"
+      "status": "Founder"
+    },
+    {
+      "name": "Jessica Pereira",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/jeh2_circle.png",
+      "linkedin": "https://www.linkedin.com/in/jessica-mariane-pereira-dev/",
+      "status": "Founder"
+    },
+    {
+      "name": "Leticia Baleiro",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/leticia_circle.png",
+      "linkedin": "https://www.linkedin.com/in/leticia-baleiro/",
+      "status": "Founder"
     },
     {
       "name": "Ian Oliveira",
@@ -61,4 +73,5 @@
           "https://www.linkedin.com/in/adby-santos-a31a70158/",
       "status": "Co-organizer"
     }
+    
 ]
