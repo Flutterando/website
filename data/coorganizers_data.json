@@ -18,16 +18,23 @@
       "status": "Founder"
     },
     {
+      "name": "Deivid Rodrigues",
+      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/deivinho_circle.png",
+      "linkedin":
+          "https://www.linkedin.com/in/deivid-willyan-rodrigues-fabiano-19776abb/",
+      "status": "Co-organizer"
+    },
+    {
       "name": "Jessica Pereira",
       "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/jeh2_circle.png",
       "linkedin": "https://www.linkedin.com/in/jessica-mariane-pereira-dev/",
-      "status": "Founder"
+      "status": "Co-organizer"
     },
     {
       "name": "Leticia Baleiro",
       "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/leticia_circle.png",
       "linkedin": "https://www.linkedin.com/in/leticia-baleiro/",
-      "status": "Founder"
+      "status": "Co-organizer"
     },
     {
       "name": "Ian Oliveira",
@@ -57,13 +64,6 @@
       "name": "Mateus Cordeiro",
       "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_felipe_circle.png",
       "linkedin": "https://www.linkedin.com/in/mateusfccp/",
-      "status": "Co-organizer"
-    },
-    {
-      "name": "Deivid Rodrigues",
-      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/deivinho_circle.png",
-      "linkedin":
-          "https://www.linkedin.com/in/deivid-willyan-rodrigues-fabiano-19776abb/",
       "status": "Co-organizer"
     },
     {
