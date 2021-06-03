@@ -13,8 +13,7 @@ class CoOrganizerItem extends StatefulWidget {
   _CoOrganizerItemState createState() => _CoOrganizerItemState();
 }
 
-class _CoOrganizerItemState
-    extends ModularState<CoOrganizerItem, CoOrganizersController> {
+class _CoOrganizerItemState extends ModularState<CoOrganizerItem, CoOrganizersController> {
   @override
   Widget build(BuildContext context) {
     final coOrganizer = widget.coOrganizer;
@@ -49,16 +48,14 @@ class _CoOrganizerItemState
               coOrganizer.name,
               textAlign: TextAlign.center,
               maxLines: 2,
-              style: TextStyles.notoSans(17 * fontScale,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 6),
           SelectableText(
             coOrganizer.status,
             textAlign: TextAlign.center,
-            style: TextStyles.roboto(14 * fontScale,
-                fontWeight: FontWeight.normal),
+            style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
           ),
           SizedBox(height: 16 * fontScale),
           InkWell(

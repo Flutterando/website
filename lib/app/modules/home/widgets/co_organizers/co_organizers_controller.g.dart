@@ -3,17 +3,6 @@
 part of 'co_organizers_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $CoOrganizersController = BindInject(
-  (i) => CoOrganizersController(
-      i<ScreenSize>(), i<GetCoOrganizers>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

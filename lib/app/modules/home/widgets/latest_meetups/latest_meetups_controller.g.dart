@@ -3,17 +3,6 @@
 part of 'latest_meetups_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $LatestMeetupsController = BindInject(
-  (i) => LatestMeetupsController(
-      i<ScreenSize>(), i<GetMeetups>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

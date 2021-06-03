@@ -3,17 +3,6 @@
 part of 'latest_channel_videos_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $LatestChannelVideosController = BindInject(
-  (i) => LatestChannelVideosController(
-      i<GetYoutube>(), i<ScreenSize>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

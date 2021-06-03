@@ -11,8 +11,7 @@ class CoOrganizers extends StatefulWidget {
   _CoOrganizersState createState() => _CoOrganizersState();
 }
 
-class _CoOrganizersState
-    extends ModularState<CoOrganizers, CoOrganizersController> {
+class _CoOrganizersState extends ModularState<CoOrganizers, CoOrganizersController> {
   @override
   Widget build(BuildContext context) {
     final screen = controller.screen;
@@ -63,9 +62,7 @@ class _CoOrganizersState
                 child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
-                    children: controller.coOrganizers
-                        .map((coOrganizer) => CoOrganizerItem(coOrganizer))
-                        .toList()),
+                    children: controller.coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList()),
               );
             },
           ),
