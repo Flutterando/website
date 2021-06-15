@@ -62,7 +62,9 @@ class _CoOrganizersState extends ModularState<CoOrganizers, CoOrganizersControll
                 child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
-                    children: controller.coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList()),
+                    children: controller.coOrganizers
+                        .map((coOrganizer) => CoOrganizerItem(coOrganizer))
+                        .toList()),
               );
             },
           ),

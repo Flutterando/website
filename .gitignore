@@ -1,5 +1,7 @@
 # Slidy History Files
 .slidy/
+.fvm/
+.vscode/
 
 # Miscellaneous
 *.class

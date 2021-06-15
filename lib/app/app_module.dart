@@ -10,9 +10,9 @@ import 'app_controller.dart';
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind((i) => AppController()),
-        Bind((i) => ScreenSize()),
-        Bind((i) => UrlLauncher()),
+        Bind((_) => AppController()),
+        Bind((_) => ScreenSize()),
+        Bind((_) => UrlLauncher()),
         Bind<Dio>((i) => Dio()),
         Bind<HttpService>((i) => HttpService(i())),
       ];
