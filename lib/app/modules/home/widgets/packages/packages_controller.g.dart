@@ -3,17 +3,6 @@
 part of 'packages_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $PackagesController = BindInject(
-  (i) =>
-      PackagesController(i<ScreenSize>(), i<GetPackages>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

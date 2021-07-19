@@ -8,13 +8,12 @@ import 'package:mobx/mobx.dart';
 part 'co_organizers_controller.g.dart';
 
 @Injectable()
-class CoOrganizersController = _CoOrganizersControllerBase
-    with _$CoOrganizersController;
+class CoOrganizersController = _CoOrganizersControllerBase with _$CoOrganizersController;
 
 abstract class _CoOrganizersControllerBase with Store {
-  final ScreenSize screen;
   final GetCoOrganizers usecase;
   final UrlLauncher urlLauncher;
+  final ScreenSize screen;
   _CoOrganizersControllerBase(this.screen, this.usecase, this.urlLauncher) {
     fetchPartners();
   }
@@ -29,8 +28,8 @@ abstract class _CoOrganizersControllerBase with Store {
   fetchPartners() async {
     var response = await usecase.call();
     response.fold(
-          (l) => error = l.toString(),
-          (r) => coOrganizers = r.asObservable(),
-        );
+      (l) => error = l.toString(),
+      (r) => coOrganizers = r.asObservable(),
+    );
   }
 }

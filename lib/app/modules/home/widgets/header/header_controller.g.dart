@@ -3,17 +3,6 @@
 part of 'header_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $HeaderController = BindInject(
-  (i) => HeaderController(i<ScreenSize>(), i<UrlLauncher>(),
-      i<ScreenStateStore>(), i<GetInstaFollowers>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

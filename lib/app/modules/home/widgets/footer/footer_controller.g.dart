@@ -3,16 +3,6 @@
 part of 'footer_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $FooterController = BindInject(
-  (i) => FooterController(i<ScreenSize>(), i<SendContact>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

@@ -3,17 +3,6 @@
 part of 'brazilian_cases_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $BrazilianCasesController = BindInject(
-  (i) => BrazilianCasesController(
-      i<ScreenSize>(), i<GetBrazilianCases>(), i<UrlLauncher>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 
