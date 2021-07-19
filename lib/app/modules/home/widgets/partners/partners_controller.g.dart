@@ -3,16 +3,6 @@
 part of 'partners_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $PartnersController = BindInject(
-  (i) => PartnersController(i<ScreenSize>(), i<GetPartners>()),
-  isSingleton: true,
-  isLazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

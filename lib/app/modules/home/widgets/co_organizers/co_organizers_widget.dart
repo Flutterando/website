@@ -11,8 +11,7 @@ class CoOrganizers extends StatefulWidget {
   _CoOrganizersState createState() => _CoOrganizersState();
 }
 
-class _CoOrganizersState
-    extends ModularState<CoOrganizers, CoOrganizersController> {
+class _CoOrganizersState extends ModularState<CoOrganizers, CoOrganizersController> {
   @override
   Widget build(BuildContext context) {
     final screen = controller.screen;

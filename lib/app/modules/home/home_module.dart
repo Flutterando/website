@@ -34,6 +34,7 @@ import 'home_page.dart';
 import 'infra/datasources/youtube_datasource.dart';
 import 'infra/repositories/meetups_repository_impl.dart';
 import 'widgets/brazilian_cases/brazilian_cases_controller.dart';
+import 'widgets/co_organizers/co_organizers_controller.dart';
 import 'widgets/header/header_controller.dart';
 import 'widgets/latest_channel_videos/latest_channel_videos_controller.dart';
 import 'widgets/latest_meetups/latest_meetups_controller.dart';
@@ -44,18 +45,19 @@ import 'widgets/partners/partners_controller.dart';
 class HomeModule extends Module {
   @override
   List<Bind> get binds => [
-        $NavbarController,
-        $PartnersController,
-        $BrazilianCasesController,
-        $PackagesController,
-        $LatestChannelVideosController,
-        $LatestMeetupsController,
-        $HeaderController,
-        $HomeController,
-        $FooterController,
+        Bind((i) => HomeController(i())),
+        Bind((i) => NavbarController(i(), i())),
+        Bind((i) => PartnersController(i(), i())),
+        Bind((i) => FooterController(i(), i(), i())),
+        Bind((i) => PackagesController(i(), i(), i())),
+        Bind((i) => HeaderController(i(), i(), i(), i())),
+        Bind((i) => CoOrganizersController(i(), i(), i())),
+        Bind((i) => LatestMeetupsController(i(), i(), i())),
+        Bind((i) => BrazilianCasesController(i(), i(), i())),
+        Bind((i) => LatestChannelVideosController(i(), i(), i())),
 
         //clean arch
-        Bind((i) => HasuraConnect(env["urlSendContact"]!)),
+        Bind((i) => HasuraConnect(dotenv.env["urlSendContact"]!)),
         Bind((i) => Dio()),
 
         //binds partners
@@ -88,7 +90,7 @@ class HomeModule extends Module {
         Bind((i) => GetMeetupsImpl(i())),
 
         //binds sendContact
-        Bind((i) => SendContactServerDatasource(i(), env)),
+        Bind((i) => SendContactServerDatasource(i(), dotenv.env)),
         Bind((i) => SendContactRepositoryImpl(i())),
         Bind((i) => SendContactImpl(i())),
 

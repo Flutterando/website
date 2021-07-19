@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/src/core/models/bind.dart' as bindModular;
 import 'package:flutter_modular_test/flutter_modular_test.dart';
@@ -20,6 +20,7 @@ import 'package:hasura_connect/hasura_connect.dart';
 import 'package:mocktail/mocktail.dart';
 
 class DioMock extends Mock implements Dio {}
+
 class HasuraConnectSpy extends Mock implements HasuraConnect {}
 
 main() {
@@ -34,7 +35,7 @@ main() {
   ]);
 
   setUp(() async {
-    await DotEnv.testLoad();
+    await dotenv.testLoad();
   });
   test('Should return the usercase without error', () {
     final usecasePartners = Modular.get<GetPartners>();
@@ -74,11 +75,11 @@ main() {
       email: 'test@test.com',
       message: 'this is a contact test',
     );
-    when(() => connection.mutation(any(), variables: any(named: 'variables'))).thenAnswer((invocation) async => {"data": 
-      {"insert_mail_box": 
-        {"affected_rows": 1}
-      }
-    });
+    when(() => connection.mutation(any(), variables: any(named: 'variables'))).thenAnswer((invocation) async => {
+          "data": {
+            "insert_mail_box": {"affected_rows": 1}
+          }
+        });
     final usecase = Modular.get<SendContact>();
     final result = await usecase(contact);
     expect(result.fold(id, id), isA<ResultContact>());
