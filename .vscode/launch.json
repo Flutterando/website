@@ -5,9 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutterando",
+            "name": "site",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--web-renderer","html"
+            ]
         }
     ]
 }

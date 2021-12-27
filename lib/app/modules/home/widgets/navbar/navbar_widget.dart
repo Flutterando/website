@@ -37,13 +37,12 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
             TextButton(
               onPressed: () async {
                 await controller.urlLauncher.launchUrl(
-                  'https://forum.flutterando.com.br/',
+                  'https://masterclass.flutterando.com.br',
                 );
               },
               child: Text(
-                'Fórum',
-                style: TextStyles.roboto(11 * fontScale,
-                    fontWeight: FontWeight.bold),
+                'Masterclass',
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(width: 2 * fontScale),
@@ -55,8 +54,7 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               },
               child: Text(
                 'Links Úteis',
-                style: TextStyles.roboto(11 * fontScale,
-                    fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
           ],
