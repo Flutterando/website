@@ -35,8 +35,8 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               ),
             ),
             TextButton(
-              onPressed: () async {
-                await controller.urlLauncher.launchUrl(
+              onPressed: () {
+                controller.urlLauncher.launchUrl(
                   'https://forms.gle/6BoxwQLLBE2vZeMk6',
                 );
               },
