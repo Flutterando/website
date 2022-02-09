@@ -35,6 +35,17 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               ),
             ),
             TextButton(
+              onPressed: () {
+                controller.urlLauncher.launchUrl(
+                  'https://forms.gle/6BoxwQLLBE2vZeMk6',
+                );
+              },
+              child: Text(
+                'Seja um palestrante',
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
+              ),
+            ),
+            TextButton(
               onPressed: () async {
                 await controller.urlLauncher.launchUrl(
                   'https://masterclass.flutterando.com.br',
