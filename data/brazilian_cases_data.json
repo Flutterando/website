@@ -7,13 +7,13 @@
     },
     {
         "title": "Banco BS2",
-        "imageUrl": "https://i3.ytimg.com/vi/5oD9dDq2D5U/maxresdefault.jpg",
+        "imageUrl": "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/brazilian_cases/bancoBs2.jpg",
         "description": "Fintechs estão optando por usar Flutter devido as sua facilidade em relação a pagamentos. Veja como o banco BS2 está trabalhando.",
         "url": "https://www.youtube.com/watch?v=Uw9BSOJRg_M"
     },
     {
         "title": "Globo",
-        "imageUrl": "https://i2.wp.com/assets.propmark.com.br/uploads/2020/05/Screenshot_20200527-115052_Globo-Ads.jpg?fit=717%2C1349&ssl=1&resize=1280%2C720",
+        "imageUrl": "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/brazilian_cases/nubank.jpg",
         "description": "A Globo está utilizando Flutter em sua aplicação Globo Ads, confira mais nesse link como estão utilizando Flutter.",
         "url": "https://www.youtube.com/watch?v=tCyNtssJVGA"
     }
