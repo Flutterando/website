@@ -26,7 +26,7 @@ class _FounderItemState extends ModularState<FounderItem, FoundersController> {
       ),
       margin: EdgeInsets.all(20),
       width: 130 * fontScale,
-      height: 250 * fontScale,
+      height: 220 * fontScale,
       child: Column(
         children: [
           SizedBox(height: 26 * fontScale),
@@ -51,12 +51,6 @@ class _FounderItemState extends ModularState<FounderItem, FoundersController> {
             ),
           ),
           SizedBox(height: 6),
-          SelectableText(
-            coOrganizer.status,
-            textAlign: TextAlign.center,
-            style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
-          ),
-          SizedBox(height: 16 * fontScale),
           InkWell(
             onTap: () {
               controller.urlLauncher.launchUrl(coOrganizer.linkedin);

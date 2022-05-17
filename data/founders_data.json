@@ -1,26 +1,22 @@
 [
-    {
-      "name": "Jacob Moura",
-      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/jacob_circle.png",
-      "linkedin": "https://www.linkedin.com/in/jacob-moura/",
-      "status": "Founder"
-    },
-    {
-      "name": "Matheus Perez",
-      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/mateus_perez_circle.png",
-      "linkedin": "https://www.linkedin.com/in/matheusperez/",
-      "status": "Founder"
-    },
-    {
-      "name": "Bwolf",
-      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/bwolf_circle.png",
-      "linkedin": "https://www.linkedin.com/in/bwolfdev/",
-      "status": "Founder"
-    },
-    {
-      "name": "David Araujo",
-      "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/david_araujo_circle.png",
-      "linkedin": "https://www.linkedin.com/in/davidsdearaujo/",
-      "status": "Founder"
-    }
+  {
+    "name": "Jacob Moura",
+    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/jacob_circle.png",
+    "linkedin": "https://www.linkedin.com/in/jacob-moura/"
+  },
+  {
+    "name": "Matheus Perez",
+    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/mateus_perez_circle.png",
+    "linkedin": "https://www.linkedin.com/in/matheusperez/"
+  },
+  {
+    "name": "Bwolf",
+    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/bwolf_circle.png",
+    "linkedin": "https://www.linkedin.com/in/bwolfdev/"
+  },
+  {
+    "name": "David Araujo",
+    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/founders/david_araujo_circle.png",
+    "linkedin": "https://www.linkedin.com/in/davidsdearaujo/"
+  }
 ]
