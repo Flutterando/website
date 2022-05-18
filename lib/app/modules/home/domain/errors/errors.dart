@@ -1,5 +1,7 @@
 class FailureGetPartners implements Exception {}
 
+class FailureGetFounders implements Exception {}
+
 class FailureGetCoOrganizers implements Exception {}
 
 class FailureGetPackages implements Exception {}
@@ -15,6 +17,7 @@ class FailureInstaFollowers implements Exception {}
 class DatasourceError
     implements
         FailureGetPartners,
+        FailureGetFounders,
         FailureGetCoOrganizers,
         FailureGetPackages,
         FailureGetBrazilianCases,
