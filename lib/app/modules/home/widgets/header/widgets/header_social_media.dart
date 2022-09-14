@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localization/localization.dart';
+
 import 'package:flutterando/app/data/followers_number.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
-import 'package:localization/localization.dart';
 
 class HeaderSocialMedia extends StatelessWidget {
   final headerController = Modular.get<HeaderController>();
@@ -29,7 +32,10 @@ class HeaderSocialMedia extends StatelessWidget {
           SizedBox(height: 40),
           SelectableText(
             "subtitle_header".i18n(),
-            style: TextStyles.roboto(16, fontWeight: FontWeight.normal),
+            style: TextStyles.roboto(
+              16,
+              fontWeight: FontWeight.normal,
+            ),
           ),
           SizedBox(height: 20),
           Container(
@@ -44,12 +50,11 @@ class HeaderSocialMedia extends StatelessWidget {
                   urlLink: LinksUrl.youtube,
                   followersNumber: followersNumber['youtube'],
                 ),
-                socialMediaIcon(
-                  IconUrls.instagram,
-                  urlLink: LinksUrl.instagram,
-                  followersNumber: followersNumber['instagram']
-                      // instagramNumber.followersNumber.toString(),
-                ),
+                socialMediaIcon(IconUrls.instagram,
+                    urlLink: LinksUrl.instagram,
+                    followersNumber: followersNumber['instagram']
+                    // instagramNumber.followersNumber.toString(),
+                    ),
                 socialMediaIcon(
                   IconUrls.twitter,
                   urlLink: LinksUrl.twitter,
@@ -78,11 +83,12 @@ class HeaderSocialMedia extends StatelessWidget {
     return InkWell(
       child: Container(
         width: 95,
+        height: 30,
         child: Row(
           children: [
-            Image.asset(urlIcon),
+            SvgPicture.asset(urlIcon),
             Container(
-              width: 57,
+              width: 47,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.all(

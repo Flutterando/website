@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:flutterando/app/modules/home/domain/entities/result_founders.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
@@ -47,7 +50,8 @@ class _FounderItemState extends ModularState<FounderItem, FoundersController> {
               coOrganizer.name,
               textAlign: TextAlign.center,
               maxLines: 2,
-              style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
+              style: TextStyles.notoSans(17 * fontScale,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 6),
@@ -55,7 +59,7 @@ class _FounderItemState extends ModularState<FounderItem, FoundersController> {
             onTap: () {
               controller.urlLauncher.launchUrl(coOrganizer.linkedin);
             },
-            child: Image.asset(
+            child: SvgPicture.asset(
               IconUrls.linkedin,
               fit: BoxFit.fill,
               height: 30 * fontScale,

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/follow_us/widgets/social_networks.dart';
-import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
-import 'package:flutterando/app/utils/images/images.dart';
-import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import 'package:flutterando/app/modules/home/widgets/footer/follow_us/widgets/social_networks.dart';
+
+import '../../../../../utils/images/images.dart';
+import '../../../../../utils/text_styles/text_styles.dart';
+import '../footer_controller.dart';
 
 class FollowUs extends StatefulWidget {
   @override
@@ -33,8 +36,10 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           SizedBox(height: 38 * fontScale),
           SelectableText(
             "footer_social_media".i18n(),
-            style:
-                TextStyles.roboto(16 * fontScale, fontWeight: FontWeight.bold),
+            style: TextStyles.roboto(
+              16 * fontScale,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           SizedBox(height: 13),
           SocialNetworks(fontScale),
@@ -68,7 +73,7 @@ class _FollowUsState extends ModularState<FollowUs, FooterController> {
           ),
           SizedBox(height: 34),
           SelectableText(
-            'Copyright © Flutterando 2021 - Todos os direitos reservados',
+            'Copyright © Flutterando 2022 - Todos os direitos reservados',
             style: TextStyles.roboto(9 * fontScale),
           )
         ],
