@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/svg.dart';
+
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
@@ -12,7 +15,8 @@ class SocialNetworks extends StatefulWidget {
   _SocialNetworksState createState() => _SocialNetworksState();
 }
 
-class _SocialNetworksState extends ModularState<SocialNetworks, FooterController> {
+class _SocialNetworksState
+    extends ModularState<SocialNetworks, FooterController> {
   @override
   Widget build(BuildContext context) {
     Widget socialnetWork(String image, String linkUrl) {
@@ -21,13 +25,15 @@ class _SocialNetworksState extends ModularState<SocialNetworks, FooterController
           controller.urlLauncher.launchUrl(linkUrl);
         },
         child: Container(
-          child: Image.asset(
+          child: SvgPicture.asset(
             image,
-            height: 22 * widget.fontScale,
-            width: 22 * widget.fontScale,
+            height: 20 * widget.fontScale,
+            width: 20 * widget.fontScale,
             fit: BoxFit.cover,
           ),
-          padding: EdgeInsets.only(left: 10 * widget.fontScale),
+          padding: EdgeInsets.only(
+            left: 10 * widget.fontScale,
+          ),
         ),
       );
     }

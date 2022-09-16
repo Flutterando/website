@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localization/localization.dart';
+
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
 import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
-import 'package:localization/localization.dart';
 
 class PackageTile extends StatefulWidget {
   final ResultPackage package;
@@ -40,7 +43,7 @@ class _PackageTileState extends ModularState<PackageTile, PackagesController> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
+              SvgPicture.asset(
                 IconUrls.package,
                 fit: BoxFit.cover,
                 width: 38 * fontScale,
