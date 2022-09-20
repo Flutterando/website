@@ -14,12 +14,12 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
   @override
   Future<List<ResultBrazilianCasesModel>> getBrazilianCases() async {
     var url =
-        'https://raw.githubusercontent.com/Titoomf/website/features/website/data/coorganizers_data.json';
+        'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases.json';
     // 'https://raw.githubusercontent.com/Flutterando/website/main/data/coorganizers_data.json';
     var response = await dio.get(url);
     if (kDebugMode) {
       url =
-          'https://raw.githubusercontent.com/Titoomf/website/features/website/data/coorganizers_data.json';
+          'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases.json';
     }
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
