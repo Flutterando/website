@@ -40,7 +40,7 @@ class _CoOrganizerItemState
             child: Image.network(
               coOrganizer.pathImage,
               height: 51 * fontScale,
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
             ),
             foregroundColor: Colors.black,
           ),
