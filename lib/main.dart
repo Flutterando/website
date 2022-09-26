@@ -7,6 +7,7 @@ import 'package:localization/localization.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: '.env');
-  await Localization.configuration(defaultLang: 'en_US', selectedLanguage: 'en_US');
+
+  // await Localization.configuration(defaultLang: 'en_US', selectedLanguage: 'en_US');
   runApp(ModularApp(module: AppModule(), child: AppWidget()));
 }

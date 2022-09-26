@@ -26,9 +26,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   void initState() {
     super.initState();
-    _scrollController  = ScrollController();
+    _scrollController = ScrollController();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,21 +37,19 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         children: [
           Align(
             alignment: Alignment.bottomCenter,
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                child: Column(
-                  children: [
-                    HeaderWidget(),
-                    LatestMeetupsWidget(),
-                    LatestChannelVideosWidget(),
-                    Founders(),
-                    CoOrganizers(),
-                    PackagesWidget(),
-                    BrazilianCasesWidget(),
-                    PartnersWidget(),
-                    Footer(),
-                  ]
-                ),
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: Column(children: [
+                HeaderWidget(),
+                LatestMeetupsWidget(),
+                LatestChannelVideosWidget(),
+                Founders(),
+                CoOrganizers(),
+                PackagesWidget(),
+                BrazilianCasesWidget(),
+                PartnersWidget(),
+                // Footer(),
+              ]),
             ),
           ),
           Align(
