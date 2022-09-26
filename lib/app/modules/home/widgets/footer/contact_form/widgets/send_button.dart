@@ -12,7 +12,14 @@ class SendButton extends StatefulWidget {
   _SendButtonState createState() => _SendButtonState();
 }
 
-class _SendButtonState extends ModularState<SendButton, FooterController> {
+class _SendButtonState extends State<SendButton> {
+  final controller = Modular.get<FooterController>();
+  @override
+  void dispose() {
+    Modular.dispose<FooterController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final fontScale = controller.screen.fontScale(context);

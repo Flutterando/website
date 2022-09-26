@@ -10,8 +10,14 @@ class Footer extends StatefulWidget {
   _FooterState createState() => _FooterState();
 }
 
-class _FooterState extends ModularState<Footer, FooterController> {
+class _FooterState extends State<Footer> {
+  final controller = Modular.get<FooterController>();
   @override
+  void dispose() {
+    Modular.dispose<FooterController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);

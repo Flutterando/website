@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
 import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
@@ -9,12 +12,20 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 class CoOrganizerItem extends StatefulWidget {
   final ResultCoOrganizers coOrganizer;
   CoOrganizerItem(this.coOrganizer);
+
   @override
   _CoOrganizerItemState createState() => _CoOrganizerItemState();
 }
 
-class _CoOrganizerItemState extends ModularState<CoOrganizerItem, CoOrganizersController> {
+class _CoOrganizerItemState extends State<CoOrganizerItem> {
+  final controller = Modular.get<CoOrganizersController>();
+
   @override
+  void dispose() {
+    Modular.dispose<ResultCoOrganizers>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final coOrganizer = widget.coOrganizer;
     final fontScale = controller.screen.fontScale(context);
@@ -35,8 +46,8 @@ class _CoOrganizerItemState extends ModularState<CoOrganizerItem, CoOrganizersCo
             radius: 30 * fontScale,
             child: Image.network(
               coOrganizer.pathImage,
-              height: 56 * fontScale,
-              fit: BoxFit.fitHeight,
+              height: 51 * fontScale,
+              fit: BoxFit.contain,
             ),
             foregroundColor: Colors.black,
           ),
@@ -48,23 +59,25 @@ class _CoOrganizerItemState extends ModularState<CoOrganizerItem, CoOrganizersCo
               coOrganizer.name,
               textAlign: TextAlign.center,
               maxLines: 2,
-              style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
+              style: TextStyles.notoSans(17 * fontScale,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 6),
           SelectableText(
             coOrganizer.status,
             textAlign: TextAlign.center,
-            style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
+            style: TextStyles.roboto(14 * fontScale,
+                fontWeight: FontWeight.normal),
           ),
           SizedBox(height: 16 * fontScale),
           InkWell(
             onTap: () {
               controller.urlLauncher.launchUrl(coOrganizer.linkedin);
             },
-            child: Image.asset(
+            child: SvgPicture.asset(
               IconUrls.linkedin,
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
               height: 30 * fontScale,
             ),
           ),
