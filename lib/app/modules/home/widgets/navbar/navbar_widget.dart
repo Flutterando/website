@@ -10,8 +10,15 @@ class NavbarWidget extends StatefulWidget {
   _NavbarWidgetState createState() => _NavbarWidgetState();
 }
 
-class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
+class _NavbarWidgetState extends State<NavbarWidget> {
+  final controller = Modular.get<NavbarController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<NavbarController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);
@@ -42,7 +49,8 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               },
               child: Text(
                 'Seja um palestrante',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             TextButton(
@@ -53,7 +61,8 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               },
               child: Text(
                 'Masterclass',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(width: 2 * fontScale),
@@ -65,7 +74,8 @@ class _NavbarWidgetState extends ModularState<NavbarWidget, NavbarController> {
               },
               child: Text(
                 'Links Úteis',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ],

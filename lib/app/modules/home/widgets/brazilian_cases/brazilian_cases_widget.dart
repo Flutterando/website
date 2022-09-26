@@ -13,9 +13,14 @@ class BrazilianCasesWidget extends StatefulWidget {
   _BrazilianCasesWidgetState createState() => _BrazilianCasesWidgetState();
 }
 
-class _BrazilianCasesWidgetState
-    extends ModularState<BrazilianCasesWidget, BrazilianCasesController> {
+class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
+  final controller = Modular.get<BrazilianCasesController>();
   @override
+  void dispose() {
+    Modular.dispose<BrazilianCasesController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final screenWidth = screen.atualScreenWidth(context: context);

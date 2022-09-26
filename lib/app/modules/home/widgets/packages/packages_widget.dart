@@ -13,9 +13,15 @@ class PackagesWidget extends StatefulWidget {
   _PackagesWidgetState createState() => _PackagesWidgetState();
 }
 
-class _PackagesWidgetState
-    extends ModularState<PackagesWidget, PackagesController> {
+class _PackagesWidgetState extends State<PackagesWidget> {
+  final controller = Modular.get<PackagesController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<PackagesController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);

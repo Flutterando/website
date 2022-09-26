@@ -14,8 +14,14 @@ class FollowUs extends StatefulWidget {
   _FollowUsState createState() => _FollowUsState();
 }
 
-class _FollowUsState extends ModularState<FollowUs, FooterController> {
+class _FollowUsState extends State<FollowUs> {
+  final controller = Modular.get<FooterController>();
   @override
+  void dispose() {
+    Modular.dispose<FooterController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final fontScale = controller.screen.fontScale(context);
     return Container(

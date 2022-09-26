@@ -26,8 +26,8 @@ abstract class _PartnersControllerBase with Store {
   fetchPartners() async {
     var response = await usecase.call();
     response.fold(
-          (l) => error = l.toString(),
-          (r) => partners = r.asObservable(),
-        );
+      (l) => error = l.toString(),
+      (r) => partners = r.asObservable(),
+    );
   }
 }

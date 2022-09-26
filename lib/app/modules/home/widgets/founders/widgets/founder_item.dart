@@ -17,8 +17,13 @@ class FounderItem extends StatefulWidget {
   _FounderItemState createState() => _FounderItemState();
 }
 
-class _FounderItemState extends ModularState<FounderItem, FoundersController> {
-  @override
+class _FounderItemState extends State<FounderItem> {
+  final controller = Modular.get<FoundersController>();
+  void dispose() {
+    Modular.dispose<FoundersController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final coOrganizer = widget.founder;
     final fontScale = controller.screen.fontScale(context);

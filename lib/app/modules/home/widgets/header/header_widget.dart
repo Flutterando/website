@@ -9,8 +9,13 @@ class HeaderWidget extends StatefulWidget {
   _HeaderWidgetState createState() => _HeaderWidgetState();
 }
 
-class _HeaderWidgetState extends ModularState<HeaderWidget, HeaderController> {
-  @override
+class _HeaderWidgetState extends State<HeaderWidget> {
+  final controller = Modular.get<HeaderController>();
+  void dispose() {
+    Modular.dispose<HeaderController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final fontScale = controller.screen.fontScale(context);

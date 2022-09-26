@@ -16,13 +16,15 @@ class ContactForm extends StatefulWidget {
   _ContactFormState createState() => _ContactFormState();
 }
 
-class _ContactFormState extends ModularState<ContactForm, FooterController> {
+class _ContactFormState extends State<ContactForm> {
   TextEditingController _name = TextEditingController();
   TextEditingController _email = TextEditingController();
   TextEditingController _message = TextEditingController();
+  final controller = Modular.get<FooterController>();
 
   @override
   void dispose() {
+    Modular.dispose<FooterController>();
     super.dispose();
     _name.dispose();
     _email.dispose();
@@ -30,6 +32,7 @@ class _ContactFormState extends ModularState<ContactForm, FooterController> {
   }
 
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     final fontScale = controller.screen.fontScale(context);

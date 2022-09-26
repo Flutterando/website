@@ -15,9 +15,14 @@ class ChannelVideoTile extends StatefulWidget {
   _ChannelVideoTileState createState() => _ChannelVideoTileState();
 }
 
-class _ChannelVideoTileState
-    extends ModularState<ChannelVideoTile, LatestChannelVideosController> {
+class _ChannelVideoTileState extends State<ChannelVideoTile> {
+  final controller = Modular.get<LatestChannelVideosController>();
   @override
+  void dispose() {
+    Modular.dispose<LatestChannelVideosController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {

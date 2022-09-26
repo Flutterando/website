@@ -11,8 +11,15 @@ class CoOrganizers extends StatefulWidget {
   _CoOrganizersState createState() => _CoOrganizersState();
 }
 
-class _CoOrganizersState extends ModularState<CoOrganizers, CoOrganizersController> {
+class _CoOrganizersState extends State<CoOrganizers> {
+  final controller = Modular.get<CoOrganizersController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<CoOrganizersController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);

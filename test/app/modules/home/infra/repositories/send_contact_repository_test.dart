@@ -20,13 +20,14 @@ main() {
   );
 
   setUpAll(() {
-    registerFallbackValue<ContactModel>(ContactModelFake());
+    registerFallbackValue(ContactModelFake());
   });
 
   final datasource = SendContactDatasourceMock();
   final repository = SendContactRepositoryImpl(datasource);
   test('Should return a ResultContact succesfull', () async {
-    when(() => datasource.sendContact(any())).thenAnswer((_) async => ResultContact("Succesfull Test!"));
+    when(() => datasource.sendContact(any()))
+        .thenAnswer((_) async => ResultContact("Succesfull Test!"));
     final result = await repository.send(contact);
     expect(result.fold(id, id), isA<ResultContact>());
   });
