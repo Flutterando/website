@@ -20,7 +20,7 @@ main() {
   );
 
   setUpAll(() {
-    registerFallbackValue<ContactModel>(ContactModelFake());
+    registerFallbackValue(ContactModelFake());
   });
 
   final datasource = SendContactDatasourceMock();

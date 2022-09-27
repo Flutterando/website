@@ -1,5 +1,4 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_founders.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_founders.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
