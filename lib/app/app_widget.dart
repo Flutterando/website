@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
 
 class AppWidget extends StatelessWidget {
@@ -7,7 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     LocalJsonLocalization.delegate.directories = ['assets/lang/'];
 
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutterando',
       theme: ThemeData(
@@ -19,6 +20,8 @@ class AppWidget extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         LocalJsonLocalization.delegate,
       ],
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
     );
   }
 }
