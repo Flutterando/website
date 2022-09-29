@@ -62,7 +62,8 @@ class HomeModule extends Module {
         Bind((i) => LatestChannelVideosController(i(), i(), i())),
 
         //clean arch
-        Bind((i) => HasuraConnect(dotenv.env["urlSendContact"]!)),
+        Bind((i) => HasuraConnect(
+            "https://flutterando-fteam-box.herokuapp.com/v1/graphql")),
         Bind((i) => Dio()),
 
         //binds partners

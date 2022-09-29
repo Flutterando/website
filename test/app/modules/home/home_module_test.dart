@@ -33,9 +33,6 @@ main() {
     Bind<Dio>((i) => dio),
   ]);
 
-  setUp(() {
-    dotenv.testLoad();
-  });
   test('Should return the usercase without error', () {
     final usecasePartners = Modular.get<GetPartners>();
     expect(usecasePartners, isA<GetPartnersImpl>());

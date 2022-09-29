@@ -17,10 +17,6 @@ main() {
   };
   final datasource = SendContactServerDatasource(connection, envsVar);
 
-  setUpAll(() {
-    dotenv.testLoad();
-  });
-
   test('Should return a ResultContact', () async {
     var contact = ContactModel(
         name: "Flutterando",

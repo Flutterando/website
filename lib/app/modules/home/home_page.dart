@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 PackagesWidget(),
                 BrazilianCasesWidget(),
                 PartnersWidget(),
-                // Footer()
+                Footer()
               ]),
             ),
             Align(
