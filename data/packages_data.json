@@ -2,33 +2,67 @@
     {
       "name": "asuka",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/gustavokg1999/website/08e487649c537923d7dd737404b0f9e08ac1f3a0/assets/images/packages/pubv2.0.0.svg",
+      "version": "",
       "description":
           "Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean",
       "url": "https://pub.dev/packages/asuka"
     },
     {
-      "name": "flutter_modular",
-      "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/gustavokg1999/website/08e487649c537923d7dd737404b0f9e08ac1f3a0/assets/images/packages/pubv4.4.0%2B1.svg",
-      "description":
-          "Smart project structure with dependency injection and route management",
-      "url": "https://pub.dev/packages/flutter_modular"
-    },
-    {
       "name": "koin",
       "author": "pedro.bissonho@gmail.com",
-      "version": "https://raw.githubusercontent.com/gustavokg1999/website/08e487649c537923d7dd737404b0f9e08ac1f3a0/assets/images/packages/pubv0.14.2.svg",
+      "version": "",
       "description":
-          "A pragmatic lightweight dependency injection framework for Dart projects",
+      "A pragmatic lightweight dependency injection framework for Dart projects",
       "url": "https://pub.dev/packages/koin"
     },
     {
       "name": "slidy",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/gustavokg1999/website/08e487649c537923d7dd737404b0f9e08ac1f3a0/assets/images/packages/pubv3.2.2%2B2.svg",
+      "version": "",
+      "description":
+      "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+      "url": "https://pub.dev/packages/slidy"
+    },
+    {
+      "name": "flutter_modular",
+      "author": "flutterando.com.br",
+      "version": "",
+      "description":
+          "Smart project structure with dependency injection and route management",
+      "url": "https://pub.dev/packages/flutter_modular"
+    },
+    {
+      "name": "flutter_triple",
+      "author": "flutterando.com.br",
+      "version": "",
       "description":
           "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
-      "url": "https://pub.dev/packages/slidy"
-    }
-]
+      "url": "https://pub.dev/packages/flutter_triple"
+    },
+    {
+      "name": "uno",
+      "author": "flutterando.com.br",
+      "version": "",
+      "description":
+          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+      "url": "https://pub.dev/packages/uno"
+    },
+    {
+      "name": "hasura_connect",
+      "author": "flutterando.com.br",
+      "version": "",
+      "description":
+          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+      "url": "https://pub.dev/packages/hasura_connect"
+    },
+  
+  {
+    "name": "flutterando_analysis",
+    "author": "flutterando.com.br",
+    "version": "",
+    "description":
+        "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+    "url": "https://pub.dev/packages/flutterando_analysis"
+    }]
+  
+  
