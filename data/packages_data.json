@@ -2,7 +2,7 @@
     {
       "name": "asuka",
       "author": "flutterando.com.br",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/asuka.svg",
       "description":
           "Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean",
       "url": "https://pub.dev/packages/asuka"
@@ -10,7 +10,7 @@
     {
       "name": "koin",
       "author": "pedro.bissonho@gmail.com",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/koin.svg",
       "description":
       "A pragmatic lightweight dependency injection framework for Dart projects",
       "url": "https://pub.dev/packages/koin"
@@ -18,7 +18,7 @@
     {
       "name": "slidy",
       "author": "flutterando.com.br",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/slidy.svg",
       "description":
       "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
       "url": "https://pub.dev/packages/slidy"
@@ -34,7 +34,7 @@
     {
       "name": "flutter_triple",
       "author": "flutterando.com.br",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/flutter_triple.svg",
       "description":
           "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
       "url": "https://pub.dev/packages/flutter_triple"
@@ -42,7 +42,7 @@
     {
       "name": "uno",
       "author": "flutterando.com.br",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/uno.svg",
       "description":
           "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
       "url": "https://pub.dev/packages/uno"
@@ -50,7 +50,7 @@
     {
       "name": "hasura_connect",
       "author": "flutterando.com.br",
-      "version": "",
+      "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/hasura_connect.svg",
       "description":
           "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
       "url": "https://pub.dev/packages/hasura_connect"
@@ -59,7 +59,7 @@
   {
     "name": "flutterando_analysis",
     "author": "flutterando.com.br",
-    "version": "",
+    "version": "https://github.com/Titoomf/website/blob/features/website/assets/images/packages/flutterando_analysis.svg",
     "description":
         "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
     "url": "https://pub.dev/packages/flutterando_analysis"
