@@ -16,6 +16,11 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
     var url =
         'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases_data.json';
 
+    // var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/data/brazilian_cases_data.json');
+    url =
+        'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases_data.json';
+    // 'https://raw.githubusercontent.com/Flutterando/website/main/data/coorganizers_data.json';
+
     var response = await dio.get(url);
     if (kDebugMode) {
       url =
