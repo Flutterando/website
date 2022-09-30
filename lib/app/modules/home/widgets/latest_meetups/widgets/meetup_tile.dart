@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:transparent_image/transparent_image.dart';
+
 import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class MeetupTile extends StatefulWidget {
   final ResultMeetups meetup;
@@ -33,18 +35,18 @@ class _MeetupTileState
                 ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                   child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                        color: Colors.blue,
-                      ),
-
-                      // width: constraints.maxWidth,
-                      // height: constraints.maxWidth * 0.65,
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: widget.meetup.photoUrl,
-                      ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      color: Colors.blue,
                     ),
+
+                    // width: constraints.maxWidth,
+                    // height: constraints.maxWidth * 0.65,
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: widget.meetup.photoUrl,
+                    ),
+                  ),
                 ),
                 SizedBox(height: constraints.maxWidth / 40),
                 Container(
@@ -67,7 +69,7 @@ class _MeetupTileState
                     fit: BoxFit.fitWidth,
                     child: SelectableText(
                       widget.meetup.date,
-                      style: TextStyles.roboto(12, fontWeight: FontWeight.bold),
+                      style: TextStyles.roboto(16, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
