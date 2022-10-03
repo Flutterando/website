@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
@@ -100,7 +99,7 @@ class HomeModule extends Module {
         Bind((i) => GetMeetupsImpl(i())),
 
         //binds sendContact
-        Bind((i) => SendContactServerDatasource(i(), dotenv.env)),
+        Bind((i) => SendContactServerDatasource(i(),)),
         Bind((i) => SendContactRepositoryImpl(i())),
         Bind((i) => SendContactImpl(i())),
 

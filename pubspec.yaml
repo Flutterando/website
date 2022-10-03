@@ -40,7 +40,7 @@ dependencies:
   mobx: ^2.1.0
   flutter_modular: ^5.0.3
   transparent_image: ^2.0.0
-  flutter_dotenv: ^5.0.2
+  # flutter_dotenv: ^5.0.2
   hasura_connect: ^4.0.0+4
   localization: ^2.1.0
   flutter:
@@ -78,7 +78,7 @@ flutter:
     - assets/images/brazilian_cases/
     - assets/lang/
     - assets/images/icons/svgs/
-    - .env
+    # - .env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
