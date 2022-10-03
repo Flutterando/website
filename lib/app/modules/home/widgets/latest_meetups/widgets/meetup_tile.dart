@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:transparent_image/transparent_image.dart';
-
 import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MeetupTile extends StatefulWidget {
   final ResultMeetups meetup;

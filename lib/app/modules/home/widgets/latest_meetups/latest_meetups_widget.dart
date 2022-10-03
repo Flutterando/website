@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
@@ -7,6 +8,8 @@ import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../../../utils/screen/screen_size.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
   @override
@@ -43,12 +46,44 @@ class _LatestMeetupsWidgetState
             ),
           ),
           SizedBox(height: 28),
-          SelectableText(
-            "subtitle_meetups".i18n(),
-            style: TextStyles.roboto(
-              11 * fontScale,
-              fontWeight: FontWeight.normal,
-            ),
+          Row(
+            children: [
+              SelectableText(
+                "subtitle_meetups".i18n(),
+                style: TextStyles.roboto(
+                  11 * fontScale,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 150,
+                decoration: BoxDecoration(
+                  color: PrimaryColors.dark,
+                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                ),
+                height: 22 * fontScale,
+                child: TextButton(
+                  onPressed: () {
+                    // controller.urlLauncher.launchUrl(widget.meetups.linkUrl);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Ver mais',
+                        style: TextStyles.roboto(
+                          fontSize(screen, 17, context),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 40 * fontScale),
           Observer(
@@ -77,5 +112,19 @@ class _LatestMeetupsWidgetState
         ],
       ),
     );
+  }
+
+  double fontSize(ScreenSize screen, double fontSize, BuildContext context) {
+    final factorFontText = screen.atualScreenWidth(context: context) / 2712;
+    if (screen.isDesktopXl(context: context)) {
+      return fontSize * factorFontText * screen.fontScale(context);
+    } else if (screen.isDesktopLg(context: context)) {
+      return fontSize * factorFontText * screen.fontScale(context) * (9 / 4);
+    } else if (screen.isTablet(context: context) ||
+        screen.isMobile(context: context)) {
+      return fontSize * screen.fontScale(context) * 0.9;
+    } else {
+      return 15;
+    }
   }
 }

@@ -21,7 +21,6 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
     if (kDebugMode) {
       url =
           'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases_data.json';
-      // 'https://raw.githubusercontent.com/Titoomf/website/features/website/data/brazilian_cases_data.json';
     }
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
