@@ -7,14 +7,7 @@
           "Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean",
       "url": "https://pub.dev/packages/asuka"
     },
-    {
-      "name": "koin",
-      "author": "pedro.bissonho@gmail.com",
-      "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/koin.svg",
-      "description":
-      "A pragmatic lightweight dependency injection framework for Dart projects",
-      "url": "https://pub.dev/packages/koin"
-    },
+   
     {
       "name": "slidy",
       "author": "flutterando.com.br",

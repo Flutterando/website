@@ -1,5 +1,4 @@
-[
-    
+[    
     {
       "photoUrl":
           "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/meetups/flutterando.png",
@@ -14,5 +13,53 @@
       "title": "Flutterando Meetup | 37º Edição | Porque não SetState e ValueNotifier?",
       "linkUrl": "https://www.meetup.com/fluttercwb/events/288607727/",
       "date": "quinta-feira, 29 de setembro de 2022 às 19:30 até quinta-feira, 29 de setembro de 2022 às 21:00"
+    },
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/modular_slidy.jpg",
+      "title": "Keynote Flutter Modular",
+      "linkUrl": "https://www.youtube.com/watch?v=Bs0z_gIWM_o",
+      "date": "segunda-feira, 03 de maio de 2021 20:00 até 21:30"
+    },
+     {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/latam.jpeg",
+      "title": "Flutter LATAM Conf 3º Edição 2020",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/274649309/",
+      "date": "quinta-feira, 26 de novembro de 2020 19:00 até 22:00"
+    },
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/ddd_com_modular.jpeg",
+      "title": "Flutterando Meetup | 16º Edição",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/274530332/",
+      "date": "quinta-feira, 12 de novembro de 2020 19:30 até 20:30"
+    },
+    {
+      "photoUrl": "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/codigo_aberto.jpeg",
+      "title": "Flutterando Meetup | 15º Edição",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/274210644/",
+      "date": "quinta-feira, 26 de novembro de 2020 19:00 até 22:00"
+    },
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/async_await.jpeg",
+      "title": "Flutterando Meetup | 14º Edição",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/273578669/",
+      "date": "quinta-feira, 1 de outubro de 2020 19:30 até 21:30"
+    },
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/latam_2_edicao.jpeg",
+      "title": "Flutter LATAM Conf 2º Edição 2020",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/272934613/",
+      "date": "quinta-feira, 10 de setembro de 2020 19:00 até 22:00"
+    },
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/meetups/arquitetura_boas_praticas.jpeg",
+      "title": "Flutterando Meetup | 13º Edição",
+      "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/272484819/",
+      "date": "terça-feira, 11 de agosto de 2020 19:30 até 21:30"
     }
 ]
