@@ -15,15 +15,18 @@ class _PartnerLogoState extends State<PartnerLogo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: GestureDetector(
-        child: Image.network(
-          widget.photoUrl,
-          color: Colors.white,
-          height: 120,
+      child: MouseRegion(
+        child: GestureDetector(
+          child: Image.network(
+            widget.photoUrl,
+            color: Colors.white,
+            height: 120,
+          ),
+          onTap: () async {
+            await launchUrl(Uri.parse(widget.siteUrl));
+          },
         ),
-        onTap: () async {
-          await launchUrl(Uri.parse(widget.siteUrl));
-        },
+        cursor: SystemMouseCursors.click,
       ),
     );
   }
