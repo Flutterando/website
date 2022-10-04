@@ -4,5 +4,5 @@ Map<String, dynamic> followersNumber = {
   'twitter': '1.8',
   'discord': '5.9',
   'telegram': '9.2',
-  'facebook': '2.8'
+  'facebook': '11.0'
 };

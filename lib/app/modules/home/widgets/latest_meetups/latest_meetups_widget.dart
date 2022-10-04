@@ -5,7 +5,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/widgets/meetup_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
@@ -23,10 +22,6 @@ class _LatestMeetupsWidgetState
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);
-    final numberGridRowItemsByScreenSize =
-        NumberGridRowItemsByScreenSize(1, 1, 2, 2, 3);
-    final numberGridRowItems = screen.numberGridRowItems(
-        screen, context, numberGridRowItemsByScreenSize);
     return Container(
       padding: EdgeInsets.only(
         top: 60 * fontScale,
@@ -90,20 +85,23 @@ class _LatestMeetupsWidgetState
           Observer(
             builder: (_) {
               if (controller.meetups.isNotEmpty) {
-                return GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: controller.meetups.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 1.2,
-                      crossAxisCount: numberGridRowItems,
-                      crossAxisSpacing: 15 * fontScale,
-                      mainAxisSpacing: 15 * fontScale),
-                  itemBuilder: (_, index) {
-                    return GridTile(
-                      child: MeetupTile(controller.meetups[index]),
-                    );
-                  },
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height,
+                  child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: controller.meetups.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 0.5),
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (_, index) {
+                      return GridTile(
+                        child: MeetupTile(controller.meetups[index]),
+                      );
+                    },
+                  ),
                 );
               }
               return Container();
