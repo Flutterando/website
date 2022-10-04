@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:localization/localization.dart';
-
 import 'package:flutterando/app/data/followers_number.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
+import 'package:localization/localization.dart';
 
 class HeaderSocialMedia extends StatelessWidget {
   final headerController = Modular.get<HeaderController>();
@@ -69,6 +68,11 @@ class HeaderSocialMedia extends StatelessWidget {
                   IconUrls.telegram,
                   urlLink: LinksUrl.telegram,
                   followersNumber: followersNumber['telegram'],
+                ),
+                socialMediaIcon(
+                  IconUrls.facebook,
+                  urlLink: LinksUrl.facebook,
+                  followersNumber: followersNumber['facebook'],
                 )
               ],
             ),
@@ -82,20 +86,20 @@ class HeaderSocialMedia extends StatelessWidget {
       {required String urlLink, required String followersNumber}) {
     return InkWell(
       child: Container(
-        width: 95,
-        height: 30,
+        width: 98,
+        height: 35,
         child: Row(
           children: [
             SvgPicture.asset(urlIcon),
             Container(
-              width: 47,
+              width: 50,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.all(
                   const Radius.circular(4.0),
                 ),
               ),
-              padding: EdgeInsets.all(6),
+              padding: EdgeInsets.all(4),
               child: Text(
                 '${followersNumber}K',
                 textAlign: TextAlign.center,

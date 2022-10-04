@@ -29,7 +29,7 @@
       "author": "flutterando.com.br",
       "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/flutter_triple.svg",
       "description":
-          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+          "Implementation of the Segmented State Pattern, nicknamed Triple.",
       "url": "https://pub.dev/packages/flutter_triple"
     },
     {
@@ -37,7 +37,7 @@
       "author": "flutterando.com.br",
       "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/uno.svg",
       "description":
-          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+          "Uno is a multiplatform HTTP client, based on Axios and built following the Clean Dart approach by the Flutterando Community.",
       "url": "https://pub.dev/packages/uno"
     },
     {
@@ -45,7 +45,7 @@
       "author": "flutterando.com.br",
       "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/hasura_connect.svg",
       "description":
-          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+          "Connect your Flutter/Dart apps to Hasura simply. All the power of GraphQL and Postgres in Flutter.",
       "url": "https://pub.dev/packages/hasura_connect"
     },
   
@@ -54,7 +54,7 @@
     "author": "flutterando.com.br",
     "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/flutterando_analysis.svg",
     "description":
-        "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+        "Lint rules for Flutter and Dart, created for the open source projects of the Flutterando Community.",
     "url": "https://pub.dev/packages/flutterando_analysis"
     }]
   

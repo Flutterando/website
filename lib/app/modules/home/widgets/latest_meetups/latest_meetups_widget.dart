@@ -67,7 +67,8 @@ class _LatestMeetupsWidgetState
                 height: 22 * fontScale,
                 child: TextButton(
                   onPressed: () {
-                    // controller.urlLauncher.launchUrl(widget.meetups.linkUrl);
+                    controller.urlLauncher.launchUrl(
+                        'https://www.youtube.com/playlist?list=PLlBnICoI-g-ddr7axgJZQeUdEtps-bKnp');
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
