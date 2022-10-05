@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
 
@@ -11,15 +12,18 @@ class ScreenSize {
   }
 
   bool isDesktopLg({required BuildContext context}) {
-    return MediaQuery.of(context).size.width >= 800.0 && MediaQuery.of(context).size.width < 1280.0;
+    return MediaQuery.of(context).size.width >= 800.0 &&
+        MediaQuery.of(context).size.width < 1280.0;
   }
 
   bool isTablet({required BuildContext context}) {
-    return MediaQuery.of(context).size.width >= 599.0 && MediaQuery.of(context).size.width < 800.0;
+    return MediaQuery.of(context).size.width >= 599.0 &&
+        MediaQuery.of(context).size.width < 800.0;
   }
 
   bool isMobile({required BuildContext context}) {
-    return MediaQuery.of(context).size.width >= 375.0 && MediaQuery.of(context).size.width < 599.0;
+    return MediaQuery.of(context).size.width >= 375.0 &&
+        MediaQuery.of(context).size.width < 599.0;
   }
 
   bool isWatch({required BuildContext context}) {
@@ -69,7 +73,8 @@ class ScreenSize {
   }
 
   double gridElementSize(int numberGridRowItems, maxWidth) {
-    double disponibleWidth = (maxWidth - (numberGridRowItems - 1) * (maxWidth / 32)) as double;
+    double disponibleWidth =
+        (maxWidth - (numberGridRowItems - 1) * (maxWidth / 30)) as double;
     double sizeElementGrid = disponibleWidth / numberGridRowItems;
     return sizeElementGrid;
   }

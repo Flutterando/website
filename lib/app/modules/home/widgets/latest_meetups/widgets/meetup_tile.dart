@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
@@ -29,56 +30,63 @@ class _MeetupTileState extends State<MeetupTile> {
           onTap: () {
             controller.urlLauncher.launchUrl(widget.meetup.linkUrl);
           },
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
-            ),
-            width: constraints.maxWidth,
-            child: Column(
-              children: [
-                ClipRRect(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: constraints.maxHeight / 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(8)),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
-                      color: Colors.blue,
-                    ),
-
-                    // width: constraints.maxWidth,
-                    // height: constraints.maxWidth * 0.65,
-                    child: FadeInImage.memoryNetwork(
-                      placeholder: kTransparentImage,
-                      image: widget.meetup.photoUrl,
+                  child: FadeInImage.memoryNetwork(
+                    placeholder: kTransparentImage,
+                    image: widget.meetup.photoUrl,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 2,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SelectableText(
+                    widget.meetup.title,
+                    style: TextStyles.notoSans(
+                      22,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                SizedBox(height: constraints.maxWidth / 40),
-                Container(
-                  width: constraints.maxWidth - 7,
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    child: SelectableText(
-                      widget.meetup.title,
-                      style: TextStyles.notoSans(
-                        18,
-                        fontWeight: FontWeight.bold,
-                      ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 2,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 3,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: SelectableText(
+                            widget.meetup.date,
+                            textAlign: TextAlign.center,
+                            style: TextStyles.roboto(
+                              16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(height: 4),
-                Container(
-                  width: constraints.maxWidth - 7,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: SelectableText(
-                      widget.meetup.date,
-                      style: TextStyles.roboto(12, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         );
       },

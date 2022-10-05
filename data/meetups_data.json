@@ -1,4 +1,19 @@
-[
+[    
+    {
+      "photoUrl":
+          "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/meetups/flutter_brasil.png",
+      "title": "Flutter Brasil 2022",
+      "linkUrl": "https://www.meetup.com/fluttercwb/events/288573244/",
+      "date": "quinta-feira, 6 de outubro de 2022 às 19:00 até quinta-feira, 6 de outubro de 2022 às 22:00"
+    },
+    {
+      "photoUrl":
+      
+          "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/meetups/value_notifier.png",
+      "title": "Flutterando Meetup | 37º Edição ",
+      "linkUrl": "https://www.meetup.com/fluttercwb/events/288607727/",
+      "date": "quinta-feira, 29 de setembro de 2022 às 19:30 até quinta-feira, 29 de setembro de 2022 às 21:00"
+    },
     {
       "photoUrl":
           "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/meetups/modular_slidy.jpg",
@@ -44,4 +59,5 @@
       "linkUrl": "https://www.meetup.com/pt-BR/Flutterando/events/272484819/",
       "date": "terça-feira, 11 de agosto de 2020 19:30 até 21:30"
     }
+  
 ]

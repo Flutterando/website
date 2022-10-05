@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 import 'package:dio/dio.dart';
-
 import 'package:flutterando/app/modules/home/infra/datasources/brazilian_cases_datasource.dart';
 import 'package:flutterando/app/modules/home/infra/models/result_brazilian_cases_model.dart';
 
@@ -13,7 +12,7 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
 
   @override
   Future<List<ResultBrazilianCasesModel>> getBrazilianCases() async {
-    // var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/data/brazilian_cases_data.json');
+    //  var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/data/brazilian_cases_data.json');
     var url =
         'https://raw.githubusercontent.com/Flutterando/website/main/data/brazilian_cases_data.json';
     // 'https://raw.githubusercontent.com/Flutterando/website/main/data/coorganizers_data.json';

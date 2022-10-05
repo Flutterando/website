@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
 import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
