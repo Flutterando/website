@@ -14,9 +14,14 @@ class LatestChannelVideosWidget extends StatefulWidget {
       _LatestChannelVideosWidgetState();
 }
 
-class _LatestChannelVideosWidgetState extends ModularState<
-    LatestChannelVideosWidget, LatestChannelVideosController> {
+class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
+  final controller = Modular.get<LatestChannelVideosController>();
   @override
+  void dispose() {
+    Modular.dispose<LatestChannelVideosController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final screen = controller.screen;

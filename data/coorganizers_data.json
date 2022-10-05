@@ -11,16 +11,17 @@
     "linkedin": "https://www.linkedin.com/in/ian-oliveira-0701a2130/",
     "status": "Co-organizer"
   },
-  {
-    "name": "Mateus Gerônimo",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_geronimo_circle.png",
-    "linkedin": "https://www.linkedin.com/in/mateus-geronimo-rosa-106b6714b/",
-    "status": "Co-organizer"
-  },
+ 
   {
     "name": "Kevlin Ossada",
     "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/toshi_circle.png",
     "linkedin": "https://www.linkedin.com/in/toshiossada/",
+    "status": "Co-organizer"
+  },
+  {
+    "name": "Gabriela Pereira dos Santos ",
+    "pathImage": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/co_organizers/gabriela.png",
+    "linkedin": "https://www.linkedin.com/in/gabriela-pereira-dos-santos-472365139/",
     "status": "Co-organizer"
   },
   {

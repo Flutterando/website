@@ -12,8 +12,14 @@ class PartnersWidget extends StatefulWidget {
   _PartnersWidgetState createState() => _PartnersWidgetState();
 }
 
-class _PartnersWidgetState
-    extends ModularState<PartnersWidget, PartnersController> {
+class _PartnersWidgetState extends State<PartnersWidget> {
+  final controller = Modular.get<PartnersController>();
+  @override
+  void dispose() {
+    Modular.dispose<PartnersController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final screen = controller.screen;
@@ -71,7 +77,8 @@ class _PartnersWidgetState
                   runAlignment: WrapAlignment.center,
                   alignment: WrapAlignment.center,
                   children: controller.partners
-                      .map((partner) => PartnerLogo(partner.photoUrl))
+                      .map((partner) =>
+                          PartnerLogo(partner.photoUrl, partner.siteUrl))
                       .toList(),
                 );
               },

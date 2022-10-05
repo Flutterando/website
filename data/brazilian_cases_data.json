@@ -13,7 +13,7 @@
     },
     {
         "title": "Globo",
-        "imageUrl": "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/brazilian_cases/nubank.jpg",
+        "imageUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/brazilian_cases/globo.jpg",
         "description": "A Globo está utilizando Flutter em sua aplicação Globo Ads, confira mais nesse link como estão utilizando Flutter.",
         "url": "https://www.youtube.com/watch?v=tCyNtssJVGA"
     }

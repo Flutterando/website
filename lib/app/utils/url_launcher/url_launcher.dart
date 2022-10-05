@@ -6,11 +6,9 @@ import 'package:url_launcher/url_launcher.dart';
 @Injectable(singleton: false)
 class UrlLauncher {
   Future<void> launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(
         url,
-        forceSafariVC: false,
-        forceWebView: false,
       );
     } else {
       throw 'Could not launch $url';

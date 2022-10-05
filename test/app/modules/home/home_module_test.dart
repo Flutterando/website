@@ -1,9 +1,6 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide Bind;
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_modular/src/core/models/bind.dart' as bindModular;
-import 'package:flutter_modular_test/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/app_module.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
@@ -18,6 +15,7 @@ import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/home_module.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:modular_test/modular_test.dart';
 
 class DioMock extends Mock implements Dio {}
 
@@ -31,12 +29,9 @@ main() {
     AppModule(),
     HomeModule(),
   ], replaceBinds: [
-    bindModular.Bind<Dio>((i) => dio),
+    Bind<Dio>((i) => dio),
   ]);
 
-  setUp(() async {
-    await dotenv.testLoad();
-  });
   test('Should return the usercase without error', () {
     final usecasePartners = Modular.get<GetPartners>();
     expect(usecasePartners, isA<GetPartnersImpl>());
@@ -75,11 +70,12 @@ main() {
       email: 'test@test.com',
       message: 'this is a contact test',
     );
-    when(() => connection.mutation(any(), variables: any(named: 'variables'))).thenAnswer((invocation) async => {
-          "data": {
-            "insert_mail_box": {"affected_rows": 1}
-          }
-        });
+    when(() => connection.mutation(any(), variables: any(named: 'variables')))
+        .thenAnswer((invocation) async => {
+              "data": {
+                "insert_mail_box": {"affected_rows": 1}
+              }
+            });
     final usecase = Modular.get<SendContact>();
     final result = await usecase(contact);
     expect(result.fold(id, id), isA<ResultContact>());

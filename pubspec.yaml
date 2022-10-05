@@ -3,7 +3,7 @@ description: Uma das maiores comunidade de Flutter do mundo.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -17,48 +17,45 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.2+3
 
-## Slidy Scripts 
-vars: 
-    clean: flutter clean
-    get: flutter pub get
-    runner: flutter pub run build_runner
-scripts: 
-    mobx_build: $runner build
-    mobx_watch: $clean & $get & $runner watch --delete-conflicting-outputs
-    mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
-
-
+## Slidy Scripts
+vars:
+  clean: flutter clean
+  get: flutter pub get
+  runner: flutter pub run build_runner
+scripts:
+  mobx_build: $runner build
+  mobx_watch: $clean & $get & $runner watch --delete-conflicting-outputs
+  mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  url_launcher: ^6.0.3
-  dartz: ^0.10.0-nullsafety.1
-  dio: ^4.0.0
-  flutter_mobx: ^2.0.0
-  mobx: ^2.0.0
-  flutter_modular: ^3.2.0 
+  flutter_localizations: 
+    sdk: flutter
+  url_launcher: ^6.1.5
+  dartz: ^0.10.1
+  dio: ^4.0.6
+  flutter_mobx: ^2.0.6+4
+  mobx: ^2.1.0
+  flutter_modular: ^5.0.3
   transparent_image: ^2.0.0
-  flutter_dotenv: ^5.0.0
-  hasura_connect: ^3.0.0+1
-  localization:
-    git: 
-      url: https://github.com/raphaelbarbosaqwerty/localization
-      ref: fix_support_web
+  # flutter_dotenv: ^5.0.2
+  hasura_connect: ^4.0.0+4
+  localization: ^2.1.0
   flutter:
     sdk: flutter
+  flutter_svg: ^1.1.5
   # fdottedline: ^1.0.1
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
 dev_dependencies:
-  mocktail: ^0.1.1
-  mobx_codegen: ^2.0.0
-  build_runner: ^2.0.4
-  flutter_modular_test: ^1.0.1
+  mocktail: ^0.3.0
+  mobx_codegen: ^2.0.7+3
+  build_runner: ^2.2.1
+  modular_test: ^2.0.0
   flutter_test:
     sdk: flutter
 
@@ -67,7 +64,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -81,7 +77,8 @@ flutter:
     - assets/images/co_organizers/
     - assets/images/brazilian_cases/
     - assets/lang/
-    - .env
+    - assets/images/icons/svgs/
+    # - .env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

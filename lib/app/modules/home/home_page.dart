@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/widgets/scroll_bar/scroll_bar_widget.dart';
@@ -7,7 +8,6 @@ import 'package:flutterando/app/utils/widgets/scroll_bar/scroll_bar_widget.dart'
 import 'home_controller.dart';
 import 'widgets/brazilian_cases/brazilian_cases_widget.dart';
 import 'widgets/co_organizers/co_organizers_widget.dart';
-import 'widgets/footer/footer.dart';
 import 'widgets/founders/founders_widget.dart';
 import 'widgets/header/header_widget.dart';
 import 'widgets/latest_channel_videos/latest_channel_videos_widget.dart';
@@ -20,50 +20,54 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeController> {
+class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
+  final controller = Modular.get<HomeController>();
+
+  @override
+  void dispose() {
+    Modular.dispose<HomeController>();
+    super.dispose();
+  }
 
   @override
   void initState() {
     super.initState();
-    _scrollController  = ScrollController();
+    _scrollController = ScrollController();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GrayColors.gray00,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                child: Column(
-                  children: [
-                    HeaderWidget(),
-                    LatestMeetupsWidget(),
-                    LatestChannelVideosWidget(),
-                    Founders(),
-                    CoOrganizers(),
-                    PackagesWidget(),
-                    BrazilianCasesWidget(),
-                    PartnersWidget(),
-                    Footer(),
-                  ]
-                ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(children: [
+                HeaderWidget(),
+                LatestMeetupsWidget(),
+                LatestChannelVideosWidget(),
+                Founders(),
+                CoOrganizers(),
+                PackagesWidget(),
+                BrazilianCasesWidget(),
+                PartnersWidget(),
+                Footer()
+              ]),
             ),
-          ),
-          Align(
-            child: Banner(
-              child: NavbarWidget(),
-              location: BannerLocation.topEnd,
-              message: "Flutter",
+            Align(
+              child: Banner(
+                child: NavbarWidget(),
+                location: BannerLocation.topEnd,
+                message: "Flutter",
+              ),
+              alignment: Alignment.topCenter,
             ),
-            alignment: Alignment.topCenter,
-          ),
-          ScrollBarWidget(_scrollController),
-        ],
+            ScrollBarWidget(_scrollController),
+          ],
+        ),
       ),
     );
   }

@@ -13,8 +13,13 @@ class Founders extends StatefulWidget {
   _FoundersState createState() => _FoundersState();
 }
 
-class _FoundersState extends ModularState<Founders, FoundersController> {
-  @override
+class _FoundersState extends State<Founders> {
+  final controller = Modular.get<FoundersController>();
+  void dispose() {
+    Modular.dispose<FoundersController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
@@ -56,7 +61,8 @@ class _FoundersState extends ModularState<Founders, FoundersController> {
               ),
               SizedBox(height: 50 * fontScale),
               if (isError) ...{
-                SelectableText('Erro ao processar conteúdo', style: TextStyles.roboto(30 * fontScale)),
+                SelectableText('Erro ao processar conteúdo',
+                    style: TextStyles.roboto(30 * fontScale)),
               },
               if (isLoading) ...{
                 Center(child: CircularProgressIndicator()),
@@ -68,7 +74,9 @@ class _FoundersState extends ModularState<Founders, FoundersController> {
                   child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
-                    children: controller.founders.map((founder) => FounderItem(founder)).toList(),
+                    children: controller.founders
+                        .map((founder) => FounderItem(founder))
+                        .toList(),
                   ),
                 ),
               },
