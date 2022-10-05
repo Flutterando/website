@@ -35,7 +35,7 @@ dependencies:
     sdk: flutter
   url_launcher: ^6.1.5
   dartz: ^0.10.1
-  dio: ^4.0.6
+  dio: ^4.0.6 
   flutter_mobx: ^2.0.6+4
   mobx: ^2.1.0
   flutter_modular: ^5.0.3
@@ -78,8 +78,6 @@ flutter:
     - assets/images/brazilian_cases/
     - assets/lang/
     - assets/images/icons/svgs/
-    - data/
-    # - .env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
