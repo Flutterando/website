@@ -6,10 +6,11 @@ part of 'partners_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$PartnersController on _PartnersControllerBase, Store {
-  final _$partnersAtom = Atom(name: '_PartnersControllerBase.partners');
+  late final _$partnersAtom =
+      Atom(name: '_PartnersControllerBase.partners', context: context);
 
   @override
   ObservableList<ResultPartners> get partners {
@@ -24,7 +25,8 @@ mixin _$PartnersController on _PartnersControllerBase, Store {
     });
   }
 
-  final _$errorAtom = Atom(name: '_PartnersControllerBase.error');
+  late final _$errorAtom =
+      Atom(name: '_PartnersControllerBase.error', context: context);
 
   @override
   String get error {
@@ -39,8 +41,8 @@ mixin _$PartnersController on _PartnersControllerBase, Store {
     });
   }
 
-  final _$fetchPartnersAsyncAction =
-      AsyncAction('_PartnersControllerBase.fetchPartners');
+  late final _$fetchPartnersAsyncAction =
+      AsyncAction('_PartnersControllerBase.fetchPartners', context: context);
 
   @override
   Future fetchPartners() {

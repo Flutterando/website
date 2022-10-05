@@ -6,10 +6,11 @@ part of 'latest_meetups_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$LatestMeetupsController on _LatestMeetupsControllerBase, Store {
-  final _$meetupsAtom = Atom(name: '_LatestMeetupsControllerBase.meetups');
+  late final _$meetupsAtom =
+      Atom(name: '_LatestMeetupsControllerBase.meetups', context: context);
 
   @override
   ObservableList<ResultMeetups> get meetups {
@@ -24,7 +25,8 @@ mixin _$LatestMeetupsController on _LatestMeetupsControllerBase, Store {
     });
   }
 
-  final _$errorAtom = Atom(name: '_LatestMeetupsControllerBase.error');
+  late final _$errorAtom =
+      Atom(name: '_LatestMeetupsControllerBase.error', context: context);
 
   @override
   String get error {
@@ -39,8 +41,9 @@ mixin _$LatestMeetupsController on _LatestMeetupsControllerBase, Store {
     });
   }
 
-  final _$fetchMeetupsAsyncAction =
-      AsyncAction('_LatestMeetupsControllerBase.fetchMeetups');
+  late final _$fetchMeetupsAsyncAction = AsyncAction(
+      '_LatestMeetupsControllerBase.fetchMeetups',
+      context: context);
 
   @override
   Future fetchMeetups() {

@@ -6,12 +6,12 @@ part of 'latest_channel_videos_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$LatestChannelVideosController
     on _LatestChannelVideosControllerBase, Store {
-  final _$youtubeAtom =
-      Atom(name: '_LatestChannelVideosControllerBase.youtube');
+  late final _$youtubeAtom = Atom(
+      name: '_LatestChannelVideosControllerBase.youtube', context: context);
 
   @override
   ObservableList<ResultYoutube> get youtube {
@@ -26,7 +26,8 @@ mixin _$LatestChannelVideosController
     });
   }
 
-  final _$errorAtom = Atom(name: '_LatestChannelVideosControllerBase.error');
+  late final _$errorAtom =
+      Atom(name: '_LatestChannelVideosControllerBase.error', context: context);
 
   @override
   String get error {
@@ -41,8 +42,9 @@ mixin _$LatestChannelVideosController
     });
   }
 
-  final _$fetchYoutubeAsyncAction =
-      AsyncAction('_LatestChannelVideosControllerBase.fetchYoutube');
+  late final _$fetchYoutubeAsyncAction = AsyncAction(
+      '_LatestChannelVideosControllerBase.fetchYoutube',
+      context: context);
 
   @override
   Future fetchYoutube() {

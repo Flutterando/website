@@ -8,22 +8,12 @@ class ResultPackagesModel implements ResultPackage {
   final String version;
   final String description;
   final String url;
+  final String imageUrl;
 
-  ResultPackagesModel(
-      this.name, this.author, this.version, this.description, this.url);
-
-  Map<String, dynamic> toMap() {
-    return {
-      'name': name,
-      'author': author,
-      'version': version,
-      'description': description,
-      'url': url,
-    };
-  }
+  ResultPackagesModel(this.name, this.author, this.version, this.description, this.url, this.imageUrl);
 
   factory ResultPackagesModel.fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultPackagesModel("", "", "", "", "");
+    if (map.isEmpty) return ResultPackagesModel("", "", "", "", "", "");
 
     return ResultPackagesModel(
       map['name'],
@@ -31,11 +21,9 @@ class ResultPackagesModel implements ResultPackage {
       map['version'],
       map['description'],
       map['url'],
+      map['imageUrl'],
     );
   }
 
-  String toJson() => json.encode(toMap());
-
-  factory ResultPackagesModel.fromJson(String source) =>
-      ResultPackagesModel.fromMap(json.decode(source));
+  factory ResultPackagesModel.fromJson(String source) => ResultPackagesModel.fromMap(json.decode(source));
 }

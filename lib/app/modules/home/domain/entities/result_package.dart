@@ -4,7 +4,7 @@ class ResultPackage {
   final String version;
   final String description;
   final String url;
+  final String imageUrl;
 
-  ResultPackage(
-      this.name, this.author, this.version, this.description, this.url);
+  ResultPackage(this.name, this.author, this.version, this.description, this.url, this.imageUrl);
 }
