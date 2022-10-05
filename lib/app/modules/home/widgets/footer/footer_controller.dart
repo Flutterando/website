@@ -4,7 +4,6 @@ import 'package:flutterando/app/modules/home/domain/entities/send_contact/result
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 import 'package:mobx/mobx.dart';
 
 part 'footer_controller.g.dart';
@@ -15,8 +14,7 @@ class FooterController = _FooterControllerBase with _$FooterController;
 abstract class _FooterControllerBase with Store {
   late final ScreenSize screen;
   late final SendContact usecase;
-  late final UrlLauncher urlLauncher;
-  _FooterControllerBase(this.screen, this.usecase, this.urlLauncher);
+  _FooterControllerBase(this.screen, this.usecase);
 
   @observable
   ResultContact resultContact = ResultContact("");

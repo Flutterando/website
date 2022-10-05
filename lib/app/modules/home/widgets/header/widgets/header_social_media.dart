@@ -9,6 +9,7 @@ import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
 import 'package:localization/localization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeaderSocialMedia extends StatefulWidget {
   final ScreenSize screenSize;
@@ -125,8 +126,8 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
           ],
         ),
       ),
-      onTap: () {
-        headerController.urlLauncher.launchUrl(urlLink);
+      onTap: () async {
+        await launchUrl(Uri.parse(urlLink));
       },
     );
   }

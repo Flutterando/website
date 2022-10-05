@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:flutterando/app/modules/home/domain/entities/result_founders.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../founders_controller.dart';
 
@@ -55,14 +54,13 @@ class _FounderItemState extends State<FounderItem> {
               coOrganizer.name,
               textAlign: TextAlign.center,
               maxLines: 2,
-              style: TextStyles.notoSans(17 * fontScale,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 6),
           InkWell(
-            onTap: () {
-              controller.urlLauncher.launchUrl(coOrganizer.linkedin);
+            onTap: () async {
+              await launchUrl(Uri.parse(coOrganizer.linkedin));
             },
             child: SvgPicture.asset(
               IconUrls.linkedin,

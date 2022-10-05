@@ -4,6 +4,7 @@ import 'package:flutterando/app/modules/home/widgets/navbar/navbar_controller.da
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/images/images.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavbarWidget extends StatefulWidget {
   @override
@@ -42,40 +43,31 @@ class _NavbarWidgetState extends State<NavbarWidget> {
               ),
             ),
             TextButton(
-              onPressed: () {
-                controller.urlLauncher.launchUrl(
-                  'https://forms.gle/6BoxwQLLBE2vZeMk6',
-                );
+              onPressed: () async {
+                await launchUrl(Uri.parse('https://forms.gle/6BoxwQLLBE2vZeMk6'));
               },
               child: Text(
                 'Seja um palestrante',
-                style: TextStyles.roboto(11 * fontScale,
-                    fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
             TextButton(
               onPressed: () async {
-                await controller.urlLauncher.launchUrl(
-                  'https://masterclass.flutterando.com.br',
-                );
+                await launchUrl(Uri.parse('https://masterclass.flutterando.com.br'));
               },
               child: Text(
                 'Masterclass',
-                style: TextStyles.roboto(11 * fontScale,
-                    fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(width: 2 * fontScale),
             TextButton(
-              onPressed: () {
-                controller.urlLauncher.launchUrl(
-                  'https://linktr.ee/flutterando',
-                );
+              onPressed: () async {
+                await launchUrl(Uri.parse('https://linktr.ee/flutterando'));
               },
               child: Text(
                 'Links Úteis',
-                style: TextStyles.roboto(11 * fontScale,
-                    fontWeight: FontWeight.bold),
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
           ],

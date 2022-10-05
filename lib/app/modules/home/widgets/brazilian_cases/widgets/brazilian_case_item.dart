@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_cases_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BrazilianCaseItem extends StatefulWidget {
   final ResultBrazilianCases brazilianCase;
@@ -74,8 +74,8 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
                 ),
                 height: 36 * fontScale,
                 child: TextButton(
-                  onPressed: () {
-                    controller.urlLauncher.launchUrl(brazilianCase.url);
+                  onPressed: () async {
+                    await launchUrl(Uri.parse(brazilianCase.url));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -105,8 +105,7 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
       return fontSize * factorFontText * screen.fontScale(context);
     } else if (screen.isDesktopLg(context: context)) {
       return fontSize * factorFontText * screen.fontScale(context) * (9 / 4);
-    } else if (screen.isTablet(context: context) ||
-        screen.isMobile(context: context)) {
+    } else if (screen.isTablet(context: context) || screen.isMobile(context: context)) {
       return fontSize * screen.fontScale(context) * 0.9;
     } else {
       return 15;

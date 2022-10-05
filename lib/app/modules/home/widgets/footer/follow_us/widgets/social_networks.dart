@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialNetworks extends StatefulWidget {
   final double fontScale;
@@ -24,8 +25,8 @@ class _SocialNetworksState extends State<SocialNetworks> {
   Widget build(BuildContext context) {
     Widget socialnetWork(String image, String linkUrl) {
       return InkWell(
-        onTap: () {
-          controller.urlLauncher.launchUrl(linkUrl);
+        onTap: () async {
+          await launchUrl(Uri.parse(linkUrl));
         },
         child: Container(
           child: SvgPicture.asset(

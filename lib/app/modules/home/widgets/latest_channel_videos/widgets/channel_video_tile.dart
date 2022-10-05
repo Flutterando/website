@@ -6,6 +6,7 @@ import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ChannelVideoTile extends StatefulWidget {
   final ResultYoutube video;
@@ -27,8 +28,8 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
     return LayoutBuilder(
       builder: (_, constraints) {
         return InkWell(
-          onTap: () {
-            controller.urlLauncher.launchUrl(widget.video.linkUrl);
+          onTap: () async {
+            await launchUrl(Uri.parse(widget.video.linkUrl));
           },
           child: Container(
             decoration: BoxDecoration(
@@ -55,16 +56,11 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                 ),
                 SizedBox(height: constraints.maxWidth / 15),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.title,
-                    maxLines:
-                        (controller.screen.isDesktopXl(context: context) ||
-                                controller.screen.isDesktopLg(context: context))
-                            ? 2
-                            : 1,
+                    maxLines: (controller.screen.isDesktopXl(context: context) || controller.screen.isDesktopLg(context: context)) ? 2 : 1,
                     style: TextStyles.roboto(
                       fontSize(controller.screen, context),
                       fontWeight: FontWeight.bold,
@@ -73,8 +69,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                 ),
                 SizedBox(height: constraints.maxWidth / 15),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.date,

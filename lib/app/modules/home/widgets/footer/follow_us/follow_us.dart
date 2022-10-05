@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:localization/localization.dart';
-
 import 'package:flutterando/app/modules/home/widgets/footer/follow_us/widgets/social_networks.dart';
+import 'package:localization/localization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../utils/images/images.dart';
 import '../../../../../utils/text_styles/text_styles.dart';
@@ -52,20 +51,17 @@ class _FollowUsState extends State<FollowUs> {
           SizedBox(height: 60),
           SelectableText(
             "footer_contact".i18n(),
-            style: TextStyles.notoSans(24 * fontScale,
-                fontWeight: FontWeight.bold),
+            style: TextStyles.notoSans(24 * fontScale, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 13),
           SelectableText(
             'contato@flutterando.com.br',
-            style: TextStyles.roboto(16 * fontScale,
-                fontWeight: FontWeight.normal),
+            style: TextStyles.roboto(16 * fontScale, fontWeight: FontWeight.normal),
           ),
           SizedBox(height: 45),
           InkWell(
-            onTap: () {
-              controller.urlLauncher
-                  .launchUrl('https://f-team.dev/desenvolvimento');
+            onTap: () async {
+              await launchUrl(Uri.parse('https://f-team.dev/desenvolvimento'));
             },
             child: Text(
               'Powered by F-Team',

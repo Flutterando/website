@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
@@ -9,6 +8,7 @@ import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PackageTile extends StatefulWidget {
   final ResultPackage package;
@@ -40,11 +40,7 @@ class _PackageTileState extends State<PackageTile> {
             borderRadius: BorderRadius.all(Radius.circular(2)),
           ),
           width: constraints.maxWidth,
-          padding: EdgeInsets.only(
-              left: maxWidth / 16,
-              right: maxWidth / 16,
-              bottom: maxWidth / 16,
-              top: maxWidth / 12),
+          padding: EdgeInsets.only(left: maxWidth / 16, right: maxWidth / 16, bottom: maxWidth / 16, top: maxWidth / 12),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,12 +92,11 @@ class _PackageTileState extends State<PackageTile> {
                   color: PrimaryColors.dark,
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith(
-                          (states) => PrimaryColors.dark),
+                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
                     ),
                     // color: PrimaryColors.dark,
-                    onPressed: () {
-                      controller.urlLauncher.launchUrl(package.url);
+                    onPressed: () async {
+                      await launchUrl(Uri.parse(package.url));
                     },
                     child: Text(
                       "button_packages".i18n(),
@@ -123,8 +118,7 @@ class _PackageTileState extends State<PackageTile> {
       return fontSize * factorFontText * screen.fontScale(context);
     } else if (screen.isDesktopLg(context: context)) {
       return fontSize * factorFontText * screen.fontScale(context) * (9 / 4);
-    } else if (screen.isTablet(context: context) ||
-        screen.isMobile(context: context)) {
+    } else if (screen.isTablet(context: context) || screen.isMobile(context: context)) {
       return fontSize * screen.fontScale(context) * 0.9 - 2;
     } else {
       return 18;
