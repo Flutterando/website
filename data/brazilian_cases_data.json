@@ -1,19 +1,19 @@
 [
     {
         "title": "Nubank",
-        "imageUrl": "https://i3.ytimg.com/vi/JVi-sYYgYEI/maxresdefault.jpg",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/nubank.jpg",
         "description": "O Nubank anunciou recentemente que está utilizando o Flutter em suas aplicações. No link abaixo você vê mais sobre o projeto.",
         "url": "https://www.youtube.com/watch?v=vnj2i6RNo3g"
     },
     {
         "title": "Banco BS2",
-        "imageUrl": "https://raw.githubusercontent.com/gustavokg1999/website/main/assets/images/brazilian_cases/bancoBs2.jpg",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/a787d1b2836ed6d1173b4a70de215ac2858783f0/assets/images/brazilian_cases/bancoBs2.jpg",
         "description": "Fintechs estão optando por usar Flutter devido as sua facilidade em relação a pagamentos. Veja como o banco BS2 está trabalhando.",
         "url": "https://www.youtube.com/watch?v=Uw9BSOJRg_M"
     },
     {
         "title": "Globo",
-        "imageUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/brazilian_cases/globo.jpg",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/a787d1b2836ed6d1173b4a70de215ac2858783f0/assets/images/brazilian_cases/globo.jpg",
         "description": "A Globo está utilizando Flutter em sua aplicação Globo Ads, confira mais nesse link como estão utilizando Flutter.",
         "url": "https://www.youtube.com/watch?v=tCyNtssJVGA"
     }
