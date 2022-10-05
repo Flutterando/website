@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
-
 import 'package:flutterando/app/modules/home/domain/entities/result_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_cases_controller.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';

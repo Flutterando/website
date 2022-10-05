@@ -5,6 +5,8 @@
 //   static const String package = '$base_url/package.png';
 // }
 const String base_url = 'assets/images/icons/svgs';
+// packagges assets/images/packages
+const String base_url_packages = 'assets/images/packages';
 
 class IconUrls {
   static const String discord = '$base_url/discord.svg';

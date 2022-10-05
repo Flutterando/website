@@ -7,6 +7,15 @@
           "Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean",
       "url": "https://pub.dev/packages/asuka"
     },
+   
+    {
+      "name": "slidy",
+      "author": "flutterando.com.br",
+      "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/slidy.svg",
+      "description":
+      "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
+      "url": "https://pub.dev/packages/slidy"
+    },
     {
       "name": "flutter_modular",
       "author": "flutterando.com.br",
@@ -20,15 +29,25 @@
       "author": "pedro.bissonho@gmail.com",
       "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/pubv0.14.2.svg",
       "description":
-          "A pragmatic lightweight dependency injection framework for Dart projects",
-      "url": "https://pub.dev/packages/koin"
+          "Uno is a multiplatform HTTP client, based on Axios and built following the Clean Dart approach by the Flutterando Community.",
+      "url": "https://pub.dev/packages/uno"
     },
     {
-      "name": "slidy",
+      "name": "hasura_connect",
       "author": "flutterando.com.br",
       "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/pubv3.2.2%2B2.svg",
       "description":
-          "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
-      "url": "https://pub.dev/packages/slidy"
-    }
-]
+          "Connect your Flutter/Dart apps to Hasura simply. All the power of GraphQL and Postgres in Flutter.",
+      "url": "https://pub.dev/packages/hasura_connect"
+    },
+  
+  {
+    "name": "flutterando_analysis",
+    "author": "flutterando.com.br",
+    "version": "https://raw.githubusercontent.com/Titoomf/website/05572f1d122df8c29e65d04c8390440226d5dcdf/assets/images/packages/flutterando_analysis.svg",
+    "description":
+        "Lint rules for Flutter and Dart, created for the open source projects of the Flutterando Community.",
+    "url": "https://pub.dev/packages/flutterando_analysis"
+    }]
+  
+  
