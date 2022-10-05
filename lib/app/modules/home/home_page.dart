@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/widgets/scroll_bar/scroll_bar_widget.dart';
 
 import 'home_controller.dart';
 import 'widgets/brazilian_cases/brazilian_cases_widget.dart';
@@ -22,7 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late ScrollController _scrollController;
+  // late ScrollController _scrollController;
   final controller = Modular.get<HomeController>();
 
   @override
@@ -34,40 +32,45 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
+    //  _scrollController = ScrollController();
   }
 
+  final scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GrayColors.gray00,
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Column(children: [
-                HeaderWidget(),
-                LatestMeetupsWidget(),
-                LatestChannelVideosWidget(),
-                Founders(),
-                CoOrganizers(),
-                PackagesWidget(),
-                BrazilianCasesWidget(),
-                PartnersWidget(),
-                Footer()
-              ]),
-            ),
-            Align(
-              child: Banner(
-                child: NavbarWidget(),
-                location: BannerLocation.topEnd,
-                message: "Flutter",
+      body: ScrollConfiguration(
+        behavior: CustomScrollBehavior(),
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(children: [
+                  HeaderWidget(),
+                  LatestMeetupsWidget(),
+                  LatestChannelVideosWidget(),
+                  Founders(),
+                  CoOrganizers(),
+                  PackagesWidget(),
+                  BrazilianCasesWidget(),
+                  PartnersWidget(),
+                  Footer()
+                ]),
               ),
-              alignment: Alignment.topCenter,
-            ),
-            ScrollBarWidget(_scrollController),
-          ],
+              Align(
+                child: Banner(
+                  child: NavbarWidget(),
+                  location: BannerLocation.topEnd,
+                  message: "Flutter",
+                ),
+                alignment: Alignment.topCenter,
+              ),
+              // ScrollBarWidget(_scrollController),
+            ],
+          ),
         ),
       ),
     );

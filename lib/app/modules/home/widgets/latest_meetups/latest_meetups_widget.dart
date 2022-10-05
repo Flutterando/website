@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -99,25 +100,27 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
             builder: (_) {
               if (controller.meetups.isNotEmpty) {
                 return Container(
-                  color: Colors.red,
                   height: MediaQuery.of(context).size.height,
-                  child: GridView.builder(
-                    padding: EdgeInsets.only(
-                      left: (screenWidth / 15) * fontScale,
-                      right: (screenWidth / 15) * fontScale,
+                  child: ScrollConfiguration(
+                    behavior: CustomScrollBehavior(),
+                    child: GridView.builder(
+                      padding: EdgeInsets.only(
+                        left: (screenWidth / 15) * fontScale,
+                        right: (screenWidth / 15) * fontScale,
+                      ),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: controller.meetups.length,
+                      physics: BouncingScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 238 / 300,
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 32,
+                      ),
+                      itemBuilder: (_, index) {
+                        return Container(child: MeetupTile(controller.meetups[index]));
+                      },
                     ),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: controller.meetups.length,
-                    physics: ScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 238 / 300,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                    ),
-                    itemBuilder: (_, index) {
-                      return Container(child: MeetupTile(controller.meetups[index]));
-                    },
                   ),
                 );
               }
@@ -142,4 +145,12 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
       return 15;
     }
   }
+}
+
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse
+      };
 }
