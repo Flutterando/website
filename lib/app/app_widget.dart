@@ -9,19 +9,18 @@ class AppWidget extends StatelessWidget {
     LocalJsonLocalization.delegate.directories = ['assets/lang/'];
 
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutterando',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        LocalJsonLocalization.delegate,
-      ],
-      routeInformationParser: Modular.routeInformationParser,
-      routerDelegate: Modular.routerDelegate,
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutterando',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          LocalJsonLocalization.delegate,
+        ],
+        routeInformationParser: Modular.routeInformationParser,
+        routerDelegate: Modular.routerDelegate);
   }
 }
