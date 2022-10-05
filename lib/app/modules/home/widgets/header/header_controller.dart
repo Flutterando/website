@@ -16,6 +16,7 @@ abstract class _HeaderControllerBase with Store {
   final ScreenSize screen;
   final UrlLauncher urlLauncher;
   late ResultInstaFollowers resultInstaFollowers;
+
   ScreenStateStore socialMediaState;
 
   _HeaderControllerBase(

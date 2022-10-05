@@ -6,6 +6,7 @@ import 'package:flutterando/app/utils/service/http_service.dart';
 import 'package:flutterando/app/utils/url_launcher/url_launcher.dart';
 
 import 'app_controller.dart';
+import 'modules/home/home_module.dart';
 
 class AppModule extends Module {
   @override

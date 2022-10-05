@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/usecases/get_folower_numbers.dart';
+import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
 import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
@@ -59,10 +61,9 @@ class HomeModule extends Module {
         Bind((i) => LatestMeetupsController(i(), i(), i())),
         Bind((i) => BrazilianCasesController(i(), i(), i())),
         Bind((i) => LatestChannelVideosController(i(), i(), i())),
-
+        Bind((i) => HeaderStore(i())),
         //clean arch
-        Bind((i) => HasuraConnect(
-            "https://flutterando-fteam-box.herokuapp.com/v1/graphql")),
+        Bind((i) => HasuraConnect("https://flutterando-fteam-box.herokuapp.com/v1/graphql")),
         Bind((i) => Dio()),
 
         //binds partners
@@ -75,6 +76,7 @@ class HomeModule extends Module {
         Bind((i) => FoundersRemoteDatasource(i())),
         Bind((i) => FoundersRepositoryImpl(i())),
         Bind((i) => GetFoundersImpl(i())),
+        Bind((i) => GetFolowersNumbersImpl(i())),
         //binds co_organizers
         // Bind((i) => CoOrganizersData()),
         Bind((i) => CoOrganizersRemoteDatasource(i())),
@@ -99,7 +101,9 @@ class HomeModule extends Module {
         Bind((i) => GetMeetupsImpl(i())),
 
         //binds sendContact
-        Bind((i) => SendContactServerDatasource(i(),)),
+        Bind((i) => SendContactServerDatasource(
+              i(),
+            )),
         Bind((i) => SendContactRepositoryImpl(i())),
         Bind((i) => SendContactImpl(i())),
 
