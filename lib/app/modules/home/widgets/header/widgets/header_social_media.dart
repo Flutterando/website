@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutterando/app/data/followers_number.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
@@ -11,6 +10,8 @@ import 'package:flutterando/app/utils/url_launcher/urls.dart';
 import 'package:localization/localization.dart';
 
 class HeaderSocialMedia extends StatelessWidget {
+  // final followersNumber =
+  //     'https://github.com/Flutterando/website/blob/main/data/folower_numbers.json';
   final headerController = Modular.get<HeaderController>();
   final ScreenSize screenSize;
   HeaderSocialMedia(this.screenSize);
@@ -44,36 +45,36 @@ class HeaderSocialMedia extends StatelessWidget {
               runSpacing: 30,
               spacing: 30,
               children: [
-                socialMediaIcon(
-                  IconUrls.youtube,
-                  urlLink: LinksUrl.youtube,
-                  followersNumber: followersNumber['youtube'],
-                ),
-                socialMediaIcon(IconUrls.instagram,
-                    urlLink: LinksUrl.instagram,
-                    followersNumber: followersNumber['instagram']
-                    // instagramNumber.followersNumber.toString(),
-                    ),
-                socialMediaIcon(
-                  IconUrls.twitter,
-                  urlLink: LinksUrl.twitter,
-                  followersNumber: followersNumber['twitter'],
-                ),
-                socialMediaIcon(
-                  IconUrls.discord,
-                  urlLink: LinksUrl.discord,
-                  followersNumber: followersNumber['discord'],
-                ),
-                socialMediaIcon(
-                  IconUrls.telegram,
-                  urlLink: LinksUrl.telegram,
-                  followersNumber: followersNumber['telegram'],
-                ),
-                socialMediaIcon(
-                  IconUrls.facebook,
-                  urlLink: LinksUrl.facebook,
-                  followersNumber: followersNumber['facebook'],
-                )
+                // socialMediaIcon(
+                //   IconUrls.youtube,
+                //   urlLink: LinksUrl.youtube,
+                //   followersNumber: followersNumber['youtube'],
+                // ),
+                // socialMediaIcon(IconUrls.instagram,
+                //     urlLink: LinksUrl.instagram,
+                //     followersNumber: followersNumber['instagram']
+                //     // instagramNumber.followersNumber.toString(),
+                //     ),
+                // socialMediaIcon(
+                //   IconUrls.twitter,
+                //   urlLink: LinksUrl.twitter,
+                //   followersNumber: followersNumber['twitter'],
+                // ),
+                // socialMediaIcon(
+                //   IconUrls.discord,
+                //   urlLink: LinksUrl.discord,
+                //   followersNumber: followersNumber['discord'],
+                // ),
+                // socialMediaIcon(
+                //   IconUrls.telegram,
+                //   urlLink: LinksUrl.telegram,
+                //   followersNumber: followersNumber['telegram'],
+                // ),
+                // socialMediaIcon(
+                //   IconUrls.facebook,
+                //   urlLink: LinksUrl.facebook,
+                //   followersNumber: followersNumber['facebook'],
+                // )
               ],
             ),
           ),

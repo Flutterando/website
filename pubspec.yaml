@@ -78,6 +78,7 @@ flutter:
     - assets/images/brazilian_cases/
     - assets/lang/
     - assets/images/icons/svgs/
+    - data/
     # - .env
   #   - images/a_dot_ham.jpeg
 
