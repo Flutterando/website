@@ -66,13 +66,11 @@ class _CoOrganizerItemState extends State<CoOrganizerItem> {
               maxLines: 2,
               style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 6),
             SelectableText(
               coOrganizer.status,
               textAlign: TextAlign.center,
               style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
             ),
-            SizedBox(height: 16 * fontScale),
             InkWell(
               onTap: () async {
                 await launchUrl(Uri.parse(coOrganizer.linkedin));

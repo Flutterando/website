@@ -4,14 +4,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/widgets/channel_video_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/number_grid_row_items_by_screen_size.dart';
+import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
   @override
-  _LatestChannelVideosWidgetState createState() =>
-      _LatestChannelVideosWidgetState();
+  _LatestChannelVideosWidgetState createState() => _LatestChannelVideosWidgetState();
 }
 
 class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
@@ -26,10 +25,6 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);
-    final numberGridRowItemsByScreenSize =
-        NumberGridRowItemsByScreenSize(1, 2, 3, 3, 4);
-    final numberGridRowItems = screen.numberGridRowItems(
-        screen, context, numberGridRowItemsByScreenSize);
 
     return Container(
       padding: EdgeInsets.only(
@@ -61,20 +56,26 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
           Observer(
             builder: (_) {
               if (controller.youtube.isNotEmpty) {
-                return GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: controller.youtube.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 1.01,
-                      crossAxisCount: numberGridRowItems,
-                      crossAxisSpacing: 15 * fontScale,
-                      mainAxisSpacing: 15 * fontScale),
-                  itemBuilder: (_, index) {
-                    return GridTile(
-                      child: ChannelVideoTile(controller.youtube[index]),
-                    );
-                  },
+                return SizedBox(
+                  height: 300 * fontScale,
+                  child: ScrollConfiguration(
+                    behavior: CustomScrollBehavior(),
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: controller.youtube.length,
+                      scrollDirection: Axis.horizontal,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: .9,
+                        crossAxisCount: 1,
+                        crossAxisSpacing: 15 * fontScale,
+                        mainAxisSpacing: 15 * fontScale,
+                      ),
+                      itemBuilder: (_, index) {
+                        return ChannelVideoTile(controller.youtube[index]);
+                      },
+                    ),
+                  ),
                 );
               }
 

@@ -38,6 +38,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
             ),
             width: constraints.maxWidth,
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
                   decoration: BoxDecoration(
@@ -67,18 +68,15 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                     ),
                   ),
                 ),
-                SizedBox(height: constraints.maxWidth / 15),
+                SizedBox(height: 8),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.date,
-                    style: TextStyles.roboto(
-                      fontSize(controller.screen, context),
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyles.roboto(18, fontWeight: FontWeight.bold),
                   ),
-                )
+                ),
               ],
             ),
           ),
