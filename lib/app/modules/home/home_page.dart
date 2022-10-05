@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
+import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 
 import 'home_controller.dart';
 import 'widgets/brazilian_cases/brazilian_cases_widget.dart';
@@ -20,19 +21,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // late ScrollController _scrollController;
   final controller = Modular.get<HomeController>();
 
   @override
   void dispose() {
     Modular.dispose<HomeController>();
     super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    //  _scrollController = ScrollController();
   }
 
   final scrollController = ScrollController();

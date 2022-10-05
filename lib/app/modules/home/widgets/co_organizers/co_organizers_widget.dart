@@ -25,31 +25,38 @@ class _CoOrganizersState extends State<CoOrganizers> {
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
     return Container(
-      width: screenWidth,
-      padding: EdgeInsets.only(
-        top: 50 * fontScale,
-        left: (screenWidth / 15) * fontScale,
-        right: (screenWidth / 15) * fontScale,
-      ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SelectableText(
-            "title_coorganizers".i18n(),
-            style: TextStyles.notoSans(
-              25 * fontScale,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.only(
+              top: 50 * fontScale,
+              left: (screenWidth / 15) * fontScale,
+              right: (screenWidth / 15) * fontScale,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SelectableText(
+                  "title_coorganizers".i18n(),
+                  style: TextStyles.notoSans(
+                    25 * fontScale,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 32 * fontScale),
+                SelectableText(
+                  "subtitle_coorganizers".i18n(),
+                  style: TextStyles.roboto(
+                    11 * fontScale,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(height: 50 * fontScale),
+              ],
             ),
           ),
-          SizedBox(height: 32 * fontScale),
-          SelectableText(
-            "subtitle_coorganizers".i18n(),
-            style: TextStyles.roboto(
-              11 * fontScale,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-          SizedBox(height: 50 * fontScale),
           Observer(
             builder: (_) {
               if (controller.error.isNotEmpty) {
@@ -64,14 +71,18 @@ class _CoOrganizersState extends State<CoOrganizers> {
                 );
               }
               return Container(
-                width: double.infinity,
+                height: 300 * fontScale,
                 alignment: Alignment.center,
-                child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.center,
-                    children: controller.coOrganizers
-                        .map((coOrganizer) => CoOrganizerItem(coOrganizer))
-                        .toList()),
+                child: ListView(
+                  physics: BouncingScrollPhysics(),
+                  padding: EdgeInsets.only(
+                    left: (screenWidth / 15) * fontScale,
+                    right: (screenWidth / 15) * fontScale,
+                  ),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: controller.coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList(),
+                ),
               );
             },
           ),

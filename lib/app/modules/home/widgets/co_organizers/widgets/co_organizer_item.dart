@@ -28,57 +28,63 @@ class _CoOrganizerItemState extends State<CoOrganizerItem> {
   Widget build(BuildContext context) {
     final coOrganizer = widget.coOrganizer;
     final fontScale = controller.screen.fontScale(context);
-    return Container(
-      decoration: new BoxDecoration(
-        color: GrayColors.gray02,
-        borderRadius: const BorderRadius.all(
-          const Radius.circular(10.0),
-        ),
-      ),
-      margin: EdgeInsets.all(20),
-      width: 130 * fontScale,
-      height: 250 * fontScale,
-      child: Column(
-        children: [
-          SizedBox(height: 26 * fontScale),
-          CircleAvatar(
-            radius: 30 * fontScale,
-            child: Image.network(
-              coOrganizer.pathImage,
-              height: 51 * fontScale,
-              fit: BoxFit.contain,
-            ),
-            foregroundColor: Colors.black,
+    return AspectRatio(
+      aspectRatio: 0.6,
+      child: Container(
+        padding: EdgeInsets.all(36),
+        decoration: new BoxDecoration(
+          color: GrayColors.gray02,
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(10.0),
           ),
-          Container(
-            alignment: Alignment.center,
-            height: 80 * fontScale,
-            width: 110 * fontScale,
-            child: SelectableText(
+        ),
+        margin: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              width: 70 * fontScale,
+              height: 70 * fontScale,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  color: Color(0xffC0c0c0),
+                  width: 2,
+                ),
+              ),
+              child: ClipOval(
+                child: Image.network(
+                  coOrganizer.pathImage,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SelectableText(
               coOrganizer.name,
               textAlign: TextAlign.center,
               maxLines: 2,
               style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
             ),
-          ),
-          SizedBox(height: 6),
-          SelectableText(
-            coOrganizer.status,
-            textAlign: TextAlign.center,
-            style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
-          ),
-          SizedBox(height: 16 * fontScale),
-          InkWell(
-            onTap: () async {
-              await launchUrl(Uri.parse(coOrganizer.linkedin));
-            },
-            child: SvgPicture.asset(
-              IconUrls.linkedin,
-              fit: BoxFit.contain,
-              height: 30 * fontScale,
+            SizedBox(height: 6),
+            SelectableText(
+              coOrganizer.status,
+              textAlign: TextAlign.center,
+              style: TextStyles.roboto(14 * fontScale, fontWeight: FontWeight.normal),
             ),
-          ),
-        ],
+            SizedBox(height: 16 * fontScale),
+            InkWell(
+              onTap: () async {
+                await launchUrl(Uri.parse(coOrganizer.linkedin));
+              },
+              child: SvgPicture.asset(
+                IconUrls.linkedin,
+                fit: BoxFit.contain,
+                height: 30 * fontScale,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

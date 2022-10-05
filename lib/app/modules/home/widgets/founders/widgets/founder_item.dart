@@ -37,24 +37,41 @@ class _FounderItemState extends State<FounderItem> {
       child: Column(
         children: [
           SizedBox(height: 26 * fontScale),
-          CircleAvatar(
-            radius: 30 * fontScale,
-            child: Image.network(
-              coOrganizer.pathImage,
-              height: 56 * fontScale,
-              fit: BoxFit.fitHeight,
+          Container(
+            width: 70 * fontScale,
+            height: 70 * fontScale,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(
+                color: Color(0xffFFD700),
+                width: 2,
+              ),
             ),
-            foregroundColor: Colors.black,
+            child: ClipOval(
+              child: Image.network(
+                coOrganizer.pathImage,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Container(
             alignment: Alignment.center,
             height: 80 * fontScale,
             width: 110 * fontScale,
-            child: SelectableText(
-              coOrganizer.name,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
+            child: Row(
+              children: [
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: SelectableText(
+                      coOrganizer.name,
+                      textAlign: TextAlign.center,
+                      style: TextStyles.notoSans(17 * fontScale, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(height: 6),

@@ -61,22 +61,18 @@ class _FoundersState extends State<Founders> {
               ),
               SizedBox(height: 50 * fontScale),
               if (isError) ...{
-                SelectableText('Erro ao processar conteúdo',
-                    style: TextStyles.roboto(30 * fontScale)),
+                SelectableText('Erro ao processar conteúdo', style: TextStyles.roboto(30 * fontScale)),
               },
               if (isLoading) ...{
                 Center(child: CircularProgressIndicator()),
               },
               if (isState) ...{
                 Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
+                  alignment: Alignment.bottomLeft,
                   child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.center,
-                    children: controller.founders
-                        .map((founder) => FounderItem(founder))
-                        .toList(),
+                    crossAxisAlignment: WrapCrossAlignment.start,
+                    alignment: WrapAlignment.start,
+                    children: controller.founders.map((founder) => FounderItem(founder)).toList(),
                   ),
                 ),
               },

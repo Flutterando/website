@@ -1,10 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/widgets/meetup_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
+import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -145,12 +145,4 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
       return 15;
     }
   }
-}
-
-class CustomScrollBehavior extends MaterialScrollBehavior {
-  @override
-  Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse
-      };
 }
