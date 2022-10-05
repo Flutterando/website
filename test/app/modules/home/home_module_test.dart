@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart' hide Bind;
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/app_module.dart';
@@ -33,9 +32,6 @@ main() {
     Bind<Dio>((i) => dio),
   ]);
 
-  setUp(() {
-    dotenv.testLoad();
-  });
   test('Should return the usercase without error', () {
     final usecasePartners = Modular.get<GetPartners>();
     expect(usecasePartners, isA<GetPartnersImpl>());

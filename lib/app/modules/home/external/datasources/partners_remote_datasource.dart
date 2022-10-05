@@ -9,10 +9,12 @@ class PartnersRemoteDatasource implements PartnersDatasource {
   PartnersRemoteDatasource(this.dio);
   @override
   Future<List<ResultPartnersModel>> getPartners() async {
-    var response = await dio.get('https://raw.githubusercontent.com/Flutterando/website/main/data/partners_data.json');
-    if(response.statusCode == 200) {
+    var response = await dio.get(
+        'https://raw.githubusercontent.com/Flutterando/website/main/data/partners_data.json');
+    if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
-      var listPartners = jsonList.map((e) => ResultPartnersModel.fromMap(e)).toList();
+      var listPartners =
+          jsonList.map((e) => ResultPartnersModel.fromMap(e)).toList();
       return listPartners;
     }
 

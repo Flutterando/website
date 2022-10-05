@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/widgets/scroll_bar/scroll_bar_widget.dart';
@@ -37,15 +38,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.red);
     return Scaffold(
       backgroundColor: GrayColors.gray00,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: SingleChildScrollView(
-              controller: _scrollController,
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
               child: Column(children: [
                 HeaderWidget(),
                 LatestMeetupsWidget(),
@@ -55,20 +54,20 @@ class _HomePageState extends State<HomePage> {
                 PackagesWidget(),
                 BrazilianCasesWidget(),
                 PartnersWidget(),
-                // Footer(),
+                Footer()
               ]),
             ),
-          ),
-          Align(
-            child: Banner(
-              child: NavbarWidget(),
-              location: BannerLocation.topEnd,
-              message: "Flutter",
+            Align(
+              child: Banner(
+                child: NavbarWidget(),
+                location: BannerLocation.topEnd,
+                message: "Flutter",
+              ),
+              alignment: Alignment.topCenter,
             ),
-            alignment: Alignment.topCenter,
-          ),
-          ScrollBarWidget(_scrollController),
-        ],
+            ScrollBarWidget(_scrollController),
+          ],
+        ),
       ),
     );
   }

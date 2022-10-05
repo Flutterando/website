@@ -77,7 +77,8 @@ class _PartnersWidgetState extends State<PartnersWidget> {
                   runAlignment: WrapAlignment.center,
                   alignment: WrapAlignment.center,
                   children: controller.partners
-                      .map((partner) => PartnerLogo(partner.photoUrl))
+                      .map((partner) =>
+                          PartnerLogo(partner.photoUrl, partner.siteUrl))
                       .toList(),
                 );
               },

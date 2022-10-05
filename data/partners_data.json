@@ -1,17 +1,22 @@
 [
   {
-    "photoUrl": "assets/images/partners/fteam_icon.png"
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/fteam_icon.png",
+    "siteUrl": "https://fteam.dev/"
   },
   {
-    "photoUrl": "assets/images/partners/adventista.png"
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/adventista.png",
+    "siteUrl": "https://iatec.com/"
   },
   {
-    "photoUrl": "assets/images/partners/google_startups.png"
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/google_startups.png",
+    "siteUrl": "https://startup.google.com/"
   },
   {
-    "photoUrl": "assets/images/partners/pupz.png"
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/pupz.png",
+    "siteUrl": "https://www.pupz.com.br/"
   },
   {
-    "photoUrl": "assets/images/partners/quem_contrata.png"
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/quem_contrata.png",
+    "siteUrl": "https://quemcontrato.com/"
   }
 ]

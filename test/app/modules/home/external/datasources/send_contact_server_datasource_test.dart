@@ -1,4 +1,3 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
@@ -11,15 +10,8 @@ class HasuraConnectSpy extends Mock implements HasuraConnect {}
 
 main() {
   final connection = HasuraConnectSpy();
-  final envsVar = {
-    "title": "production",
-    "urlSendContact": "flutterand_test@flutterando.com.br"
-  };
-  final datasource = SendContactServerDatasource(connection, envsVar);
 
-  setUpAll(() {
-    dotenv.testLoad();
-  });
+  final datasource = SendContactServerDatasource(connection);
 
   test('Should return a ResultContact', () async {
     var contact = ContactModel(
