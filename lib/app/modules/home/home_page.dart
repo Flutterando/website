@@ -19,8 +19,15 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeController> {
+class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
+  final controller = Modular.get<HomeController>();
+
+  @override
+  void dispose() {
+    Modular.dispose<HomeController>();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -30,6 +37,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    return Container(color: Colors.red);
     return Scaffold(
       backgroundColor: GrayColors.gray00,
       body: Stack(

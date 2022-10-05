@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutterando/app/utils/errors/http_error.dart';
 
 class HttpService {
-  Dio dio;
+  final Dio dio;
   HttpService(this.dio);
 
   Future<Response> get(String path) async {

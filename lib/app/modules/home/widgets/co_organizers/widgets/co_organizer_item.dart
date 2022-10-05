@@ -12,13 +12,20 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 class CoOrganizerItem extends StatefulWidget {
   final ResultCoOrganizers coOrganizer;
   CoOrganizerItem(this.coOrganizer);
+
   @override
   _CoOrganizerItemState createState() => _CoOrganizerItemState();
 }
 
-class _CoOrganizerItemState
-    extends ModularState<CoOrganizerItem, CoOrganizersController> {
+class _CoOrganizerItemState extends State<CoOrganizerItem> {
+  final controller = Modular.get<CoOrganizersController>();
+
   @override
+  void dispose() {
+    Modular.dispose<ResultCoOrganizers>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final coOrganizer = widget.coOrganizer;
     final fontScale = controller.screen.fontScale(context);

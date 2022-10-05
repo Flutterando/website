@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/url_launcher/urls.dart';
@@ -15,9 +13,14 @@ class SocialNetworks extends StatefulWidget {
   _SocialNetworksState createState() => _SocialNetworksState();
 }
 
-class _SocialNetworksState
-    extends ModularState<SocialNetworks, FooterController> {
+class _SocialNetworksState extends State<SocialNetworks> {
+  final controller = Modular.get<FooterController>();
   @override
+  void dispose() {
+    Modular.dispose<FooterController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     Widget socialnetWork(String image, String linkUrl) {
       return InkWell(

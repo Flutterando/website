@@ -13,9 +13,15 @@ class MeetupTile extends StatefulWidget {
   _MeetupTileState createState() => _MeetupTileState();
 }
 
-class _MeetupTileState
-    extends ModularState<MeetupTile, LatestMeetupsController> {
+class _MeetupTileState extends State<MeetupTile> {
+  final controller = Modular.get<LatestMeetupsController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<LatestMeetupsController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
@@ -33,18 +39,18 @@ class _MeetupTileState
                 ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                   child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                        color: Colors.blue,
-                      ),
-
-                      // width: constraints.maxWidth,
-                      // height: constraints.maxWidth * 0.65,
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: widget.meetup.photoUrl,
-                      ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      color: Colors.blue,
                     ),
+
+                    // width: constraints.maxWidth,
+                    // height: constraints.maxWidth * 0.65,
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: widget.meetup.photoUrl,
+                    ),
+                  ),
                 ),
                 SizedBox(height: constraints.maxWidth / 40),
                 Container(

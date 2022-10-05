@@ -13,9 +13,15 @@ class LatestMeetupsWidget extends StatefulWidget {
   _LatestMeetupsWidgetState createState() => _LatestMeetupsWidgetState();
 }
 
-class _LatestMeetupsWidgetState
-    extends ModularState<LatestMeetupsWidget, LatestMeetupsController> {
+class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
+  final controller = Modular.get<LatestMeetupsController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<LatestMeetupsController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final screen = controller.screen;

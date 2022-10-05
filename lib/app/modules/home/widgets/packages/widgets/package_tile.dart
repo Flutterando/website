@@ -18,8 +18,15 @@ class PackageTile extends StatefulWidget {
   _PackageTileState createState() => _PackageTileState();
 }
 
-class _PackageTileState extends ModularState<PackageTile, PackagesController> {
+class _PackageTileState extends State<PackageTile> {
+  final controller = Modular.get<PackagesController>();
   @override
+  @override
+  void dispose() {
+    Modular.dispose<PackagesController>();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     final package = widget.package;
     final screen = controller.screen;
