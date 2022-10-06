@@ -33,9 +33,17 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.data);
-      return ResultFolowers(data['youtube'], data['instagram'], data['twitter'], data['discord'], data['telegram'], data['facebook']);
+      return ResultFolowers(
+        data['youtube'],
+        data['instagram'],
+        data['twitter'],
+        data['discord'],
+        data['telegram'],
+        data['facebook'],
+        data['linkedin'],
+      );
     }
 
-    return ResultFolowers('0', '0', '0', '0', '0', '0');
+    return ResultFolowers('0', '0', '0', '0', '0', '0', '0');
   }
 }

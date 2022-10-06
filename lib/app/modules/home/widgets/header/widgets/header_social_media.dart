@@ -88,7 +88,12 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
                         IconUrls.facebook,
                         urlLink: LinksUrl.facebook,
                         followersNumber: value.facebook,
-                      )
+                      ),
+                      socialMediaIcon(
+                        IconUrls.linkedin,
+                        urlLink: LinksUrl.linkedin,
+                        followersNumber: value.linkedin,
+                      ),
                     ],
                   ),
                 );

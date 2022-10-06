@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/meetups_datasource.dart';
 import 'package:flutterando/app/modules/home/infra/models/result_meetups_model.dart';
 
@@ -16,9 +15,7 @@ class MeetupsRemoteDatasource implements MeetupsDatasource {
     var url = 'https://raw.githubusercontent.com/Flutterando/website/main/data/meetups_data.json';
 
     var response = await dio.get(url);
-    if (kDebugMode) {
-      url = 'https://raw.githubusercontent.com/Flutterando/website/main/data/meetups_data.json';
-    }
+
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listMeetups = jsonList.map((e) => ResultMeetupsModel.fromMap(e)).toList();

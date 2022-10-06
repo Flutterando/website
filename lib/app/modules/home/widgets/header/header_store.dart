@@ -4,7 +4,7 @@ import 'package:flutterando/app/modules/home/domain/usecases/get_folower_numbers
 
 class HeaderStore extends ValueNotifier<ResultFolowers> {
   final GetFolowersNumbers getFolowersNumbers;
-  HeaderStore(this.getFolowersNumbers) : super(ResultFolowers("", "", "", "", "", ""));
+  HeaderStore(this.getFolowersNumbers) : super(ResultFolowers("", "", "", "", "", "", ""));
 
   Future<void> load() async {
     var result = await getFolowersNumbers();

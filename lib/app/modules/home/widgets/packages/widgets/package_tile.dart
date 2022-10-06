@@ -39,19 +39,18 @@ class _PackageTileState extends State<PackageTile> {
             borderRadius: BorderRadius.all(Radius.circular(2)),
           ),
           width: constraints.maxWidth,
-          padding: EdgeInsets.only(
-              left: maxWidth / 16,
-              right: maxWidth / 16,
-              bottom: maxWidth / 16,
-              top: maxWidth / 12),
+          padding: EdgeInsets.only(left: maxWidth / 16, right: maxWidth / 16, bottom: maxWidth / 16, top: maxWidth / 12),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(
-                package.imageUrl,
-                fit: BoxFit.cover,
-                width: 38 * fontScale,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  package.imageUrl,
+                  fit: BoxFit.cover,
+                  width: 38 * fontScale,
+                ),
               ),
               SizedBox(height: constraints.maxWidth / 15),
               SelectableText(
@@ -95,8 +94,7 @@ class _PackageTileState extends State<PackageTile> {
                   color: PrimaryColors.dark,
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith(
-                          (states) => PrimaryColors.dark),
+                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
                     ),
                     // color: PrimaryColors.dark,
                     onPressed: () async {
@@ -122,8 +120,7 @@ class _PackageTileState extends State<PackageTile> {
       return fontSize * factorFontText * screen.fontScale(context);
     } else if (screen.isDesktopLg(context: context)) {
       return fontSize * factorFontText * screen.fontScale(context) * (9 / 4);
-    } else if (screen.isTablet(context: context) ||
-        screen.isMobile(context: context)) {
+    } else if (screen.isTablet(context: context) || screen.isMobile(context: context)) {
       return fontSize * screen.fontScale(context) * 0.9 - 2;
     } else {
       return 18;
