@@ -22,5 +22,17 @@
         "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/suaMusica.png",
         "description": "Com mais de 10 milhões de usuários ativos e mais de 16 mil artistas verificados, Sua Música é a maior plataforma de música Latino Americana para artistas independentes no mundo. O time reescreveu seus apps de iOS e Android para Flutter em 2020.",
         "url": "https://www.youtube.com/watch?v=xSDLSPodzUo"
+    },
+    {
+        "title": "Celcoin",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/celcoin.png",
+        "description": "A Celcoin, pioneira em infraestrutura de tecnologia financeira e bancária é hoje uma das maiores referências em Open Finance do Brasil, com mais de 3000 clientens entre bancos, fintechs e outras empresas e transacionando valores superiores a R$ 4 bilhões mensalmente em sua plataforma.",
+        "url": "https://youtu.be/OSex7G3wXg4?t=1937"
+    },
+    {
+        "title": "IFood",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/iFood.png",
+        "description": "O iFood é uma empresa brasileira que aproxima clientes, restaurantes, mercados e entregadores de forma simples e prática. É a FoodTech referência na América Latina, atua no Brasil e na Colômbia e está em constante expansão.",
+        "url": "https://medium.com/ifood-tech/porque-optamos-em-usar-flutter-em-nosso-novo-produto-no-ifood-bbe04dd1d452"
     }
 ]
