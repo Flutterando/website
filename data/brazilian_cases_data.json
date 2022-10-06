@@ -34,5 +34,11 @@
         "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/iFood.png",
         "description": "O iFood é uma empresa brasileira que aproxima clientes, restaurantes, mercados e entregadores de forma simples e prática. É a FoodTech referência na América Latina, atua no Brasil e na Colômbia e está em constante expansão.",
         "url": "https://medium.com/ifood-tech/porque-optamos-em-usar-flutter-em-nosso-novo-produto-no-ifood-bbe04dd1d452"
+    },
+    {
+        "title": "Quinto Andar",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/quintoAndar.png",
+        "description": "QuintoAndar é uma startup brasileira de tecnologia focada no aluguel e na venda de imóveis, fundada no início de 2013.  Passaram a utilizar o Flutter durante a expansão da companhia para fazer com que a experiência de seus clientes no app se mantenha a par com a web.",
+        "url": "https://flutter.dev/showcase/quintoandar"
     }
 ]

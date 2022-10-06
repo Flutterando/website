@@ -2,7 +2,7 @@
     {
       "name": "asuka",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/asuka.svg",
+      "version": "https://img.shields.io/pub/v/asuka",
       "description":
           "Show Snackbars, dialogs, ModalSheets in a single provider. Simple and Clean",
       "url": "https://pub.dev/packages/asuka",
@@ -12,17 +12,17 @@
     {
       "name": "slidy",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/slidy.svg",
+      "version": "https://img.shields.io/pub/v/slidy",
       "description":
           "CLI package manager and template for Flutter. Generate Modules, Pages, Widgets and BLoCs",
       "url": "https://pub.dev/packages/slidy",
-      "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/icons/svgs/package.svg"
+      "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/icons/svgs/package.png"
     },
 
     {
       "name": "flutter_modular",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/asuka.svg",
+      "version": "https://img.shields.io/pub/v/flutter_modular",
       "description":
           "Smart project structure with dependency injection and route management",
       "url": "https://pub.dev/packages/flutter_modular",
@@ -32,7 +32,7 @@
     {
       "name": "hasura_connect",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/hasura_connect.svg",
+      "version": "https://img.shields.io/pub/v/hasura_connect",
       "description":
           "Connect your Flutter/Dart apps to Hasura simply. All the power of GraphQL and Postgres in Flutter.",
       "url": "https://pub.dev/packages/hasura_connect",
@@ -42,7 +42,7 @@
     {
     "name": "flutterando_analysis",
     "author": "flutterando.com.br",
-    "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/flutterando_analysis.svg",
+    "version": "https://img.shields.io/pub/v/flutterando_analysis",
     "description":
         "Lint rules for Flutter and Dart, created for the open source projects of the Flutterando Community.",
     "url": "https://pub.dev/packages/flutterando_analysis",
@@ -52,7 +52,7 @@
     {
     "name": "uno",
     "author": "flutterando.com.br",
-    "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/uno.svg",
+    "version": "https://img.shields.io/pub/v/uno",
     "description":
         "Uno, inspired by Axios, brings a simple and robust experience to crossplatform apps in Flutter and server apps in Dart.",
     "url": "https://pub.dev/packages/uno",
@@ -60,9 +60,9 @@
     },
 
     {
-      "name": "triple",
+      "name": "flutter_triple",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/flutter_triple.svg",
+      "version": "https://img.shields.io/pub/v/flutter_triple",
       "description":
           "Triple is a nickname to SSP (Segmented State Standard). Some packages were created to make it easier for developers to start using the standard. We'll call it an extension.",
       "url": "https://pub.dev/packages/flutter_triple",
@@ -72,11 +72,11 @@
     {
     "name": "localization",
       "author": "flutterando.com.br",
-      "version": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/packages/localization.svg",
+      "version": "https://img.shields.io/pub/v/localization",
       "description":
           "Package to simplify in-app translation.",
       "url": "https://pub.dev/packages/localization",
-      "imageUrl": "https://raw.githubusercontent.com/Flutterando/flutterando_analysis/main/readme_assets/logo.png"
+      "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/icons/svgs/package.png"
     }
   ]
   
