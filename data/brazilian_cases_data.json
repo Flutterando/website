@@ -31,7 +31,7 @@
     },
     {
         "title": "IFood",
-        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/iFood.png",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/ifood.png",
         "description": "O iFood é uma empresa brasileira que aproxima clientes, restaurantes, mercados e entregadores de forma simples e prática. É a FoodTech referência na América Latina, atua no Brasil e na Colômbia e está em constante expansão.",
         "url": "https://medium.com/ifood-tech/porque-optamos-em-usar-flutter-em-nosso-novo-produto-no-ifood-bbe04dd1d452"
     }
