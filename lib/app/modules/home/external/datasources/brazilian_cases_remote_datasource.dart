@@ -18,6 +18,7 @@ class BrazilianCasesRemoteDatasource implements BrazilianCasesDatasource {
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listBrazilianCases = jsonList.map((e) => ResultBrazilianCasesModel.fromMap(e)).toList();
+      listBrazilianCases.shuffle();
       return listBrazilianCases;
     }
 

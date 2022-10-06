@@ -17,6 +17,7 @@ class PackagesRemoteDatasource implements PackagesDatasource {
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listPackages = jsonList.map((e) => ResultPackagesModel.fromMap(e)).toList();
+      listPackages.shuffle();
       return listPackages;
     }
 
