@@ -9,12 +9,18 @@
         "title": "Banco BS2",
         "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/bancoBs2.jpg",
         "description": "Fintechs estão optando por usar Flutter devido as sua facilidade em relação a pagamentos. Veja como o banco BS2 está trabalhando.",
-        "url": "https://www.youtube.com/watch?v=Uw9BSOJRg_M"
+        "url": "https://youtu.be/yRHl4Gy07PI?t=3786"
     },
     {
         "title": "Globo",
         "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/globo.jpg",
         "description": "A Globo está utilizando Flutter em sua aplicação Globo Ads, confira mais nesse link como estão utilizando Flutter.",
         "url": "https://www.youtube.com/watch?v=tCyNtssJVGA"
+    },
+    {
+        "title": "Sua Música",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/suaMusica.png",
+        "description": "Com mais de 10 milhões de usuários ativos e mais de 16 mil artistas verificados, Sua Música é a maior plataforma de música Latino Americana para artistas independentes no mundo. O time reescreveu seus apps de iOS e Android para Flutter em 2020.",
+        "url": "https://www.youtube.com/watch?v=xSDLSPodzUo"
     }
 ]
