@@ -53,6 +53,16 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             ),
             TextButton(
               onPressed: () async {
+                await launchUrl(Uri.parse('https://github.com/Flutterando/forum/discussions'));
+              },
+              child: Text(
+                'Forum',
+                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(width: 2 * fontScale),
+            TextButton(
+              onPressed: () async {
                 await launchUrl(Uri.parse('https://masterclass.flutterando.com.br'));
               },
               child: Text(
