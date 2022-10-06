@@ -29,30 +29,40 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
     return Container(
       padding: EdgeInsets.only(
         top: 40 * fontScale,
-        left: (screenWidth / 15) * fontScale,
-        right: (screenWidth / 15) * fontScale,
       ),
       color: GrayColors.gray01,
       width: screenWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SelectableText(
-            "title_video_channel".i18n(),
-            style: TextStyles.notoSans(
-              25 * fontScale,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.only(
+              left: (screenWidth / 15) * fontScale,
+              right: (screenWidth / 15) * fontScale,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SelectableText(
+                  "title_video_channel".i18n(),
+                  style: TextStyles.notoSans(
+                    25 * fontScale,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 28),
+                SelectableText(
+                  "subtitle_video_channel".i18n(),
+                  style: TextStyles.roboto(
+                    11 * fontScale,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(height: 40 * fontScale),
+              ],
             ),
           ),
-          SizedBox(height: 28),
-          SelectableText(
-            "subtitle_video_channel".i18n(),
-            style: TextStyles.roboto(
-              11 * fontScale,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-          SizedBox(height: 40 * fontScale),
           Observer(
             builder: (_) {
               if (controller.youtube.isNotEmpty) {
@@ -61,7 +71,10 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
                   child: ScrollConfiguration(
                     behavior: CustomScrollBehavior(),
                     child: GridView.builder(
-                      shrinkWrap: true,
+                      padding: EdgeInsets.only(
+                        left: (screenWidth / 15) * fontScale,
+                        right: (screenWidth / 15) * fontScale,
+                      ),
                       physics: BouncingScrollPhysics(),
                       itemCount: controller.youtube.length,
                       scrollDirection: Axis.horizontal,
