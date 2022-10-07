@@ -1,20 +1,20 @@
 [
   {
-    "imgUrl": "https://i.ytimg.com/vi/wUvktAs8f0U/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/dart.jpg",
     "title":"FINALMENTE! A melhor feature do Dart ESTÁ VINDO!",
     "linkUrl":
         "https://www.youtube.com/watch?v=wUvktAs8f0U",
     "date": "há 1 dia"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/aZICtnkyRrU/hqdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/flutter.jpg",
     "title": "Flutterando Masterclass - Chamada para Turma 6",
     "linkUrl":"https://www.youtube.com/watch?v=aZICtnkyRrU", 
     
     "date": "há 1 dia"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/z3PL90my9eE/hqdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/context.jpg",
     "title": "FLUTTER AULÃO - Tudo sobre o Context",
     "linkUrl":
         "https://www.youtube.com/watch?v=z3PL90my9eE",
@@ -22,21 +22,21 @@
   },
 
   {
-    "imgUrl": "https://i.ytimg.com/vi/ULUN1iaftpU/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/valuenotifier.jpg",
     "title": "Flutterando Meetup | 37º Edição + GDG Curitiba | Porque não SetState e ValueNotifier?",
     "linkUrl":
         "https://www.youtube.com/watch?v=ULUN1iaftpU",
     "date": "há 6 dias"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/s1ZVmeAzsBk/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/jacob.jpg",
     "title": "Livros que todo programador deveria ler.",
     "linkUrl":
         "https://www.youtube.com/watch?v=s1ZVmeAzsBk",
     "date": "há 8 dias"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/UmSrUmHdfms/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/jacob_experiencia.jpg",
     "title": "O fator experiência.",
     "linkUrl":
         "https://www.youtube.com/watch?v=UmSrUmHdfms",
@@ -44,42 +44,42 @@
   },
 
   {
-    "imgUrl": "https://i.ytimg.com/vi/jnyZqTIQevU/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/designPatter.jpg",
     "title": "Design Patterns no Flutter - Domínios anêmicos. (por Carlos Castro)",
     "linkUrl":
         "https://www.youtube.com/watch?v=jnyZqTIQevU",
     "date": "há 3 semanas"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/RF5sPE4ootk/hqdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/ffi.jpg",
     "title": "Tudo sobre Dart FFI",
     "linkUrl":
         "https://www.youtube.com/watch?v=RF5sPE4ootk",
     "date": "há 1 mês"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/9_lhzZ4cGTo/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/jacob2.jpg",
     "title": "Como um desenvolvedor deve se comportar em uma reunião?",
     "linkUrl":
         "https://www.youtube.com/watch?v=9_lhzZ4cGTo",
     "date": "há 1 mês"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/sAPjd8Y6IM8/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/jacob3.jpg",
     "title": "A BOLHA já estourou e ninguem percebeu",
     "linkUrl":
         "https://www.youtube.com/watch?v=sAPjd8Y6IM8",
     "date": "há 2 mês"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/560pwthPOZk/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/realidade_aumentada.jpg",
     "title": "Flutterando Meetup | 36º Edição + GDG Curitiba | Realidade Aumentada com Flutter",
     "linkUrl":
         "https://www.youtube.com/watch?v=560pwthPOZk",
     "date": "há 2 mês"
   },
   {
-    "imgUrl": "https://i.ytimg.com/vi/5Z_Lr9LDE-w/maxresdefault.jpg",
+    "imgUrl": "https://raw.githubusercontent.com/Titoomf/website/features/website/assets/images/last%20videos/jacob4.jpg",
     "title": "Por que não se deve usar Clean Architecture em tudo?",
     "linkUrl":
         "https://www.youtube.com/watch?v=5Z_Lr9LDE-w",
