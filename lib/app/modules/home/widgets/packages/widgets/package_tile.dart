@@ -71,7 +71,7 @@ class _PackageTileState extends State<PackageTile> {
                 ),
               ),
               SizedBox(height: constraints.maxWidth / 15),
-              SvgPicture.network(
+              Image.network(
                 package.version,
               ),
               SizedBox(height: constraints.maxWidth / 15),
