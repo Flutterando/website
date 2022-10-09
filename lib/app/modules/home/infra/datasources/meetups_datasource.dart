@@ -1,5 +1,5 @@
-import 'package:flutterando/app/modules/home/infra/models/result_meetups_model.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 
 abstract class MeetupsDatasource {
-  Future<List<ResultMeetupsModel>> getMeetups();
+  Future<List<ResultMeetups>> getMeetups();
 }

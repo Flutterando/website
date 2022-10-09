@@ -5,17 +5,15 @@ import 'package:flutterando/app/modules/home/domain/entities/send_contact/result
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
 import 'package:flutterando/app/modules/home/domain/repositories/send_contact_repository.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/send_contact_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/send_contact/contact_model.dart';
 
 class SendContactRepositoryImpl implements SendContactRepository {
   final SendContactDatasource datasource;
   SendContactRepositoryImpl(this.datasource);
-  
+
   @override
   Future<Either<FailureSendContact, ResultContact>> send(Contact contact) async {
     try {
-      final contactModel = ContactModel.fromContact(contact);
-      final result = await datasource.sendContact(contactModel);
+      final result = await datasource.sendContact(contact);
       return Right(result);
     } on DioError catch (_) {
       return Right(ResultContact("E-mail enviado com sucesso!"));

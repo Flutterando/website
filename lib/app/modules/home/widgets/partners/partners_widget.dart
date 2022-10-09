@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:flutterando/app/modules/home/widgets/partners/partners_store.dart';
@@ -70,23 +69,21 @@ class _PartnersWidgetState extends State<PartnersWidget> {
                 'Erro ao processar conteúdo',
                 style: TextStyles.roboto(30 * fontScale),
               ),
-              onState: (context, state) => Observer(
-                builder: (_) {
-                  if (state.isEmpty) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  return Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 40 * fontScale,
-                    runSpacing: 40 * fontScale,
-                    runAlignment: WrapAlignment.center,
-                    alignment: WrapAlignment.center,
-                    children: state.map((partner) => PartnerLogo(partner.photoUrl, partner.siteUrl)).toList(),
+              onState: (context, state) {
+                if (state.isEmpty) {
+                  return Center(
+                    child: CircularProgressIndicator(),
                   );
-                },
-              ),
+                }
+                return Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 40 * fontScale,
+                  runSpacing: 40 * fontScale,
+                  runAlignment: WrapAlignment.center,
+                  alignment: WrapAlignment.center,
+                  children: state.map((partner) => PartnerLogo(partner.photoUrl, partner.siteUrl)).toList(),
+                );
+              },
             ),
           ],
         ),

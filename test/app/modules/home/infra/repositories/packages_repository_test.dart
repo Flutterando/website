@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/packages_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_packages_model.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/packages_repository_impl.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -13,7 +12,7 @@ main() {
   final datasource = PackagesDatasourceMock();
   final repository = PackagesRepositoryImpl(datasource);
   test('Should return a list of ResultPackages', () async {
-    when(() => datasource.getPackages()).thenAnswer((_) async => <ResultPackagesModel>[]);
+    when(() => datasource.getPackages()).thenAnswer((_) async => <ResultPackage>[]);
     final result = await repository.get();
     expect(result.fold(id, id), isA<List<ResultPackage>>());
   });

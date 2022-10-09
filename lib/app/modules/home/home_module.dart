@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_folower_numbers.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
-import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 import 'domain/repositories/youtube_repository.dart';
@@ -113,8 +112,6 @@ class HomeModule extends Module {
         Bind((i) => GetInstaFollowersImpl(i.get())),
         Bind((i) => InstaFollowersRepositoryImpl(i.get())),
         Bind((i) => InstaFollowersDatasourceImpl(i.get())),
-
-        Bind((i) => ScreenStateStore(), isSingleton: false),
       ];
 
   @override
