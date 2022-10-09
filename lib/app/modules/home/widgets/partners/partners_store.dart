@@ -5,10 +5,10 @@ import 'package:flutterando/app/utils/screen/screen_size.dart';
 
 import '../../domain/errors/errors.dart';
 
-class PartnersController extends StreamStore<FailureGetPartners, List<ResultPartners>> {
+class PartnersStore extends StreamStore<FailureGetPartners, List<ResultPartners>> {
   final ScreenSize screen;
   final GetPartners usecase;
-  PartnersController(this.screen, this.usecase) : super([]) {
+  PartnersStore(this.screen, this.usecase) : super([]) {
     fetchPartners();
   }
 

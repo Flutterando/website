@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/partners/partners_store.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PartnerLogo extends StatefulWidget {
@@ -11,7 +11,7 @@ class PartnerLogo extends StatefulWidget {
 }
 
 class _PartnerLogoState extends State<PartnerLogo> {
-  final controller = PartnersController;
+  final controller = PartnersStore;
   @override
   Widget build(BuildContext context) {
     return Container(

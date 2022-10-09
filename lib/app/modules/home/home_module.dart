@@ -45,14 +45,14 @@ import 'widgets/latest_channel_videos/latest_channel_videos_controller.dart';
 import 'widgets/latest_meetups/latest_meetups_controller.dart';
 import 'widgets/navbar/navbar_controller.dart';
 import 'widgets/packages/packages_controller.dart';
-import 'widgets/partners/partners_controller.dart';
+import 'widgets/partners/partners_store.dart';
 
 class HomeModule extends Module {
   @override
   List<Bind> get binds => [
         Bind((i) => HomeController(i())),
         Bind((i) => NavbarController(i())),
-        Bind((i) => PartnersController(i(), i())),
+        Bind((i) => PartnersStore(i(), i())),
         Bind((i) => FooterController(i(), i())),
         Bind((i) => PackagesController(i(), i())),
         Bind((i) => HeaderController(i(), i(), i())),

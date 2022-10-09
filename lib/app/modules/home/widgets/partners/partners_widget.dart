@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/partners/partners_store.dart';
 import 'package:flutterando/app/modules/home/widgets/partners/widgets/partner_logo.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
@@ -17,16 +17,16 @@ class PartnersWidget extends StatefulWidget {
 }
 
 class _PartnersWidgetState extends State<PartnersWidget> {
-  final controller = Modular.get<PartnersController>();
+  final partnerStore = Modular.get<PartnersStore>();
   @override
   void dispose() {
-    Modular.dispose<PartnersController>();
+    Modular.dispose<PartnersStore>();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final screen = controller.screen;
+    final screen = partnerStore.screen;
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
     return Center(
@@ -61,8 +61,8 @@ class _PartnersWidgetState extends State<PartnersWidget> {
             SizedBox(
               height: 40,
             ),
-            ScopedBuilder<PartnersController, FailureGetPartners, List<ResultPartners>>(
-              store: controller,
+            ScopedBuilder<PartnersStore, FailureGetPartners, List<ResultPartners>>(
+              store: partnerStore,
               onLoading: (context) => Center(
                 child: CircularProgressIndicator(),
               ),
