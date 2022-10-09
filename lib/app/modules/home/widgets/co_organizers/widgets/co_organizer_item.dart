@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
-import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_store.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
@@ -17,7 +17,7 @@ class CoOrganizerItem extends StatefulWidget {
 }
 
 class _CoOrganizerItemState extends State<CoOrganizerItem> {
-  final controller = Modular.get<CoOrganizersController>();
+  final controller = Modular.get<CoOrganizersStore>();
 
   @override
   void dispose() {

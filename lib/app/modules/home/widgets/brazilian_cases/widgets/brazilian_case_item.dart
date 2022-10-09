@@ -40,12 +40,14 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                alignment: Alignment.center,
-                color: Colors.blue,
+                color: Colors.black,
                 // height: 4 / 10 * constraints.maxHeight,
-                child: Image.network(
-                  brazilianCase.imageUrl,
-                  fit: BoxFit.contain,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image.network(
+                    brazilianCase.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               SizedBox(height: constraints.maxWidth / 22),

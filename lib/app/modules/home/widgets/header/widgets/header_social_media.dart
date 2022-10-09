@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_folowers_numbers.dart';
-import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
@@ -20,9 +19,6 @@ class HeaderSocialMedia extends StatefulWidget {
 }
 
 class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
-  // final followersNumber =
-  final headerController = Modular.get<HeaderController>();
-
   final headerStore = Modular.get<HeaderStore>();
 
   @override

@@ -7,7 +7,7 @@ import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../founders_controller.dart';
+import '../founders_store.dart';
 
 class FounderItem extends StatefulWidget {
   final ResultFounders founder;
@@ -17,9 +17,9 @@ class FounderItem extends StatefulWidget {
 }
 
 class _FounderItemState extends State<FounderItem> {
-  final controller = Modular.get<FoundersController>();
+  final controller = Modular.get<FoundersStore>();
   void dispose() {
-    Modular.dispose<FoundersController>();
+    Modular.dispose<FoundersStore>();
     super.dispose();
   }
 

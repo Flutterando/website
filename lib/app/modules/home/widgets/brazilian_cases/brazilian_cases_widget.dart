@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_cases_controller.dart';
 import 'package:flutterando/app/modules/home/widgets/brazilian_cases/widgets/brazilian_case_item.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../domain/entities/result_brazilian_cases.dart';
+import '../../domain/errors/errors.dart';
 
 class BrazilianCasesWidget extends StatefulWidget {
   @override
@@ -61,19 +64,16 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
               ],
             ),
           ),
-          Observer(
-            builder: (_) {
-              if (controller.error.isNotEmpty) {
-                return SelectableText(
-                  'Erro ao processar conteúdo',
-                  style: TextStyles.roboto(30 * fontScale),
-                );
-              }
-              if (controller.brazilianCases.isEmpty) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
+          ScopedBuilder<BrazilianCasesController, FailureGetBrazilianCases, List<ResultBrazilianCases>>(
+            store: controller,
+            onError: (context, error) => SelectableText(
+              'Erro ao processar conteúdo',
+              style: TextStyles.roboto(30 * fontScale),
+            ),
+            onLoading: (context) => Center(
+              child: CircularProgressIndicator(),
+            ),
+            onState: (context, brazilianCases) {
               return Container(
                 height: 400 * fontScale,
                 child: ScrollConfiguration(
@@ -86,7 +86,7 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
                     ),
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.brazilianCases.length,
+                    itemCount: brazilianCases.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 863 / 648,
                       crossAxisCount: 1,
@@ -94,7 +94,7 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
                       mainAxisSpacing: 15 * fontScale,
                     ),
                     itemBuilder: (_, index) {
-                      return BrazilianCaseItem(controller.brazilianCases[index]);
+                      return BrazilianCaseItem(brazilianCases[index]);
                     },
                   ),
                 ),
