@@ -5,6 +5,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_founders.dar
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/icons/icons.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../founders_store.dart';
@@ -49,8 +50,9 @@ class _FounderItemState extends State<FounderItem> {
               ),
             ),
             child: ClipOval(
-              child: Image.network(
-                coOrganizer.pathImage,
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: coOrganizer.pathImage,
                 fit: BoxFit.cover,
               ),
             ),

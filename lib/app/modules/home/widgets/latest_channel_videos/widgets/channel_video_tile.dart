@@ -49,10 +49,13 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                   ),
                   width: constraints.maxWidth,
                   height: constraints.maxWidth * 0.57,
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: widget.video.imgUrl,
-                    fit: BoxFit.fill,
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: widget.video.imgUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(height: constraints.maxWidth / 15),
