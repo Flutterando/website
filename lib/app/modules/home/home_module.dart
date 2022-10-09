@@ -42,7 +42,7 @@ import 'widgets/footer/footer_controller.dart';
 import 'widgets/founders/founders_controller.dart';
 import 'widgets/header/header_controller.dart';
 import 'widgets/latest_channel_videos/latest_channel_videos_controller.dart';
-import 'widgets/latest_meetups/latest_meetups_controller.dart';
+import 'widgets/latest_meetups/latest_meetups_store.dart';
 import 'widgets/navbar/navbar_controller.dart';
 import 'widgets/packages/packages_store.dart';
 import 'widgets/partners/partners_store.dart';
@@ -58,7 +58,7 @@ class HomeModule extends Module {
         Bind((i) => HeaderController(i(), i(), i())),
         Bind((i) => FoundersController(i(), i())),
         Bind((i) => CoOrganizersController(i(), i())),
-        Bind((i) => LatestMeetupsController(i(), i())),
+        Bind((i) => LatestMeetupsStore(i(), i())),
         Bind((i) => BrazilianCasesController(i(), i())),
         Bind((i) => LatestChannelVideosController(i(), i())),
         Bind((i) => HeaderStore(i())),
