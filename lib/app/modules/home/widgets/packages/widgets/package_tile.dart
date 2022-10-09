@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/packages/packages_store.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
@@ -17,11 +17,11 @@ class PackageTile extends StatefulWidget {
 }
 
 class _PackageTileState extends State<PackageTile> {
-  final controller = Modular.get<PackagesController>();
+  final controller = Modular.get<PackagesStore>();
 
   @override
   void dispose() {
-    Modular.dispose<PackagesController>();
+    Modular.dispose<PackagesStore>();
     super.dispose();
   }
 

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
+import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutterando/app/modules/home/widgets/packages/packages_store.dart';
 import 'package:flutterando/app/modules/home/widgets/packages/widgets/package_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../domain/entities/result_package.dart';
+import '../../domain/errors/errors.dart';
 
 class PackagesWidget extends StatefulWidget {
   @override
@@ -14,16 +17,16 @@ class PackagesWidget extends StatefulWidget {
 }
 
 class _PackagesWidgetState extends State<PackagesWidget> {
-  final controller = Modular.get<PackagesController>();
+  final packageStore = Modular.get<PackagesStore>();
   @override
   @override
   void dispose() {
-    Modular.dispose<PackagesController>();
+    Modular.dispose<PackagesStore>();
     super.dispose();
   }
 
   Widget build(BuildContext context) {
-    final screen = controller.screen;
+    final screen = packageStore.screen;
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
     return Container(
@@ -65,9 +68,16 @@ class _PackagesWidgetState extends State<PackagesWidget> {
               ],
             ),
           ),
-          Observer(
-            builder: (_) {
-              if (controller.packages.isNotEmpty) {
+          ScopedBuilder<PackagesStore, FailureGetPackages, List<ResultPackage>>(
+            store: packageStore,
+            onLoading: (context) => Center(
+              child: CircularProgressIndicator(),
+            ),
+            onError: (context, error) => Center(
+              child: Text(error.toString()),
+            ),
+            onState: (context, packages) {
+              if (packages.isNotEmpty) {
                 return Container(
                   height: 500,
                   color: GrayColors.gray01,
@@ -79,22 +89,21 @@ class _PackagesWidgetState extends State<PackagesWidget> {
                         right: (screenWidth / 15) * fontScale,
                       ),
                       scrollDirection: Axis.horizontal,
-                      itemCount: controller.packages.length,
+                      itemCount: packages.length,
                       physics: BouncingScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 664 / 487,
-                        crossAxisCount: controller.packages.length > 10 ? 2 : 1,
+                        crossAxisCount: packages.length > 10 ? 2 : 1,
                         crossAxisSpacing: 15 * fontScale,
                         mainAxisSpacing: 15 * fontScale,
                       ),
                       itemBuilder: (_, index) {
-                        return PackageTile(controller.packages[index]);
+                        return PackageTile(packages[index]);
                       },
                     ),
                   ),
                 );
               }
-
               return Container();
             },
           ),
