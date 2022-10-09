@@ -38,6 +38,7 @@ dependencies:
   dio: ^4.0.6 
   flutter_mobx: ^2.0.6+4
   mobx: ^2.1.0
+  flutter_triple: ^1.2.7+4
   flutter_modular: ^5.0.3
   transparent_image: ^2.0.0
   # flutter_dotenv: ^5.0.2
