@@ -1,5 +1,5 @@
-import 'package:flutterando/app/modules/home/infra/models/result_youtube_model.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart';
 
 abstract class YoutubeDatasource {
-  Future<List<ResultYoutubeModel>> getYoutube();
+  Future<List<ResultYoutube>> getYoutube();
 }

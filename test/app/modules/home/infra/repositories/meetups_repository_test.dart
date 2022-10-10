@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/meetups_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_meetups_model.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/meetups_repository_impl.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -14,7 +13,7 @@ main() {
   final repository = MeetupsRepositoryImpl(datasource);
   test('Should return a list of ResultMeetups', () async {
     when(() => datasource.getMeetups()).thenAnswer(
-      (_) async => <ResultMeetupsModel>[],
+      (_) async => <ResultMeetups>[],
     );
     final result = await repository.get();
 

@@ -1,5 +1,5 @@
-import 'package:flutterando/app/modules/home/infra/models/result_co_organizers_model.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_co_organizers.dart';
 
 abstract class CoOrganizersDatasource {
-  Future<List<ResultCoOrganizersModel>> getCoOrganizers();
+  Future<List<ResultCoOrganizers>> getCoOrganizers();
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_store.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
@@ -17,10 +17,10 @@ class ChannelVideoTile extends StatefulWidget {
 }
 
 class _ChannelVideoTileState extends State<ChannelVideoTile> {
-  final controller = Modular.get<LatestChannelVideosController>();
+  final controller = Modular.get<LatestChannelVideosStore>();
   @override
   void dispose() {
-    Modular.dispose<LatestChannelVideosController>();
+    Modular.dispose<LatestChannelVideosStore>();
     super.dispose();
   }
 
@@ -49,10 +49,13 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                   ),
                   width: constraints.maxWidth,
                   height: constraints.maxWidth * 0.57,
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: widget.video.imgUrl,
-                    fit: BoxFit.fill,
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: widget.video.imgUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(height: constraints.maxWidth / 15),

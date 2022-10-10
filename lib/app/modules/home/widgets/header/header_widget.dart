@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/header/header_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
 import 'package:flutterando/app/modules/home/widgets/header/widgets/header_social_media.dart';
 import 'package:flutterando/app/utils/images/images.dart';
 
@@ -10,9 +10,9 @@ class HeaderWidget extends StatefulWidget {
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
-  final controller = Modular.get<HeaderController>();
+  final controller = Modular.get<HeaderStore>();
   void dispose() {
-    Modular.dispose<HeaderController>();
+    Modular.dispose<HeaderStore>();
     super.dispose();
   }
 

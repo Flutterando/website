@@ -1,33 +1,22 @@
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_brazilian_cases.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_brazilian_cases.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
-import 'package:mobx/mobx.dart';
 
-part 'brazilian_cases_controller.g.dart';
+import '../../domain/errors/errors.dart';
 
-@Injectable()
-class BrazilianCasesController = _BrazilianCasesControllerBase with _$BrazilianCasesController;
-
-abstract class _BrazilianCasesControllerBase with Store {
+class BrazilianCasesController extends StreamStore<FailureGetBrazilianCases, List<ResultBrazilianCases>> {
   final ScreenSize screen;
   final GetBrazilianCases usecase;
-  _BrazilianCasesControllerBase(this.screen, this.usecase) {
+  BrazilianCasesController(this.screen, this.usecase) : super([]) {
     fetchBrazilianCases();
   }
 
-  @observable
-  ObservableList<ResultBrazilianCases> brazilianCases = <ResultBrazilianCases>[].asObservable();
-
-  @observable
-  String error = "";
-
-  @action
-  fetchBrazilianCases() async {
+  Future<void> fetchBrazilianCases() async {
     var response = await usecase();
     response.fold(
-      (l) => error = l.toString(),
-      (r) => brazilianCases = r.asObservable(),
+      (l) => setError(l),
+      (brazilianCases) => update(brazilianCases),
     );
   }
 }

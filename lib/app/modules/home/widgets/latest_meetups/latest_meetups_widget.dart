@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_controller.dart';
+import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutterando/app/modules/home/widgets/latest_meetups/latest_meetups_store.dart';
 import 'package:flutterando/app/modules/home/widgets/latest_meetups/widgets/meetup_tile.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
@@ -10,6 +10,8 @@ import 'package:localization/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../utils/screen/screen_size.dart';
+import '../../domain/entities/result_meetups.dart';
+import '../../domain/errors/errors.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
   @override
@@ -17,17 +19,17 @@ class LatestMeetupsWidget extends StatefulWidget {
 }
 
 class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
-  final controller = Modular.get<LatestMeetupsController>();
+  final latestMeetupsStore = Modular.get<LatestMeetupsStore>();
   @override
   @override
   void dispose() {
-    Modular.dispose<LatestMeetupsController>();
+    Modular.dispose<LatestMeetupsStore>();
     super.dispose();
   }
 
   Widget build(BuildContext context) {
-    final screenWidth = controller.screen.atualScreenWidth(context: context);
-    final screen = controller.screen;
+    final screenWidth = latestMeetupsStore.screen.atualScreenWidth(context: context);
+    final screen = latestMeetupsStore.screen;
     final fontScale = screen.fontScale(context);
     return Container(
       color: GrayColors.gray01,
@@ -96,9 +98,16 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
             ),
           ),
           SizedBox(height: 40 * fontScale),
-          Observer(
-            builder: (_) {
-              if (controller.meetups.isNotEmpty) {
+          ScopedBuilder<LatestMeetupsStore, FailureGetMeetups, List<ResultMeetups>>(
+            store: latestMeetupsStore,
+            onError: (context, error) => Center(
+              child: Text(error.toString()),
+            ),
+            onLoading: (context) => Center(
+              child: CircularProgressIndicator(),
+            ),
+            onState: (context, meetups) {
+              if (meetups.isNotEmpty) {
                 return Container(
                   height: MediaQuery.of(context).size.height,
                   child: ScrollConfiguration(
@@ -109,7 +118,7 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                         right: (screenWidth / 15) * fontScale,
                       ),
                       scrollDirection: Axis.horizontal,
-                      itemCount: controller.meetups.length,
+                      itemCount: meetups.length,
                       physics: BouncingScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 238 / 300,
@@ -118,7 +127,7 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                         mainAxisSpacing: 32,
                       ),
                       itemBuilder: (_, index) {
-                        return Container(child: MeetupTile(controller.meetups[index]));
+                        return Container(child: MeetupTile(meetups[index]));
                       },
                     ),
                   ),

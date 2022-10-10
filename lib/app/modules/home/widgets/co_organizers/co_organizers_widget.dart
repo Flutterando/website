@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_controller.dart';
+import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutterando/app/modules/home/widgets/co_organizers/co_organizers_store.dart';
 import 'package:flutterando/app/modules/home/widgets/co_organizers/widgets/co_organizer_item.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../domain/entities/result_co_organizers.dart';
+import '../../domain/errors/errors.dart';
 
 class CoOrganizers extends StatefulWidget {
   @override
@@ -12,16 +15,16 @@ class CoOrganizers extends StatefulWidget {
 }
 
 class _CoOrganizersState extends State<CoOrganizers> {
-  final controller = Modular.get<CoOrganizersController>();
+  final coOrganizersStore = Modular.get<CoOrganizersStore>();
   @override
   @override
   void dispose() {
-    Modular.dispose<CoOrganizersController>();
+    Modular.dispose<CoOrganizersStore>();
     super.dispose();
   }
 
   Widget build(BuildContext context) {
-    final screen = controller.screen;
+    final screen = coOrganizersStore.screen;
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
     return Container(
@@ -57,34 +60,29 @@ class _CoOrganizersState extends State<CoOrganizers> {
               ],
             ),
           ),
-          Observer(
-            builder: (_) {
-              if (controller.error.isNotEmpty) {
-                return SelectableText(
-                  'Erro ao processar conteúdo',
-                  style: TextStyles.roboto(30 * fontScale),
-                );
-              }
-              if (controller.coOrganizers.isEmpty) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-              return Container(
-                height: 300 * fontScale,
-                alignment: Alignment.center,
-                child: ListView(
-                  physics: BouncingScrollPhysics(),
-                  padding: EdgeInsets.only(
-                    left: (screenWidth / 15) * fontScale,
-                    right: (screenWidth / 15) * fontScale,
-                  ),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: controller.coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList(),
+          ScopedBuilder<CoOrganizersStore, FailureGetCoOrganizers, List<ResultCoOrganizers>>(
+            store: coOrganizersStore,
+            onError: (context, error) => SelectableText(
+              'Erro ao processar conteúdo',
+              style: TextStyles.roboto(30 * fontScale),
+            ),
+            onLoading: (context) => Center(
+              child: CircularProgressIndicator(),
+            ),
+            onState: (context, coOrganizers) => Container(
+              height: 300 * fontScale,
+              alignment: Alignment.center,
+              child: ListView(
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.only(
+                  left: (screenWidth / 15) * fontScale,
+                  right: (screenWidth / 15) * fontScale,
                 ),
-              );
-            },
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList(),
+              ),
+            ),
           ),
           SizedBox(height: 60 * fontScale)
         ],

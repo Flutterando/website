@@ -1,5 +1,5 @@
-import 'package:flutterando/app/modules/home/infra/models/result_packages_model.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
 
 abstract class PackagesDatasource {
-  Future<List<ResultPackagesModel>> getPackages();
+  Future<List<ResultPackage>> getPackages();
 }

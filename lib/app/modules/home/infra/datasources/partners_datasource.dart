@@ -1,5 +1,5 @@
-import 'package:flutterando/app/modules/home/infra/models/result_partners_model.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_partners.dart';
 
 abstract class PartnersDatasource {
-  Future<List<ResultPartnersModel>> getPartners();
+  Future<List<ResultPartners>> getPartners();
 }

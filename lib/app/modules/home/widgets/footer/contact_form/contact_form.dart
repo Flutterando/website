@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/contact_form/widgets/send_button.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer_controller.dart';
@@ -9,6 +9,8 @@ import 'package:flutterando/app/utils/validations/validations.dart';
 import 'package:flutterando/app/utils/widgets/alert/alert_animate.dart';
 import 'package:localization/localization.dart';
 
+import '../../../domain/entities/send_contact/result_contact.dart';
+import '../../../domain/errors/errors_send_contact.dart';
 import 'widgets/contact_field.dart';
 
 class ContactForm extends StatefulWidget {
@@ -73,37 +75,32 @@ class _ContactFormState extends State<ContactForm> {
               Container(
                 width: double.infinity,
                 height: 38 * fontScale,
-                child: Observer(
-                  builder: (_) {
-                    if (controller.messageError.isNotEmpty) {
-                      return AlertAnimate(
-                        controller.messageError,
-                        Colors.red,
-                        fontScale,
-                      );
-                    }
-                    if (controller.resultContact.message.isNotEmpty) {
-                      return AlertAnimate(
-                        controller.resultContact.message,
-                        Colors.green,
-                        fontScale,
-                      );
-                    }
-                    if (controller.loadingSendContact) {
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                    return SendButton(() async {
-                      if (_formKey.currentState!.validate()) {
-                        final contact = Contact(
-                          name: _name.text,
-                          email: _email.text,
-                          message: _message.text,
-                        );
-                        await controller.sendContact(contact);
-                      }
-                    });
+                child: ScopedBuilder<FooterController, FailureSendContact, ResultContact>(
+                  store: controller,
+                  onError: (context, error) => AlertAnimate(
+                    error.toString(),
+                    Colors.red,
+                    fontScale,
+                  ),
+                  onLoading: (context) => Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  onState: (context, state) {
+                    return SendButton(
+                      () async {
+                        if (_formKey.currentState!.validate()) {
+                          final contact = Contact(
+                            name: _name.text,
+                            email: _email.text,
+                            message: _message.text,
+                          );
+                          await controller.sendContact(contact);
+                          _name.clear();
+                          _email.clear();
+                          _message.clear();
+                        }
+                      },
+                    );
                   },
                 ),
               ),
