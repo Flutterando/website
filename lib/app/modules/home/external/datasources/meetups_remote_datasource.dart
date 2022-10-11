@@ -11,6 +11,7 @@ class MeetupsRemoteDatasource implements MeetupsDatasource {
   MeetupsRemoteDatasource(this.dio);
 
   @override
+
   Future<List<ResultMeetups>> getMeetups() async {
     var url = 'https://raw.githubusercontent.com/Flutterando/website/main/data/meetups_data.json';
 
@@ -18,8 +19,11 @@ class MeetupsRemoteDatasource implements MeetupsDatasource {
 
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
-      var listMeetups = jsonList.map((e) => ResultMeetupsMapper.fromMap(e)).toList();
-      listMeetups.shuffle();
+
+      var listMeetups =
+          jsonList.map((e) => ResultMeetupsModel.fromMap(e)).toList();
+      listMeetups = listMeetups.reversed.toList();
+
       return listMeetups;
     }
 
