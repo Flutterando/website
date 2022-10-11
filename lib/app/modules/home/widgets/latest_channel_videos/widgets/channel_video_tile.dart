@@ -49,22 +49,33 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                   ),
                   width: constraints.maxWidth,
                   height: constraints.maxWidth * 0.57,
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: FadeInImage.memoryNetwork(
-                      placeholder: kTransparentImage,
-                      image: widget.video.imgUrl,
-                      fit: BoxFit.cover,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: widget.video.imgUrl,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(height: constraints.maxWidth / 15),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.title,
-                    maxLines: (controller.screen.isDesktopXl(context: context) || controller.screen.isDesktopLg(context: context)) ? 2 : 1,
+                    maxLines:
+                        (controller.screen.isDesktopXl(context: context) ||
+                                controller.screen.isDesktopLg(context: context))
+                            ? 2
+                            : 1,
                     style: TextStyles.roboto(
                       fontSize(controller.screen, context),
                       fontWeight: FontWeight.bold,
@@ -73,7 +84,8 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                 ),
                 SizedBox(height: 8),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.date,
