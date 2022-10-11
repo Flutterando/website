@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/usecases/get_folower_numbers.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
-import 'package:flutterando/app/utils/state/screen_state_store.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 import 'domain/repositories/youtube_repository.dart';
@@ -37,31 +36,29 @@ import 'infra/repositories/partners_repository_impl.dart';
 import 'infra/repositories/send_contact_repository_impl.dart';
 import 'infra/repositories/youtube_repository_impl.dart';
 import 'widgets/brazilian_cases/brazilian_cases_controller.dart';
-import 'widgets/co_organizers/co_organizers_controller.dart';
+import 'widgets/co_organizers/co_organizers_store.dart';
 import 'widgets/footer/footer_controller.dart';
-import 'widgets/founders/founders_controller.dart';
-import 'widgets/header/header_controller.dart';
-import 'widgets/latest_channel_videos/latest_channel_videos_controller.dart';
-import 'widgets/latest_meetups/latest_meetups_controller.dart';
+import 'widgets/founders/founders_store.dart';
+import 'widgets/latest_channel_videos/latest_channel_videos_store.dart';
+import 'widgets/latest_meetups/latest_meetups_store.dart';
 import 'widgets/navbar/navbar_controller.dart';
-import 'widgets/packages/packages_controller.dart';
-import 'widgets/partners/partners_controller.dart';
+import 'widgets/packages/packages_store.dart';
+import 'widgets/partners/partners_store.dart';
 
 class HomeModule extends Module {
   @override
   List<Bind> get binds => [
         Bind((i) => HomeController(i())),
         Bind((i) => NavbarController(i())),
-        Bind((i) => PartnersController(i(), i())),
+        Bind((i) => PartnersStore(i(), i())),
         Bind((i) => FooterController(i(), i())),
-        Bind((i) => PackagesController(i(), i())),
-        Bind((i) => HeaderController(i(), i(), i())),
-        Bind((i) => FoundersController(i(), i())),
-        Bind((i) => CoOrganizersController(i(), i())),
-        Bind((i) => LatestMeetupsController(i(), i())),
+        Bind((i) => PackagesStore(i(), i())),
+        Bind((i) => FoundersStore(i(), i())),
+        Bind((i) => CoOrganizersStore(i(), i())),
+        Bind((i) => LatestMeetupsStore(i(), i())),
         Bind((i) => BrazilianCasesController(i(), i())),
-        Bind((i) => LatestChannelVideosController(i(), i())),
-        Bind((i) => HeaderStore(i())),
+        Bind((i) => LatestChannelVideosStore(i(), i())),
+        Bind((i) => HeaderStore(i(), i())),
         //clean arch
         Bind((i) => HasuraConnect("https://flutterando-fteam-box.herokuapp.com/v1/graphql")),
         Bind((i) => Dio()),
@@ -115,8 +112,6 @@ class HomeModule extends Module {
         Bind((i) => GetInstaFollowersImpl(i.get())),
         Bind((i) => InstaFollowersRepositoryImpl(i.get())),
         Bind((i) => InstaFollowersDatasourceImpl(i.get())),
-
-        Bind((i) => ScreenStateStore(), isSingleton: false),
       ];
 
   @override

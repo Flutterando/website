@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_package.dart';
-import 'package:flutterando/app/modules/home/widgets/packages/packages_controller.dart';
+import 'package:flutterando/app/modules/home/widgets/packages/packages_store.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PackageTile extends StatefulWidget {
@@ -17,11 +18,11 @@ class PackageTile extends StatefulWidget {
 }
 
 class _PackageTileState extends State<PackageTile> {
-  final controller = Modular.get<PackagesController>();
+  final controller = Modular.get<PackagesStore>();
 
   @override
   void dispose() {
-    Modular.dispose<PackagesController>();
+    Modular.dispose<PackagesStore>();
     super.dispose();
   }
 
@@ -46,8 +47,9 @@ class _PackageTileState extends State<PackageTile> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  package.imageUrl,
+                child: FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: package.imageUrl,
                   fit: BoxFit.cover,
                   width: 38 * fontScale,
                 ),

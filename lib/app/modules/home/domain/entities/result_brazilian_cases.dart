@@ -4,5 +4,5 @@ class ResultBrazilianCases {
   final String description;
   final String url;
 
-  ResultBrazilianCases(this.imageUrl, this.title, this.description, this.url);
+  ResultBrazilianCases({required this.imageUrl, required this.title, required this.description, required this.url});
 }

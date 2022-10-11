@@ -13,7 +13,7 @@ class NavbarWidget extends StatefulWidget {
 
 class _NavbarWidgetState extends State<NavbarWidget> {
   final controller = Modular.get<NavbarController>();
-  @override
+
   @override
   void dispose() {
     Modular.dispose<NavbarController>();

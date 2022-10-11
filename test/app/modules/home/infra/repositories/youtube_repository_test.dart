@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/youtube_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/result_youtube_model.dart';
 import 'package:flutterando/app/modules/home/infra/repositories/youtube_repository_impl.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -14,7 +13,7 @@ main() {
   final repository = YoutubeRepositoryImpl(datasource);
   test('Should return a list of ResultYoutube', () async {
     when(() => datasource.getYoutube()).thenAnswer(
-      (_) async => <ResultYoutubeModel>[],
+      (_) async => <ResultYoutube>[],
     );
     final result = await repository.get();
 

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/partners/partners_controller.dart';
+import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutterando/app/modules/home/widgets/partners/partners_store.dart';
 import 'package:flutterando/app/modules/home/widgets/partners/widgets/partner_logo.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../domain/entities/result_partners.dart';
+import '../../domain/errors/errors.dart';
 
 class PartnersWidget extends StatefulWidget {
   @override
@@ -13,16 +16,16 @@ class PartnersWidget extends StatefulWidget {
 }
 
 class _PartnersWidgetState extends State<PartnersWidget> {
-  final controller = Modular.get<PartnersController>();
+  final partnerStore = Modular.get<PartnersStore>();
   @override
   void dispose() {
-    Modular.dispose<PartnersController>();
+    Modular.dispose<PartnersStore>();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final screen = controller.screen;
+    final screen = partnerStore.screen;
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
     return Center(
@@ -57,15 +60,17 @@ class _PartnersWidgetState extends State<PartnersWidget> {
             SizedBox(
               height: 40,
             ),
-            Observer(
-              builder: (_) {
-                if (controller.error.isNotEmpty) {
-                  return SelectableText(
-                    'Erro ao processar conteúdo',
-                    style: TextStyles.roboto(30 * fontScale),
-                  );
-                }
-                if (controller.partners.isEmpty) {
+            ScopedBuilder<PartnersStore, FailureGetPartners, List<ResultPartners>>(
+              store: partnerStore,
+              onLoading: (context) => Center(
+                child: CircularProgressIndicator(),
+              ),
+              onError: (context, error) => SelectableText(
+                'Erro ao processar conteúdo',
+                style: TextStyles.roboto(30 * fontScale),
+              ),
+              onState: (context, state) {
+                if (state.isEmpty) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
@@ -76,13 +81,10 @@ class _PartnersWidgetState extends State<PartnersWidget> {
                   runSpacing: 40 * fontScale,
                   runAlignment: WrapAlignment.center,
                   alignment: WrapAlignment.center,
-                  children: controller.partners
-                      .map((partner) =>
-                          PartnerLogo(partner.photoUrl, partner.siteUrl))
-                      .toList(),
+                  children: state.map((partner) => PartnerLogo(partner.photoUrl, partner.siteUrl)).toList(),
                 );
               },
-            )
+            ),
           ],
         ),
       ),

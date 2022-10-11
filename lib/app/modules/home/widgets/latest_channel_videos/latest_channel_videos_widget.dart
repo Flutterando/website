@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_controller.dart';
-import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/widgets/channel_video_tile.dart';
+import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/latest_channel_videos_store.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
-import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
+
+import '../../../../utils/grids/custom_scroll_behavior.dart';
+import '../../domain/entities/result_youtube.dart';
+import '../../domain/errors/errors.dart';
+import 'widgets/channel_video_tile.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
   @override
@@ -14,16 +17,16 @@ class LatestChannelVideosWidget extends StatefulWidget {
 }
 
 class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
-  final controller = Modular.get<LatestChannelVideosController>();
+  final latestChannelVideosStore = Modular.get<LatestChannelVideosStore>();
   @override
   void dispose() {
-    Modular.dispose<LatestChannelVideosController>();
+    Modular.dispose<LatestChannelVideosStore>();
     super.dispose();
   }
 
   Widget build(BuildContext context) {
-    final screenWidth = controller.screen.atualScreenWidth(context: context);
-    final screen = controller.screen;
+    final screenWidth = latestChannelVideosStore.screen.atualScreenWidth(context: context);
+    final screen = latestChannelVideosStore.screen;
     final fontScale = screen.fontScale(context);
 
     return Container(
@@ -63,38 +66,44 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
               ],
             ),
           ),
-          Observer(
-            builder: (_) {
-              if (controller.youtube.isNotEmpty) {
-                return SizedBox(
-                  height: 300 * fontScale,
-                  child: ScrollConfiguration(
-                    behavior: CustomScrollBehavior(),
-                    child: GridView.builder(
-                      padding: EdgeInsets.only(
-                        left: (screenWidth / 15) * fontScale,
-                        right: (screenWidth / 15) * fontScale,
-                      ),
-                      physics: BouncingScrollPhysics(),
-                      itemCount: controller.youtube.length,
-                      scrollDirection: Axis.horizontal,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: .9,
-                        crossAxisCount: 1,
-                        crossAxisSpacing: 15 * fontScale,
-                        mainAxisSpacing: 15 * fontScale,
-                      ),
-                      itemBuilder: (_, index) {
-                        return ChannelVideoTile(controller.youtube[index]);
-                      },
-                    ),
+          ScopedBuilder<LatestChannelVideosStore, FailureGetYoutube, List<ResultYoutube>>(
+              store: latestChannelVideosStore,
+              onLoading: (context) => Center(
+                    child: CircularProgressIndicator(),
                   ),
-                );
-              }
+              onError: (context, error) => Center(
+                    child: Text(error.toString()),
+                  ),
+              onState: (context, youtube) {
+                if (youtube.isNotEmpty) {
+                  return SizedBox(
+                    height: 300 * fontScale,
+                    child: ScrollConfiguration(
+                      behavior: CustomScrollBehavior(),
+                      child: GridView.builder(
+                        padding: EdgeInsets.only(
+                          left: (screenWidth / 15) * fontScale,
+                          right: (screenWidth / 15) * fontScale,
+                        ),
+                        physics: BouncingScrollPhysics(),
+                        itemCount: youtube.length,
+                        scrollDirection: Axis.horizontal,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio: .9,
+                          crossAxisCount: 1,
+                          crossAxisSpacing: 15 * fontScale,
+                          mainAxisSpacing: 15 * fontScale,
+                        ),
+                        itemBuilder: (_, index) {
+                          return ChannelVideoTile(youtube[index]);
+                        },
+                      ),
+                    ),
+                  );
+                }
 
-              return Container();
-            },
-          ),
+                return Container();
+              }),
           SizedBox(height: 50 * fontScale)
         ],
       ),

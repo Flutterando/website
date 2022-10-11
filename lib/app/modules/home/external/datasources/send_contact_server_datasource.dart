@@ -1,7 +1,7 @@
+import 'package:flutterando/app/modules/home/domain/entities/send_contact/contact.dart';
 import 'package:flutterando/app/modules/home/domain/entities/send_contact/result_contact.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/send_contact_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/models/send_contact/contact_model.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 class SendContactServerDatasource implements SendContactDatasource {
@@ -14,7 +14,7 @@ class SendContactServerDatasource implements SendContactDatasource {
   };
 
   @override
-  Future<ResultContact> sendContact(ContactModel contact) async {
+  Future<ResultContact> sendContact(Contact contact) async {
     var query = """ 
     mutation sendEmail(\$description: String, \$email: String, \$name: String, \$phone_number: String, \$route_id: Int, \$subject: String) {
       insert_mail_box(objects: {description: \$description, email: \$email, name: \$name, phone_number: \$phone_number, route_id: \$route_id, subject: \$subject}) {

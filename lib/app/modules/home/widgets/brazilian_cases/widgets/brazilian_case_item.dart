@@ -5,6 +5,7 @@ import 'package:flutterando/app/modules/home/widgets/brazilian_cases/brazilian_c
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BrazilianCaseItem extends StatefulWidget {
@@ -40,12 +41,14 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                alignment: Alignment.center,
-                color: Colors.blue,
-                // height: 4 / 10 * constraints.maxHeight,
-                child: Image.network(
-                  brazilianCase.imageUrl,
-                  fit: BoxFit.contain,
+                color: Colors.black,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: FadeInImage.memoryNetwork(
+                    placeholder: kTransparentImage,
+                    image: brazilianCase.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               SizedBox(height: constraints.maxWidth / 22),
