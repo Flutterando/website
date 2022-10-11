@@ -14,6 +14,8 @@ class FailureGetYoutube implements Exception {}
 
 class FailureInstaFollowers implements Exception {}
 
+class FailureGetPartnerCommunities implements Exception {}
+
 class DatasourceError
     implements
         FailureGetPartners,
@@ -23,4 +25,5 @@ class DatasourceError
         FailureGetBrazilianCases,
         FailureGetYoutube,
         FailureInstaFollowers,
+        FailureGetPartnerCommunities,
         FailureGetMeetups {}

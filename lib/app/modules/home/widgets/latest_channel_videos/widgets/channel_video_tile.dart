@@ -57,7 +57,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
+                        placeholder: kTransparentImage, 
                         image: widget.video.imgUrl,
                         fit: BoxFit.cover,
                       ),

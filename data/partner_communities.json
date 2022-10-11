@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Comunidade 1",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/nubank.jpg",
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    },
+    {
+        "title": "Comunidade 2",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/bancoBs2.jpg",
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    },
+    {
+        "title": "Comunidade 3",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/globo.jpg",
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    },
+    {
+        "title": "Comunidade 4",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/suaMusica.png",
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    },
+    {
+        "title": "Comunidade 5",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/celcoin.png",
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    },
+    {
+        "title": "Comunidade 6",
+        "imageUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/brazilian_cases/ifood.png",                     
+        "description": "Descrição vai aqui",
+        "url": "https://www.youtube.com/c/Flutterando"
+    }
+]
