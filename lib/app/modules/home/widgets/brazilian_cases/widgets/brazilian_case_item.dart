@@ -40,14 +40,17 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                color: Colors.black,
-                child: AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: brazilianCase.imageUrl,
-                    fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  color: Colors.black,
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: brazilianCase.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
