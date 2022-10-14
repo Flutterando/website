@@ -5,8 +5,9 @@ import '../partners_communities_store.dart';
 
 class PartnerCommunitiesLogo extends StatefulWidget {
   final String photoUrl;
+  final String name;
   final String siteUrl;
-  PartnerCommunitiesLogo(this.photoUrl, this.siteUrl);
+  PartnerCommunitiesLogo(this.photoUrl, this.name, this.siteUrl);
   @override
   _PartnerCommunitiesLogoState createState() => _PartnerCommunitiesLogoState();
 }
@@ -18,10 +19,15 @@ class _PartnerCommunitiesLogoState extends State<PartnerCommunitiesLogo> {
     return Container(
       child: MouseRegion(
         child: GestureDetector(
-          child: Image.network(
-            widget.photoUrl,
-            color: Colors.white,
-            height: 120,
+          child: Row(
+            children: [
+              Image.network(
+                widget.photoUrl,
+                color: Colors.white,
+                height: 120,
+              ),
+              Text(widget.name),
+            ],
           ),
           onTap: () async {
             await launchUrl(Uri.parse(widget.siteUrl));

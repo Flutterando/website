@@ -1,22 +1,27 @@
 [
   {
-    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/fteam_icon.png",
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Curitiba",
     "siteUrl": "https://fteam.dev/"
   },
   {
-    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/adventista.png",
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Parnaíba",
     "siteUrl": "https://iatec.com/"
   },
   {
-    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/google_startups.png",
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Maringá",
     "siteUrl": "https://startup.google.com/"
   },
   {
-    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/pupz.png",
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG João pessoa",
     "siteUrl": "https://www.pupz.com.br/"
   },
   {
-    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/quem_contrata.png",
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Belo Horizonte",
     "siteUrl": "https://quemcontrato.com/"
   }
 ]

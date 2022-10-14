@@ -86,6 +86,7 @@ class _PartnersCommunitiesWidgetState extends State<PartnersCommunitiesWidget> {
                   children: state
                       .map((partnerCommunities) => PartnerCommunitiesLogo(
                           partnerCommunities.photoUrl,
+                          partnerCommunities.name,
                           partnerCommunities.siteUrl))
                       .toList(),
                 );
