@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/widgets/footer/footer.dart';
 import 'package:flutterando/app/modules/home/widgets/navbar/navbar_widget.dart';
-import 'package:flutterando/app/modules/home/widgets/partner_communities/partner_communities_widget.dart';
+import 'package:flutterando/app/modules/home/widgets/partners_communities/partners_communities_widget.dart';
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   CoOrganizers(),
                   PackagesWidget(),
                   BrazilianCasesWidget(),
-                  PartnerCommunitiesWidget(),
+                  PartnersCommunitiesWidget(),
                   PartnersWidget(),
                   Footer()
                 ]),

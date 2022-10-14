@@ -1,0 +1,22 @@
+[
+  {
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/fteam_icon.png",
+    "siteUrl": "https://fteam.dev/"
+  },
+  {
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/adventista.png",
+    "siteUrl": "https://iatec.com/"
+  },
+  {
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/google_startups.png",
+    "siteUrl": "https://startup.google.com/"
+  },
+  {
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/pupz.png",
+    "siteUrl": "https://www.pupz.com.br/"
+  },
+  {
+    "photoUrl": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/partners/quem_contrata.png",
+    "siteUrl": "https://quemcontrato.com/"
+  }
+]
