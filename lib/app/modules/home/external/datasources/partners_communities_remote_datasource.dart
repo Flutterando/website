@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../domain/entities/result_partners_communities.dart';
 import '../../infra/datasources/partners_communities_datasource.dart';
@@ -11,15 +12,18 @@ class PartnersCommunitiesRemoteDatasource implements PartnersCommunitiesDatasour
   PartnersCommunitiesRemoteDatasource(this.dio);
   @override
   Future<List<ResultPartnersCommunities>> getPartnersCommunities() async {
-    var url =
-        'https://raw.githubusercontent.com/Flutterando/website/main/data/partners_communities_data.json';
+    var url = '';
+    if (kReleaseMode) {
+      url = 'https://raw.githubusercontent.com/Flutterando/website/main/data/partners_communities_data.json';
+    } else {
+      url = 'https://raw.githubusercontent.com/Joao-Fialho/website/fix/43/data/partners_communities_data.json';
+    }
+
     var response = await dio.get(url);
 
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
-      var listPartnersCommunities = jsonList
-          .map((e) => ResultPartnersCommunitiesMapper.fromMap(e))
-          .toList();
+      var listPartnersCommunities = jsonList.map((e) => ResultPartnersCommunitiesMapper.fromMap(e)).toList();
       listPartnersCommunities.shuffle();
       return listPartnersCommunities;
     }
