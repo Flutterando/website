@@ -20,13 +20,20 @@ class _PartnerCommunitiesLogoState extends State<PartnerCommunitiesLogo> {
       child: MouseRegion(
         child: GestureDetector(
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Image.network(
                 widget.photoUrl,
                 color: Colors.white,
                 height: 120,
               ),
-              Text(widget.name),
+              Text(
+                widget.name,
+                style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white),
+              ),
             ],
           ),
           onTap: () async {
