@@ -1,0 +1,27 @@
+[
+  {
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Curitiba",
+    "siteUrl": "https://gdg.community.dev/gdg-curitiba/"
+  },
+  {
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Parnaíba",
+    "siteUrl": "https://gdg.community.dev/gdg-parnaiba/"
+  },
+  {
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Maringá",
+    "siteUrl": "https://gdg.community.dev/gdg-maringa/"
+  },
+  {
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG João pessoa",
+    "siteUrl": "https://gdg.community.dev/gdg-joao-pessoa/"
+  },
+  {
+    "photoUrl": "assets/images/partners_communities/gdg_icon.png",
+    "name":"GDG Belo Horizonte",
+    "siteUrl": "https://gdg.community.dev/gdg-belo-horizonte/"
+  }
+]
