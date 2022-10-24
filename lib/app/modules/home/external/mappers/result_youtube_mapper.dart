@@ -8,20 +8,21 @@ class ResultYoutubeMapper {
       'imgUrl': resultYoutube.imgUrl,
       'title': resultYoutube.title,
       'linkUrl': resultYoutube.linkUrl,
-      'date': resultYoutube.date,
+      'date': resultYoutube.date.toString(),
     };
   }
 
   static ResultYoutube fromMap(Map<String, dynamic> map) {
     return ResultYoutube(
-      imgUrl: map['imgUrl'],
-      title: map['title'],
-      linkUrl: map['linkUrl'],
-      date: map['date'],
+      imgUrl: map['snippet']['thumbnails']['high']['url'] ?? '',
+      title: map['snippet']['title'] ?? '',
+      linkUrl: 'https://www.youtube.com/watch?v=${map['id']['videoId']}',
+      date: map['snippet']['publishedAt'] ?? '',
     );
   }
 
   String toJson(e) => json.encode(toMap(e));
 
-  static ResultYoutube fromJson(String source) => ResultYoutubeMapper.fromMap(json.decode(source));
+  static ResultYoutube fromJson(String source) =>
+      ResultYoutubeMapper.fromMap(json.decode(source));
 }
