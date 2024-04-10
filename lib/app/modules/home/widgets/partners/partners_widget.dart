@@ -8,7 +8,6 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_partners.dart';
-import '../../domain/errors/errors.dart';
 
 class PartnersWidget extends StatefulWidget {
   @override
@@ -60,7 +59,7 @@ class _PartnersWidgetState extends State<PartnersWidget> {
             SizedBox(
               height: 40,
             ),
-            ScopedBuilder<PartnersStore, FailureGetPartners, List<ResultPartners>>(
+            ScopedBuilder<PartnersStore, List<ResultPartners>>(
               store: partnerStore,
               onLoading: (context) => Center(
                 child: CircularProgressIndicator(),

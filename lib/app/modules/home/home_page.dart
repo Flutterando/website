@@ -9,7 +9,6 @@ import 'package:flutterando/app/utils/grids/custom_scroll_behavior.dart';
 import 'home_controller.dart';
 import 'widgets/brazilian_cases/brazilian_cases_widget.dart';
 import 'widgets/co_organizers/co_organizers_widget.dart';
-import 'widgets/founders/founders_widget.dart';
 import 'widgets/header/header_widget.dart';
 import 'widgets/latest_channel_videos/latest_channel_videos_widget.dart';
 import 'widgets/latest_meetups/latest_meetups_widget.dart';
@@ -17,8 +16,10 @@ import 'widgets/packages/packages_widget.dart';
 import 'widgets/partners/partners_widget.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       body: ScrollConfiguration(
         behavior: CustomScrollBehavior(),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Stack(
             children: [
               Align(
@@ -47,22 +48,21 @@ class _HomePageState extends State<HomePage> {
                   HeaderWidget(),
                   LatestMeetupsWidget(),
                   LatestChannelVideosWidget(),
-                  Founders(),
                   CoOrganizers(),
                   PackagesWidget(),
-                  BrazilianCasesWidget(),
+                  const BrazilianCasesWidget(),
                   PartnerCommunitiesWidget(),
                   PartnersWidget(),
                   Footer()
                 ]),
               ),
               Align(
+                alignment: Alignment.topCenter,
                 child: Banner(
-                  child: NavbarWidget(),
                   location: BannerLocation.topEnd,
                   message: "Flutter",
+                  child: NavbarWidget(),
                 ),
-                alignment: Alignment.topCenter,
               ),
               // ScrollBarWidget(_scrollController),
             ],

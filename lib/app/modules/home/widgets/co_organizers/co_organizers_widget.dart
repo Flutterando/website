@@ -7,9 +7,10 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_co_organizers.dart';
-import '../../domain/errors/errors.dart';
 
 class CoOrganizers extends StatefulWidget {
+  const CoOrganizers({super.key});
+
   @override
   _CoOrganizersState createState() => _CoOrganizersState();
 }
@@ -23,6 +24,7 @@ class _CoOrganizersState extends State<CoOrganizers> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screen = coOrganizersStore.screen;
     final fontScale = screen.fontScale(context);
@@ -60,20 +62,20 @@ class _CoOrganizersState extends State<CoOrganizers> {
               ],
             ),
           ),
-          ScopedBuilder<CoOrganizersStore, FailureGetCoOrganizers, List<ResultCoOrganizers>>(
+          ScopedBuilder<CoOrganizersStore, List<ResultCoOrganizers>>(
             store: coOrganizersStore,
             onError: (context, error) => SelectableText(
               'Erro ao processar conteúdo',
               style: TextStyles.roboto(30 * fontScale),
             ),
-            onLoading: (context) => Center(
+            onLoading: (context) => const Center(
               child: CircularProgressIndicator(),
             ),
             onState: (context, coOrganizers) => Container(
               height: 300 * fontScale,
               alignment: Alignment.center,
               child: ListView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.only(
                   left: (screenWidth / 15) * fontScale,
                   right: (screenWidth / 15) * fontScale,

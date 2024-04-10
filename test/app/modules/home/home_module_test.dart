@@ -15,7 +15,6 @@ import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/modules/home/home_module.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:modular_test/modular_test.dart';
 
 class DioMock extends Mock implements Dio {}
 
@@ -25,12 +24,10 @@ main() {
   final dio = DioMock();
   final connection = HasuraConnectSpy();
 
-  initModules([
-    AppModule(),
-    HomeModule(),
-  ], replaceBinds: [
-    Bind<Dio>((i) => dio),
-  ]);
+  Modular.bindModule(AppModule());
+  Modular.bindModule(HomeModule());
+
+  Modular.replaceInstance<Dio>(dio);
 
   test('Should return the usercase without error', () {
     final usecasePartners = Modular.get<GetPartners>();
@@ -70,12 +67,11 @@ main() {
       email: 'test@test.com',
       message: 'this is a contact test',
     );
-    when(() => connection.mutation(any(), variables: any(named: 'variables')))
-        .thenAnswer((invocation) async => {
-              "data": {
-                "insert_mail_box": {"affected_rows": 1}
-              }
-            });
+    when(() => connection.mutation(any(), variables: any(named: 'variables'))).thenAnswer((invocation) async => {
+          "data": {
+            "insert_mail_box": {"affected_rows": 1}
+          }
+        });
     final usecase = Modular.get<SendContact>();
     final result = await usecase(contact);
     expect(result.fold(id, id), isA<ResultContact>());

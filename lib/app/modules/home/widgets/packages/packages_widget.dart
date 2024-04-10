@@ -9,7 +9,6 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_package.dart';
-import '../../domain/errors/errors.dart';
 
 class PackagesWidget extends StatefulWidget {
   @override
@@ -68,7 +67,7 @@ class _PackagesWidgetState extends State<PackagesWidget> {
               ],
             ),
           ),
-          ScopedBuilder<PackagesStore, FailureGetPackages, List<ResultPackage>>(
+          ScopedBuilder<PackagesStore, List<ResultPackage>>(
             store: packageStore,
             onLoading: (context) => Center(
               child: CircularProgressIndicator(),

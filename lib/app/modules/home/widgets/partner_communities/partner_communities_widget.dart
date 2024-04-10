@@ -9,12 +9,10 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_partner_communities.dart';
-import '../../domain/errors/errors.dart';
 
 class PartnerCommunitiesWidget extends StatefulWidget {
   @override
-  _PartnerCommunitiesWidgetState createState() =>
-      _PartnerCommunitiesWidgetState();
+  _PartnerCommunitiesWidgetState createState() => _PartnerCommunitiesWidgetState();
 }
 
 class _PartnerCommunitiesWidgetState extends State<PartnerCommunitiesWidget> {
@@ -65,8 +63,7 @@ class _PartnerCommunitiesWidgetState extends State<PartnerCommunitiesWidget> {
               ],
             ),
           ),
-          ScopedBuilder<PartnerCommunitiesController,
-              FailureGetPartnerCommunities, List<ResultPartnerCommunities>>(
+          ScopedBuilder<PartnerCommunitiesController, List<ResultPartnerCommunities>>(
             store: controller,
             onError: (context, error) => SelectableText(
               'Erro ao processar conteúdo',

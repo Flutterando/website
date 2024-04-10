@@ -3,9 +3,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_meetups.dart
 import 'package:flutterando/app/modules/home/domain/usecases/get_meetups.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 
-import '../../domain/errors/errors.dart';
-
-class LatestMeetupsStore extends StreamStore<FailureGetMeetups, List<ResultMeetups>> {
+class LatestMeetupsStore extends Store<List<ResultMeetups>> {
   final ScreenSize screen;
   final GetMeetups usecase;
 

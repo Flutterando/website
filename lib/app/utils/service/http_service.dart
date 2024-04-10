@@ -6,18 +6,17 @@ class HttpService {
   HttpService(this.dio);
 
   Future<Response> get(String path) async {
-    Options option = Options()
-      ..contentType = 'application/json'
-      ..headers?['content-type'] = 'application/json'
-      ..sendTimeout = 5000;
-    final response = await dio
-        .get(path, options: option)
-        .catchError((error) => _onError(error));
+    Options option = Options(
+      receiveTimeout: Duration(seconds: 5),
+      sendTimeout: Duration(seconds: 5),
+      headers: {'content-type': 'application/json'},
+    );
+    final response = await dio.get(path, options: option).catchError((error) => _onError(error));
     return response;
   }
 
   _onError(dynamic error) {
-    if (error is DioError && error.type == DioErrorType.response) {
+    if (error is DioException && error.type == DioExceptionType.badResponse) {
       throw HttpResponseError(message: error.toString());
     }
     throw error;

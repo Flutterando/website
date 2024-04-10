@@ -1,60 +1,21 @@
 [
   {
-    "name": "Deivid Rodrigues",
+    "name": "Jacob Moura",
     "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/deivinho_circle.png",
     "linkedin": "https://www.linkedin.com/in/deivid-willyan-rodrigues-fabiano-19776abb/",
-    "status": "Co-organizer"
+    "status": "Organization"
   },
   {
-    "name": "Ian Oliveira",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/ian_circle.png",
-    "linkedin": "https://www.linkedin.com/in/ian-oliveira-0701a2130/",
-    "status": "Co-organizer"
+    "name": "Juliana Rousseau",
+    "pathImage": "https://media.licdn.com/dms/image/D4D03AQHxMahbq0zVZQ/profile-displayphoto-shrink_800_800/0/1686678500708?e=1718236800&v=beta&t=Sdm8GoYuPyNu8FkL55ltb6nvXuhW6PFVvmG06dMlGFM",
+    "linkedin": "https://www.linkedin.com/in/julianasalafia/",
+    "status": "Organization"
   },
  
   {
-    "name": "Kevlin Ossada",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/toshi_circle.png",
-    "linkedin": "https://www.linkedin.com/in/toshiossada/",
-    "status": "Co-organizer"
-  },
-  {
-    "name": "Gabriela Pereira",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/a787d1b2836ed6d1173b4a70de215ac2858783f0/assets/images/co_organizers/gabriela.png",
-    "linkedin": "https://www.linkedin.com/in/gabriela-pereira-dos-santos-472365139/",
-    "status": "Co-organizer"
-  },
-  {
-
-    "name": "Tauã Mendonça",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/taua.png",
-    "linkedin": "linkedin.com/in/tauamendonca",
-    "status": "Co-organizer"
-  },
-  {
-    "name": "Maxweel Freitas",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/max.png",
-    "linkedin": "https://www.linkedin.com/in/maxweel-freitas/",
-    "status": "Co-organizer"
-  },
-  {
-
-
-    "name": "Mateus Cordeiro",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/mateus_felipe_circle.png",
-    "linkedin": "https://www.linkedin.com/in/mateusfccp/",
-    "status": "Co-organizer"
-  },
-  {
-    "name": "Adby Santos",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/adby_circle.png",
-    "linkedin": "https://www.linkedin.com/in/adby-santos-a31a70158/",
-    "status": "Co-organizer"
-  },
-  {
-    "name": "Tiago Silva",
-    "pathImage": "https://raw.githubusercontent.com/Flutterando/website/main/assets/images/co_organizers/tiagosito.png",
-    "linkedin": "https://www.linkedin.com/in/tiagosito/",
-    "status": "Co-organizer"
+    "name": "Murilo Ramos",
+    "pathImage": "https://media.licdn.com/dms/image/C5603AQGBQaIcbp-JEA/profile-displayphoto-shrink_800_800/0/1517799553187?e=1718236800&v=beta&t=DX7tYW8DgOzsH0DDlAgexSQUuXP5S8IqP2X-dqktoXw",
+    "linkedin": "https://www.linkedin.com/in/murilo-ramos-da-silva-834448110/",
+    "status": "Organization"
   }
 ]

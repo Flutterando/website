@@ -8,7 +8,6 @@ import 'package:localization/localization.dart';
 
 import '../../../../utils/grids/custom_scroll_behavior.dart';
 import '../../domain/entities/result_youtube.dart';
-import '../../domain/errors/errors.dart';
 import 'widgets/channel_video_tile.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
@@ -66,7 +65,7 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
               ],
             ),
           ),
-          ScopedBuilder<LatestChannelVideosStore, FailureGetYoutube, List<ResultYoutube>>(
+          ScopedBuilder<LatestChannelVideosStore, List<ResultYoutube>>(
               store: latestChannelVideosStore,
               onLoading: (context) => Center(
                     child: CircularProgressIndicator(),

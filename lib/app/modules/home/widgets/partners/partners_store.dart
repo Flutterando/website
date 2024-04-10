@@ -3,9 +3,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_partners.dar
 import 'package:flutterando/app/modules/home/domain/usecases/get_partners.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 
-import '../../domain/errors/errors.dart';
-
-class PartnersStore extends StreamStore<FailureGetPartners, List<ResultPartners>> {
+class PartnersStore extends Store<List<ResultPartners>> {
   final ScreenSize screen;
   final GetPartners usecase;
   PartnersStore(this.screen, this.usecase) : super([]) {

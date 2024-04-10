@@ -11,7 +11,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../utils/screen/screen_size.dart';
 import '../../domain/entities/result_meetups.dart';
-import '../../domain/errors/errors.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
   @override
@@ -98,7 +97,7 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
             ),
           ),
           SizedBox(height: 40 * fontScale),
-          ScopedBuilder<LatestMeetupsStore, FailureGetMeetups, List<ResultMeetups>>(
+          ScopedBuilder<LatestMeetupsStore, List<ResultMeetups>>(
             store: latestMeetupsStore,
             onError: (context, error) => Center(
               child: Text(error.toString()),

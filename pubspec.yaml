@@ -28,30 +28,30 @@ scripts:
   mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter_localizations: 
     sdk: flutter
-  url_launcher: ^6.1.5
+  url_launcher: ^6.2.5
   dartz: ^0.10.1
-  dio: ^4.0.6 
-  flutter_triple: ^1.2.7+4
-  flutter_modular: ^5.0.3
-  transparent_image: ^2.0.0
-  hasura_connect: ^4.0.0+4
-  localization: ^2.1.0
+  dio: ^5.4.2+1 
+  flutter_triple: ^3.0.0
+  flutter_modular: ^6.3.3
+  transparent_image: ^2.0.1
+  hasura_connect: ^5.0.0+3
+  localization: ^2.1.1
   flutter:
     sdk: flutter
-  flutter_svg: ^1.1.5
+  flutter_svg: ^2.0.10+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
 dev_dependencies:
-  mocktail: ^0.3.0
+  mocktail: ^1.0.3
   build_runner: ^2.2.1
-  modular_test: ^2.0.0
+  flutter_lints: ^3.0.2
   flutter_test:
     sdk: flutter
 

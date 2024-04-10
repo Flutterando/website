@@ -3,9 +3,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart
 import 'package:flutterando/app/modules/home/domain/usecases/get_youtube.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 
-import '../../domain/errors/errors.dart';
-
-class LatestChannelVideosStore extends StreamStore<FailureGetYoutube, List<ResultYoutube>> {
+class LatestChannelVideosStore extends Store<List<ResultYoutube>> {
   final GetYoutube getYoutube;
   final ScreenSize screen;
   LatestChannelVideosStore(this.getYoutube, this.screen) : super([]) {

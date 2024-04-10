@@ -3,9 +3,7 @@ import 'package:flutterando/app/modules/home/domain/entities/result_package.dart
 import 'package:flutterando/app/modules/home/domain/usecases/get_packages.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 
-import '../../domain/errors/errors.dart';
-
-class PackagesStore extends StreamStore<FailureGetPackages, List<ResultPackage>> {
+class PackagesStore extends Store<List<ResultPackage>> {
   final ScreenSize screen;
   final GetPackages usecase;
 

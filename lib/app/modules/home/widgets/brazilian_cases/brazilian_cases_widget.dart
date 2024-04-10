@@ -9,9 +9,10 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_brazilian_cases.dart';
-import '../../domain/errors/errors.dart';
 
 class BrazilianCasesWidget extends StatefulWidget {
+  const BrazilianCasesWidget({super.key});
+
   @override
   _BrazilianCasesWidgetState createState() => _BrazilianCasesWidgetState();
 }
@@ -24,6 +25,7 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final screenWidth = screen.atualScreenWidth(context: context);
@@ -52,7 +54,7 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 28),
+                const SizedBox(height: 28),
                 SelectableText(
                   "subtitle_cases".i18n(),
                   style: TextStyles.roboto(
@@ -64,17 +66,17 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
               ],
             ),
           ),
-          ScopedBuilder<BrazilianCasesController, FailureGetBrazilianCases, List<ResultBrazilianCases>>(
+          ScopedBuilder<BrazilianCasesController, List<ResultBrazilianCases>>(
             store: controller,
             onError: (context, error) => SelectableText(
               'Erro ao processar conteúdo',
               style: TextStyles.roboto(30 * fontScale),
             ),
-            onLoading: (context) => Center(
+            onLoading: (context) => const Center(
               child: CircularProgressIndicator(),
             ),
             onState: (context, brazilianCases) {
-              return Container(
+              return SizedBox(
                 height: 400 * fontScale,
                 child: ScrollConfiguration(
                   behavior: CustomScrollBehavior(),
@@ -84,7 +86,7 @@ class _BrazilianCasesWidgetState extends State<BrazilianCasesWidget> {
                       left: (screenWidth / 15) * fontScale,
                       right: (screenWidth / 15) * fontScale,
                     ),
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemCount: brazilianCases.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

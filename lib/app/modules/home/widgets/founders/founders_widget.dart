@@ -5,7 +5,6 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:localization/localization.dart';
 
 import '../../domain/entities/result_founders.dart';
-import '../../domain/errors/errors.dart';
 import 'founders_store.dart';
 import 'widgets/founder_item.dart';
 
@@ -51,7 +50,7 @@ class _FoundersState extends State<Founders> {
             ),
           ),
           SizedBox(height: 50 * fontScale),
-          ScopedBuilder<FoundersStore, FailureGetFounders, List<ResultFounders>>(
+          ScopedBuilder<FoundersStore, List<ResultFounders>>(
               store: store,
               onLoading: (context) => Center(child: CircularProgressIndicator()),
               onError: (context, error) => SelectableText('Erro ao processar conteúdo', style: TextStyles.roboto(30 * fontScale)),

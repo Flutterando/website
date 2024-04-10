@@ -3,8 +3,7 @@ import 'dart:convert';
 import '../../domain/entities/result_partner_communities.dart';
 
 class ResultPartnerCommunitiesMapper {
-  Map<String, dynamic> toMap(
-      ResultPartnerCommunities resultPartnerCommunities) {
+  Map<String, dynamic> toMap(ResultPartnerCommunities resultPartnerCommunities) {
     return {
       'imageUrl': resultPartnerCommunities.imageUrl,
       'title': resultPartnerCommunities.title,
@@ -14,9 +13,9 @@ class ResultPartnerCommunitiesMapper {
   }
 
   static ResultPartnerCommunities fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty)
-      return ResultPartnerCommunities(
-          imageUrl: "", title: "", description: "", url: "");
+    if (map.isEmpty) {
+      return ResultPartnerCommunities(imageUrl: "", title: "", description: "", url: "");
+    }
 
     return ResultPartnerCommunities(
       imageUrl: map['imageUrl'] ??= "",
@@ -28,6 +27,5 @@ class ResultPartnerCommunitiesMapper {
 
   String toJson(e) => json.encode(toMap(e));
 
-  static ResultPartnerCommunities fromJson(String source) =>
-      ResultPartnerCommunitiesMapper.fromMap(json.decode(source));
+  static ResultPartnerCommunities fromJson(String source) => ResultPartnerCommunitiesMapper.fromMap(json.decode(source));
 }

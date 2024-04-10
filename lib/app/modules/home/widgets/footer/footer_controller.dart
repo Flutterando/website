@@ -5,7 +5,7 @@ import 'package:flutterando/app/modules/home/domain/errors/errors_send_contact.d
 import 'package:flutterando/app/modules/home/domain/usecases/send_contact.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 
-class FooterController extends StreamStore<FailureSendContact, ResultContact> {
+class FooterController extends Store<ResultContact> {
   late final ScreenSize screen;
   late final SendContact usecase;
   FooterController(this.screen, this.usecase) : super(ResultContact(''));

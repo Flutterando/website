@@ -15,7 +15,7 @@ class SendContactRepositoryImpl implements SendContactRepository {
     try {
       final result = await datasource.sendContact(contact);
       return Right(result);
-    } on DioError catch (_) {
+    } on DioException catch (_) {
       return Right(ResultContact("E-mail enviado com sucesso!"));
     } catch (e) {
       return Left(SendContactExternalError(message: "Erro ao enviar o E-mail!"));

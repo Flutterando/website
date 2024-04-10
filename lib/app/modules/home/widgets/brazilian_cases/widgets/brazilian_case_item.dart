@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class BrazilianCaseItem extends StatefulWidget {
   final ResultBrazilianCases brazilianCase;
-  BrazilianCaseItem(this.brazilianCase);
+  const BrazilianCaseItem(this.brazilianCase, {super.key});
   @override
   _BrazilianCaseItemState createState() => _BrazilianCaseItemState();
 }
@@ -24,6 +24,7 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final brazilianCase = widget.brazilianCase;
     final screen = controller.screen;
@@ -31,7 +32,7 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
     return LayoutBuilder(
       builder: (_, constraints) {
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: GrayColors.gray02,
             borderRadius: BorderRadius.all(Radius.circular(12)),
           ),
@@ -72,9 +73,9 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: PrimaryColors.dark,
                   borderRadius: BorderRadius.all(Radius.circular(4)),
                 ),

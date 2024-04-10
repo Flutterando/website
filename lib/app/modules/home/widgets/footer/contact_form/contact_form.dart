@@ -10,7 +10,6 @@ import 'package:flutterando/app/utils/widgets/alert/alert_animate.dart';
 import 'package:localization/localization.dart';
 
 import '../../../domain/entities/send_contact/result_contact.dart';
-import '../../../domain/errors/errors_send_contact.dart';
 import 'widgets/contact_field.dart';
 
 class ContactForm extends StatefulWidget {
@@ -75,7 +74,7 @@ class _ContactFormState extends State<ContactForm> {
               Container(
                 width: double.infinity,
                 height: 38 * fontScale,
-                child: ScopedBuilder<FooterController, FailureSendContact, ResultContact>(
+                child: ScopedBuilder<FooterController, ResultContact>(
                   store: controller,
                   onError: (context, error) => AlertAnimate(
                     error.toString(),
