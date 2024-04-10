@@ -29,66 +29,64 @@ class _CoOrganizersState extends State<CoOrganizers> {
     final screen = coOrganizersStore.screen;
     final fontScale = screen.fontScale(context);
     final screenWidth = screen.atualScreenWidth(context: context);
-    return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: 50 * fontScale,
-              left: (screenWidth / 15) * fontScale,
-              right: (screenWidth / 15) * fontScale,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SelectableText(
-                  "title_coorganizers".i18n(),
-                  style: TextStyles.notoSans(
-                    25 * fontScale,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 32 * fontScale),
-                SelectableText(
-                  "subtitle_coorganizers".i18n(),
-                  style: TextStyles.roboto(
-                    11 * fontScale,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                SizedBox(height: 50 * fontScale),
-              ],
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(
+            top: 50 * fontScale,
+            left: (screenWidth / 15) * fontScale,
+            right: (screenWidth / 15) * fontScale,
           ),
-          ScopedBuilder<CoOrganizersStore, List<ResultCoOrganizers>>(
-            store: coOrganizersStore,
-            onError: (context, error) => SelectableText(
-              'Erro ao processar conteúdo',
-              style: TextStyles.roboto(30 * fontScale),
-            ),
-            onLoading: (context) => const Center(
-              child: CircularProgressIndicator(),
-            ),
-            onState: (context, coOrganizers) => Container(
-              height: 300 * fontScale,
-              alignment: Alignment.center,
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.only(
-                  left: (screenWidth / 15) * fontScale,
-                  right: (screenWidth / 15) * fontScale,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SelectableText(
+                "title_coorganizers".i18n(),
+                style: TextStyles.notoSans(
+                  25 * fontScale,
+                  fontWeight: FontWeight.bold,
                 ),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                children: coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList(),
               ),
+              SizedBox(height: 32 * fontScale),
+              SelectableText(
+                "subtitle_coorganizers".i18n(),
+                style: TextStyles.roboto(
+                  11 * fontScale,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+              SizedBox(height: 50 * fontScale),
+            ],
+          ),
+        ),
+        ScopedBuilder<CoOrganizersStore, List<ResultCoOrganizers>>(
+          store: coOrganizersStore,
+          onError: (context, error) => SelectableText(
+            'Erro ao processar conteúdo',
+            style: TextStyles.roboto(30 * fontScale),
+          ),
+          onLoading: (context) => const Center(
+            child: CircularProgressIndicator(),
+          ),
+          onState: (context, coOrganizers) => Container(
+            height: 300 * fontScale,
+            alignment: Alignment.center,
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.only(
+                left: (screenWidth / 15) * fontScale,
+                right: (screenWidth / 15) * fontScale,
+              ),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              children: coOrganizers.map((coOrganizer) => CoOrganizerItem(coOrganizer)).toList(),
             ),
           ),
-          SizedBox(height: 60 * fontScale)
-        ],
-      ),
+        ),
+        SizedBox(height: 60 * fontScale)
+      ],
     );
   }
 }

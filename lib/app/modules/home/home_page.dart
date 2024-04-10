@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                   HeaderWidget(),
                   LatestMeetupsWidget(),
                   LatestChannelVideosWidget(),
-                  CoOrganizers(),
+                  const CoOrganizers(),
                   PackagesWidget(),
                   const BrazilianCasesWidget(),
                   PartnerCommunitiesWidget(),
