@@ -9,6 +9,8 @@ import '../../../../../utils/text_styles/text_styles.dart';
 import '../footer_controller.dart';
 
 class FollowUs extends StatefulWidget {
+  const FollowUs({super.key});
+
   @override
   _FollowUsState createState() => _FollowUsState();
 }
@@ -21,12 +23,13 @@ class _FollowUsState extends State<FollowUs> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final fontScale = controller.screen.fontScale(context);
     return Container(
       alignment: Alignment.topRight,
       width: 260 * fontScale,
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         bottom: 30,
       ),
       child: Column(
@@ -46,19 +49,19 @@ class _FollowUsState extends State<FollowUs> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 13),
+          const SizedBox(height: 13),
           SocialNetworks(fontScale),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
           SelectableText(
             "footer_contact".i18n(),
             style: TextStyles.notoSans(24 * fontScale, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 13),
+          const SizedBox(height: 13),
           SelectableText(
             'contato@flutterando.com.br',
             style: TextStyles.roboto(16 * fontScale, fontWeight: FontWeight.normal),
           ),
-          SizedBox(height: 45),
+          const SizedBox(height: 45),
           InkWell(
             onTap: () async {
               await launchUrl(Uri.parse('https://f-team.dev/desenvolvimento'));
@@ -73,9 +76,9 @@ class _FollowUsState extends State<FollowUs> {
             textAlign: TextAlign.right,
             style: TextStyles.roboto(16, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 34),
+          const SizedBox(height: 34),
           SelectableText(
-            'Copyright © Flutterando 2022 - Todos os direitos reservados',
+            'Copyright © Flutterando 2024 - Todos os direitos reservados',
             style: TextStyles.roboto(9 * fontScale),
           )
         ],
