@@ -5,17 +5,21 @@ import 'package:flutterando/app/modules/home/widgets/header/widgets/header_socia
 import 'package:flutterando/app/utils/images/images.dart';
 
 class HeaderWidget extends StatefulWidget {
+  const HeaderWidget({super.key});
+
   @override
   _HeaderWidgetState createState() => _HeaderWidgetState();
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
   final controller = Modular.get<HeaderStore>();
+  @override
   void dispose() {
     Modular.dispose<HeaderStore>();
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final fontScale = controller.screen.fontScale(context);
@@ -42,7 +46,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           ),
           Container(
             alignment: Alignment.center,
-            margin: screenWidth < 900 ? null : EdgeInsets.all(40),
+            margin: screenWidth < 900 ? null : const EdgeInsets.all(40),
             width: screenWidth < 900 ? screenWidth * (2 / 3) : screenWidth / 2,
             child: HeaderSocialMedia(controller.screen),
           ),

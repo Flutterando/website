@@ -12,7 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HeaderSocialMedia extends StatefulWidget {
   final ScreenSize screenSize;
-  HeaderSocialMedia(this.screenSize);
+  const HeaderSocialMedia(this.screenSize, {super.key});
 
   @override
   State<HeaderSocialMedia> createState() => _HeaderSocialMediaState();
@@ -36,7 +36,7 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
             "title_header".i18n(),
             style: TextStyles.notoSans((widget.screenSize.isMobile(context: context) || widget.screenSize.isWatch(context: context)) ? 36 : 56, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           SelectableText(
             "subtitle_header".i18n(),
             style: TextStyles.roboto(
@@ -44,11 +44,11 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
               fontWeight: FontWeight.normal,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ValueListenableBuilder<ResultFolowers>(
               valueListenable: headerStore,
               builder: (context, value, child) {
-                return Container(
+                return SizedBox(
                   width: double.infinity,
                   child: Wrap(
                     alignment: WrapAlignment.center,
@@ -101,7 +101,7 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
 
   Widget socialMediaIcon(String urlIcon, {required String urlLink, required String followersNumber}) {
     return InkWell(
-      child: Container(
+      child: SizedBox(
         width: 98,
         height: 35,
         child: Row(
@@ -109,17 +109,17 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
             SvgPicture.asset(urlIcon),
             Container(
               width: 50,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.all(
-                  const Radius.circular(4.0),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4.0),
                 ),
               ),
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               child: Text(
                 '${followersNumber}K',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
