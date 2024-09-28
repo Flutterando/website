@@ -9,6 +9,7 @@ abstract class GetMeetups {
 
 class GetMeetupsImpl implements GetMeetups {
   final MeetupsRepository repository;
+  
   GetMeetupsImpl(this.repository);
 
   @override

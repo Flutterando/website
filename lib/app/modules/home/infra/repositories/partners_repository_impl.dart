@@ -6,8 +6,8 @@ import 'package:flutterando/app/modules/home/infra/datasources/partners_datasour
 
 class PartnersRepositoryImpl implements PartnersRepository {
   final PartnersDatasource datasource;
-
   PartnersRepositoryImpl(this.datasource);
+
   @override
   Future<Either<FailureGetPartners, List<ResultPartners>>> get() async {
     try {

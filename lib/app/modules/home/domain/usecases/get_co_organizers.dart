@@ -9,7 +9,9 @@ abstract class GetCoOrganizers {
 
 class GetCoOrganizersImpl extends GetCoOrganizers {
   final CoOrganizersRepository repository;
+
   GetCoOrganizersImpl(this.repository);
+  
   @override
   Future<Either<FailureGetCoOrganizers, List<ResultCoOrganizers>>> call() async {
     return await repository.get();

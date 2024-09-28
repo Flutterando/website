@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/packages_datasour
 class PackagesRepositoryImpl implements PackagesRepository {
   PackagesDatasource datasource;
   PackagesRepositoryImpl(this.datasource);
+
   @override
   Future<Either<FailureGetPackages, List<ResultPackage>>> get() async {
     try {

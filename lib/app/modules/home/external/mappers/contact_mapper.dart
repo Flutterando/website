@@ -12,17 +12,23 @@ class ContactMapper {
   }
 
   static Contact fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return Contact(name: "", email: "", message: "");
+    if (map.isEmpty) return Contact(name: '', email: '', message: '');
 
     return Contact(
-      name: map['name'] ??= "",
-      email: map['email'] ??= "",
-      message: map['message'] ??= "",
+      name: map['name'] ??= '',
+      email: map['email'] ??= '',
+      message: map['message'] ??= '',
     );
   }
 
   static Contact fromContact(Contact contact) {
-    if (contact.email.isEmpty) return Contact(name: "", email: "", message: "");
+    if (contact.email.isEmpty) {
+      return Contact(
+        name: '',
+        email: '',
+        message: '',
+      );
+    }
 
     return Contact(
       name: contact.name,

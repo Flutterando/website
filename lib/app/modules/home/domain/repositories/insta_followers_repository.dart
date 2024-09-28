@@ -4,6 +4,5 @@ import 'package:flutterando/app/modules/home/domain/errors/get_insta_followers_e
 import '../entities/result_insta_followers.dart';
 
 abstract class InstaFollowersRepository {
-  Future<Either<GetInstaFollowersError, ResultInstaFollowers>>
-      getInstaFollowers();
+  Future<Either<GetInstaFollowersError, ResultInstaFollowers>> getInstaFollowers();
 }

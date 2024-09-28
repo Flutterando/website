@@ -14,14 +14,19 @@ class ResultPartnerCommunitiesMapper {
 
   static ResultPartnerCommunities fromMap(Map<String, dynamic> map) {
     if (map.isEmpty) {
-      return ResultPartnerCommunities(imageUrl: "", title: "", description: "", url: "");
+      return ResultPartnerCommunities(
+        imageUrl: '',
+        title: '',
+        description: '',
+        url: '',
+      );
     }
 
     return ResultPartnerCommunities(
-      imageUrl: map['imageUrl'] ??= "",
-      title: map['title'] ??= "",
-      description: map['description'] ??= "",
-      url: map['url'] ??= "",
+      imageUrl: map['imageUrl'] ??= '',
+      title: map['title'] ??= '',
+      description: map['description'] ??= '',
+      url: map['url'] ??= '',
     );
   }
 

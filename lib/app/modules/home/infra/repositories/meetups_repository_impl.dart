@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/meetups_datasourc
 class MeetupsRepositoryImpl implements MeetupsRepository {
   final MeetupsDatasource datasource;
   MeetupsRepositoryImpl(this.datasource);
+
   @override
   Future<Either<FailureGetMeetups, List<ResultMeetups>>> get() async {
     try {

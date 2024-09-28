@@ -3,5 +3,9 @@ class ResultFounders {
   final String pathImage;
   final String linkedin;
 
-  ResultFounders(this.name, this.pathImage, this.linkedin);
+  ResultFounders({
+    required this.name,
+    required this.pathImage,
+    required this.linkedin,
+  });
 }

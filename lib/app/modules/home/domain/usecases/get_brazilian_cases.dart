@@ -9,8 +9,9 @@ abstract class GetBrazilianCases {
 
 class GetBrazilianCasesImpl implements GetBrazilianCases {
   final BrazilianCasesRepository repository;
+
   GetBrazilianCasesImpl(this.repository);
-  
+
   @override
   Future<Either<FailureGetBrazilianCases, List<ResultBrazilianCases>>> call() async {
     return await repository.get();

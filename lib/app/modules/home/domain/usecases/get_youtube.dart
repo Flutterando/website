@@ -9,7 +9,9 @@ abstract class GetYoutube {
 
 class GetYoutubeImpl implements GetYoutube {
   final YoutubeRepository repository;
+  
   GetYoutubeImpl(this.repository);
+
   @override
   Future<Either<FailureGetYoutube, List<ResultYoutube>>> call() async {
     return await repository.get();

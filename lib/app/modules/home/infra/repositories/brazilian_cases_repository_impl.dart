@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutterando/app/modules/home/domain/entities/result_brazilian_cases.dart';
-import 'package:flutterando/app/modules/home/domain/entities/result_folowers_numbers.dart';
+import 'package:flutterando/app/modules/home/domain/entities/result_followers_numbers.dart';
 import 'package:flutterando/app/modules/home/domain/errors/errors.dart';
 import 'package:flutterando/app/modules/home/domain/repositories/brazilian_cases_repository.dart';
 import 'package:flutterando/app/modules/home/infra/datasources/brazilian_cases_datasource.dart';
@@ -8,6 +8,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/brazilian_cases_d
 class BrazilianCasesRepositoryImpl implements BrazilianCasesRepository {
   final BrazilianCasesDatasource datasource;
   BrazilianCasesRepositoryImpl(this.datasource);
+  
   @override
   Future<Either<FailureGetBrazilianCases, List<ResultBrazilianCases>>> get() async {
     try {
@@ -19,7 +20,7 @@ class BrazilianCasesRepositoryImpl implements BrazilianCasesRepository {
   }
 
   @override
-  Future<Either<FailureGetBrazilianCases, ResultFolowers>> getFolowers() async {
+  Future<Either<FailureGetBrazilianCases, ResultFollowers>> getFolowers() async {
     try {
       final result = await datasource.getFolowers();
       return Right(result);

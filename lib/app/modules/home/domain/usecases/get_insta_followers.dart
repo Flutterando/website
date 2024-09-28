@@ -11,6 +11,7 @@ class GetInstaFollowersImpl implements GetInstaFollowers {
   final InstaFollowersRepository repository;
 
   GetInstaFollowersImpl(this.repository);
+  
   @override
   Future<Either<GetInstaFollowersError, ResultInstaFollowers>> call() async {
     final result = await repository.getInstaFollowers();

@@ -10,7 +10,9 @@ abstract class GetFounders {
 
 class GetFoundersImpl extends GetFounders {
   final FoundersRepository repository;
+
   GetFoundersImpl(this.repository);
+
   @override
   Future<Either<FailureGetFounders, List<ResultFounders>>> call() async {
     return await repository.get();

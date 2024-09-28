@@ -13,13 +13,20 @@ class ResultMeetupsMapper {
   }
 
   static ResultMeetups fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultMeetups("", "", "", "");
+    if (map.isEmpty) {
+      return ResultMeetups(
+        photoUrl: '',
+        title: '',
+        linkUrl: '',
+        date: '',
+      );
+    }
 
     return ResultMeetups(
-      map['photoUrl'] ??= "",
-      map['title'] ??= "",
-      map['linkUrl'] ??= "",
-      map['date'] ??= "",
+      photoUrl: map['photoUrl'] ??= '',
+      title: map['title'] ??= '',
+      linkUrl: map['linkUrl'] ??= '',
+      date: map['date'] ??= '',
     );
   }
 

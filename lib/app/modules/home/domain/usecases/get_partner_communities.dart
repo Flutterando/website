@@ -10,6 +10,7 @@ abstract class GetPartnerCommunities {
 
 class GetPartnerCommunitiesImpl implements GetPartnerCommunities {
   final PartnerCommunitiesRepository repository;
+  
   GetPartnerCommunitiesImpl(this.repository);
 
   @override

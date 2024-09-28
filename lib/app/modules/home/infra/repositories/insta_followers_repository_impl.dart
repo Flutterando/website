@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/insta_followers_d
 class InstaFollowersRepositoryImpl implements InstaFollowersRepository {
   final InstaFollowersDatasource datasource;
   InstaFollowersRepositoryImpl(this.datasource);
+  
   @override
   Future<Either<GetInstaFollowersError, ResultInstaFollowers>>
       getInstaFollowers() async {
