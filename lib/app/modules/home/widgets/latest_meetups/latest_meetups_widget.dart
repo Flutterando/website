@@ -13,8 +13,10 @@ import '../../../../utils/screen/screen_size.dart';
 import '../../domain/entities/result_meetups.dart';
 
 class LatestMeetupsWidget extends StatefulWidget {
+  const LatestMeetupsWidget({super.key});
+
   @override
-  _LatestMeetupsWidgetState createState() => _LatestMeetupsWidgetState();
+  State<LatestMeetupsWidget> createState() => _LatestMeetupsWidgetState();
 }
 
 class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
@@ -26,6 +28,7 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screenWidth = latestMeetupsStore.screen.atualScreenWidth(context: context);
     final screen = latestMeetupsStore.screen;
@@ -53,7 +56,7 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 28),
+                const SizedBox(height: 28),
                 Row(
                   children: [
                     SelectableText(
@@ -63,12 +66,12 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Container(
                       width: 150,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: PrimaryColors.dark,
                         borderRadius: BorderRadius.all(Radius.circular(4)),
                       ),
@@ -102,12 +105,12 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
             onError: (context, error) => Center(
               child: Text(error.toString()),
             ),
-            onLoading: (context) => Center(
+            onLoading: (context) => const Center(
               child: CircularProgressIndicator(),
             ),
             onState: (context, meetups) {
               if (meetups.isNotEmpty) {
-                return Container(
+                return SizedBox(
                   height: MediaQuery.of(context).size.height,
                   child: ScrollConfiguration(
                     behavior: CustomScrollBehavior(),
@@ -118,8 +121,8 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                       ),
                       scrollDirection: Axis.horizontal,
                       itemCount: meetups.length,
-                      physics: BouncingScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      physics: const BouncingScrollPhysics(),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 238 / 300,
                         crossAxisCount: 2,
                         crossAxisSpacing: 16,

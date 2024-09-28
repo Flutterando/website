@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(children: [
                   const HeaderWidget(),
                   LatestMeetupsWidget(),
-                  LatestChannelVideosWidget(),
+                  const LatestChannelVideosWidget(),
                   const CoOrganizers(),
                   PackagesWidget(),
                   const BrazilianCasesWidget(),
