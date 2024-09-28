@@ -23,6 +23,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   Widget build(BuildContext context) {
     final screenWidth = controller.screen.atualScreenWidth(context: context);
     final fontScale = controller.screen.fontScale(context);
+    final size = MediaQuery.of(context).size;
+
     return Container(
       padding: EdgeInsets.only(
         top: 60 * fontScale,
@@ -30,27 +32,43 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         right: (screenWidth / 15) * fontScale,
       ),
       alignment: Alignment.center,
-      width: screenWidth,
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.center,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          Container(
-            alignment: Alignment.center,
-            width: 270,
-            child: Image.asset(
-              ImageUrls.logoSymbol,
-              width: screenWidth / 4,
-              fit: BoxFit.cover,
+          Image.asset(
+            ImageUrls.backgroundBanner,
+            height: size.height * 0.75,
+            width: screenWidth,
+            fit: BoxFit.cover,
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 32),
+                    child: SizedBox(
+                      width: size.width * 0.05,
+                      child: Image.asset(
+                        ImageUrls.logoSymbol,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ), //
+                  Container(
+                    alignment: Alignment.center,
+                    margin: screenWidth < 900 ? null : const EdgeInsets.symmetric(vertical: 32),
+                    width: screenWidth < 900 ? screenWidth * (2 / 3) : screenWidth / 2,
+                    child: HeaderSocialMedia(controller.screen),
+                  ),
+                  Container(
+                    height: 48 * controller.screen.fontScale(context),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            alignment: Alignment.center,
-            margin: screenWidth < 900 ? null : const EdgeInsets.all(40),
-            width: screenWidth < 900 ? screenWidth * (2 / 3) : screenWidth / 2,
-            child: HeaderSocialMedia(controller.screen),
-          ),
-          Container(height: 60 * controller.screen.fontScale(context))
         ],
       ),
     );

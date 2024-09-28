@@ -52,8 +52,8 @@ class _HeaderSocialMediaState extends State<HeaderSocialMedia> {
                   width: double.infinity,
                   child: Wrap(
                     alignment: WrapAlignment.center,
-                    runSpacing: 30,
-                    spacing: 30,
+                    runSpacing: 24,
+                    spacing: 24,
                     children: [
                       socialMediaIcon(
                         IconUrls.youtube,
