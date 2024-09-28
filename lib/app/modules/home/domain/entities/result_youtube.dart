@@ -4,5 +4,10 @@ class ResultYoutube {
   final String linkUrl;
   final String date;
 
-  ResultYoutube({required this.imgUrl,required this.title,required this.linkUrl,required this.date});
+  ResultYoutube({
+    required this.imgUrl,
+    required this.title,
+    required this.linkUrl,
+    required this.date,
+  });
 }

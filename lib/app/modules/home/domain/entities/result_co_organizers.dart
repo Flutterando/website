@@ -4,5 +4,10 @@ class ResultCoOrganizers {
   final String linkedin;
   final String status;
 
-  ResultCoOrganizers(this.name, this.pathImage, this.linkedin, this.status);
+  ResultCoOrganizers({
+    required this.name,
+    required this.pathImage,
+    required this.linkedin,
+    required this.status,
+  });
 }

@@ -4,15 +4,24 @@ import 'package:flutterando/app/modules/home/domain/entities/result_package.dart
 
 class ResultPackagesMapper {
   static ResultPackage fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultPackage("", "", "", "", "", "");
+    if (map.isEmpty) {
+      return ResultPackage(
+        name: '',
+        author: '',
+        version: '',
+        description: '',
+        url: '',
+        imageUrl: '',
+      );
+    }
 
     return ResultPackage(
-      map['name'],
-      map['author'],
-      map['version'],
-      map['description'],
-      map['url'],
-      map['imageUrl'],
+      name: map['name'] ??= '',
+      author: map['author'] ??= '',
+      version: map['version'] ??= '',
+      description: map['description'] ??= '',
+      url: map['url'] ??= '',
+      imageUrl: map['imageUrl'] ??= '',
     );
   }
 

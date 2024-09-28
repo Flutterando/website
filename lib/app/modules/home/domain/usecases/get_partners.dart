@@ -9,7 +9,9 @@ abstract class GetPartners {
 
 class GetPartnersImpl implements GetPartners {
   final PartnersRepository repository;
+  
   GetPartnersImpl(this.repository);
+
   @override
   Future<Either<FailureGetPartners, List<ResultPartners>>> call() async {
     return await repository.get();

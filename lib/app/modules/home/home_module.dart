@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/domain/usecases/get_folower_numbers.dart';
+import 'package:flutterando/app/modules/home/domain/usecases/get_follower_numbers.dart';
 import 'package:flutterando/app/modules/home/widgets/header/header_store.dart';
 import 'package:flutterando/app/modules/home/widgets/partner_communities/partner_communities_controller.dart';
 import 'package:flutterando/app/shared_module.dart';
@@ -101,7 +101,7 @@ class HomeModule extends Module {
     i.addSingleton<FoundersDatasource>(FoundersRemoteDatasource.new);
     i.addSingleton<FoundersRepository>(FoundersRepositoryImpl.new);
     i.addSingleton<GetFounders>(GetFoundersImpl.new);
-    i.addSingleton<GetFolowersNumbers>(GetFolowersNumbersImpl.new);
+    i.addSingleton<GetFollowersNumbers>(GetFolowersNumbersImpl.new);
     //binds co_organizers
     // Bind((i) => CoOrganizersData()),
     i.addSingleton<CoOrganizersDatasource>(CoOrganizersRemoteDatasource.new);

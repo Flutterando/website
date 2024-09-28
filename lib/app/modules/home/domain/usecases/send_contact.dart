@@ -11,7 +11,9 @@ abstract class SendContact {
 
 class SendContactImpl implements SendContact {
   final SendContactRepository repository;
+
   SendContactImpl(this.repository);
+
   @override
   Future<Either<FailureSendContact, ResultContact>> call(Contact contact) async {
     String fieldsError = verifyFields(contact);
@@ -27,10 +29,10 @@ class SendContactImpl implements SendContact {
       messageError += "O campo nome não pode estar vazio!\n";
     }
     if (!emailValidation(contact.email)) {
-      messageError += "O campo email não esta formatado corretamente!\n";
+      messageError += 'O campo email não esta formatado corretamente!\n';
     }
     if (contact.message.isEmpty || contact.message == '') {
-      messageError = "O campo mensagem não pode estar vazio!\n";
+      messageError = 'O campo mensagem não pode estar vazio!\n';
     }
     return messageError;
   }

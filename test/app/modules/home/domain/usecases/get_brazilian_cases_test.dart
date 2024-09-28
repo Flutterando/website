@@ -10,10 +10,12 @@ class BrazilianCasesRepositoryMock extends Mock implements BrazilianCasesReposit
 
 main() {
   final BrazilianCasesRepository repository = BrazilianCasesRepositoryMock();
-  final usecase = GetBrazilianCasesImpl(repository);
+  final usecase = GetBrazilianCasesImpl(
+    repository,
+  );
 
   test('Should return a list of brazilian cases', () async {
-    when(() => repository.get()).thenAnswer((_) async => Right(<ResultBrazilianCases>[]));
+    when(() => repository.get()).thenAnswer((_) async => const Right(<ResultBrazilianCases>[]));
     final result = await usecase();
     expect(result.fold(id, id), isA<List<ResultBrazilianCases>>());
   });

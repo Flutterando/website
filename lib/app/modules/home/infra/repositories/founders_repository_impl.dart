@@ -8,6 +8,7 @@ import '../datasources/founders_datasource.dart';
 class FoundersRepositoryImpl implements FoundersRepository {
   final FoundersDatasource datasource;
   FoundersRepositoryImpl(this.datasource);
+  
   @override
   Future<Either<FailureGetFounders, List<ResultFounders>>> get() async {
     try {

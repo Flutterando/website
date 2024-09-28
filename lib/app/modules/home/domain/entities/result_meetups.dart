@@ -4,5 +4,10 @@ class ResultMeetups {
   final String linkUrl;
   final String date;
 
-  ResultMeetups(this.photoUrl, this.title, this.linkUrl, this.date);
+  ResultMeetups({
+    required this.photoUrl,
+    required this.title,
+    required this.linkUrl,
+    required this.date,
+  });
 }

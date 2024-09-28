@@ -9,7 +9,9 @@ abstract class GetPackages {
 
 class GetPackagesImpl implements GetPackages {
   final PackagesRepository repository;
+  
   GetPackagesImpl(this.repository);
+
   @override
   Future<Either<FailureGetPackages, List<ResultPackage>>> call() async {
     return await repository.get();

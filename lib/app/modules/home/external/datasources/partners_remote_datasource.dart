@@ -7,7 +7,9 @@ import 'package:flutterando/app/modules/home/infra/datasources/partners_datasour
 
 class PartnersRemoteDatasource implements PartnersDatasource {
   final Dio dio;
+  
   PartnersRemoteDatasource(this.dio);
+
   @override
   Future<List<ResultPartners>> getPartners() async {
     var url = 'https://raw.githubusercontent.com/Flutterando/website/main/data/partners_data.json';

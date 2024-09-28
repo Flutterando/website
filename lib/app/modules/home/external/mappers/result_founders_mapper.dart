@@ -12,12 +12,18 @@ class ResultFoundersMapper {
   }
 
   static ResultFounders fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultFounders("", "", "");
+    if (map.isEmpty) {
+      return ResultFounders(
+        name: '',
+        pathImage: '',
+        linkedin: '',
+      );
+    }
 
     return ResultFounders(
-      map['name'] ??= "",
-      map['pathImage'] ??= "",
-      map['linkedin'] ??= "",
+      name: map['name'] ??= '',
+      pathImage: map['pathImage'] ??= '',
+      linkedin: map['linkedin'] ??= '',
     );
   }
 

@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/youtube_datasourc
 class YoutubeRepositoryImpl implements YoutubeRepository {
   final YoutubeDatasource datasource;
   YoutubeRepositoryImpl(this.datasource);
+  
   @override
   Future<Either<FailureGetYoutube, List<ResultYoutube>>> get() async {
     try {

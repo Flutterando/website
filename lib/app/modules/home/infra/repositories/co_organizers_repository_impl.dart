@@ -7,6 +7,7 @@ import 'package:flutterando/app/modules/home/infra/datasources/co_organizers_dat
 class CoOrganizersRepositoryImpl implements CoOrganizersRepository {
   final CoOrganizersDatasource datasource;
   CoOrganizersRepositoryImpl(this.datasource);
+  
   @override
   Future<Either<FailureGetCoOrganizers, List<ResultCoOrganizers>>> get() async {
     try {

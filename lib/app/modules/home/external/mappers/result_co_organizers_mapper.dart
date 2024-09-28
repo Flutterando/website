@@ -13,13 +13,20 @@ class ResultCoOrganizersMapper {
   }
 
   static ResultCoOrganizers fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultCoOrganizers("", "", "", "");
+    if (map.isEmpty) {
+      return ResultCoOrganizers(
+        name: '',
+        pathImage: '',
+        linkedin: '',
+        status: '',
+      );
+    }
 
     return ResultCoOrganizers(
-      map['name'] ??= "",
-      map['pathImage'] ??= "",
-      map['linkedin'] ??= "",
-      map['status'] ??= "",
+      name: map['name'] ??= '',
+      pathImage: map['pathImage'] ??= '',
+      linkedin: map['linkedin'] ??= '',
+      status: map['status'] ??= '',
     );
   }
 

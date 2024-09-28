@@ -13,13 +13,20 @@ class ResultBrazilianCasesMapper {
   }
 
   static ResultBrazilianCases fromMap(Map<String, dynamic> map) {
-    if (map.isEmpty) return ResultBrazilianCases(imageUrl: "", title: "", description: "", url: "");
+    if (map.isEmpty) {
+      return ResultBrazilianCases(
+        imageUrl: '',
+        title: '',
+        description: '',
+        url: '',
+      );
+    }
 
     return ResultBrazilianCases(
-      imageUrl: map['imageUrl'] ??= "",
-      title: map['title'] ??= "",
-      description: map['description'] ??= "",
-      url: map['url'] ??= "",
+      imageUrl: map['imageUrl'] ??= '',
+      title: map['title'] ??= '',
+      description: map['description'] ??= '',
+      url: map['url'] ??= '',
     );
   }
 

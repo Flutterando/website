@@ -6,5 +6,12 @@ class ResultPackage {
   final String url;
   final String imageUrl;
 
-  ResultPackage(this.name, this.author, this.version, this.description, this.url, this.imageUrl);
+  ResultPackage({
+    required this.name,
+    required this.author,
+    required this.version,
+    required this.description,
+    required this.url,
+    required this.imageUrl,
+  });
 }
