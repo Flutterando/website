@@ -11,6 +11,8 @@ import '../../domain/entities/result_youtube.dart';
 import 'widgets/channel_video_tile.dart';
 
 class LatestChannelVideosWidget extends StatefulWidget {
+  const LatestChannelVideosWidget({super.key});
+
   @override
   _LatestChannelVideosWidgetState createState() => _LatestChannelVideosWidgetState();
 }
@@ -23,6 +25,7 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screenWidth = latestChannelVideosStore.screen.atualScreenWidth(context: context);
     final screen = latestChannelVideosStore.screen;
@@ -53,7 +56,7 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 28),
+                const SizedBox(height: 28),
                 SelectableText(
                   "subtitle_video_channel".i18n(),
                   style: TextStyles.roboto(
@@ -67,7 +70,7 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
           ),
           ScopedBuilder<LatestChannelVideosStore, List<ResultYoutube>>(
               store: latestChannelVideosStore,
-              onLoading: (context) => Center(
+              onLoading: (context) => const Center(
                     child: CircularProgressIndicator(),
                   ),
               onError: (context, error) => Center(
@@ -84,7 +87,7 @@ class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {
                           left: (screenWidth / 15) * fontScale,
                           right: (screenWidth / 15) * fontScale,
                         ),
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         itemCount: youtube.length,
                         scrollDirection: Axis.horizontal,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -4,5 +4,5 @@ import 'package:flutterando/app/app_module.dart';
 import 'package:flutterando/app/app_widget.dart';
 
 Future<void> main() async {
-  runApp(ModularApp(module: AppModule(), child: AppWidget()));
+  runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }
