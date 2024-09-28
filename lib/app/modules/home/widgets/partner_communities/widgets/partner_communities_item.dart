@@ -11,7 +11,7 @@ import '../partner_communities_controller.dart';
 
 class PartnerCommunitiesItem extends StatefulWidget {
   final ResultPartnerCommunities partnerCommunities;
-  PartnerCommunitiesItem(this.partnerCommunities);
+  const PartnerCommunitiesItem(this.partnerCommunities, {super.key});
   @override
   _PartnerCommunitiesItemState createState() => _PartnerCommunitiesItemState();
 }
@@ -25,6 +25,7 @@ class _PartnerCommunitiesItemState extends State<PartnerCommunitiesItem> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final partnerCommunities = widget.partnerCommunities;
     final screen = controller.screen;
@@ -32,7 +33,7 @@ class _PartnerCommunitiesItemState extends State<PartnerCommunitiesItem> {
     return LayoutBuilder(
       builder: (_, constraints) {
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: GrayColors.gray02,
             borderRadius: BorderRadius.all(Radius.circular(12)),
           ),
@@ -70,11 +71,11 @@ class _PartnerCommunitiesItemState extends State<PartnerCommunitiesItem> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
-                decoration: BoxDecoration(
-                  color: PrimaryColors.dark,
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                decoration: const BoxDecoration(
+                  color: PrimaryColors.carmesim,
+                  borderRadius: BorderRadius.all(Radius.circular(16)),
                 ),
                 height: 36 * fontScale,
                 child: TextButton(
@@ -109,8 +110,7 @@ class _PartnerCommunitiesItemState extends State<PartnerCommunitiesItem> {
       return fontSize * factorFontText * screen.fontScale(context);
     } else if (screen.isDesktopLg(context: context)) {
       return fontSize * factorFontText * screen.fontScale(context) * (9 / 4);
-    } else if (screen.isTablet(context: context) ||
-        screen.isMobile(context: context)) {
+    } else if (screen.isTablet(context: context) || screen.isMobile(context: context)) {
       return fontSize * screen.fontScale(context) * 0.9;
     } else {
       return 15;

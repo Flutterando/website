@@ -7,7 +7,7 @@ import 'package:localization/localization.dart';
 
 class SendButton extends StatefulWidget {
   final Function sendContact;
-  SendButton(this.sendContact);
+  const SendButton(this.sendContact, {super.key});
   @override
   _SendButtonState createState() => _SendButtonState();
 }
@@ -23,27 +23,27 @@ class _SendButtonState extends State<SendButton> {
   @override
   Widget build(BuildContext context) {
     final fontScale = controller.screen.fontScale(context);
-    return Align(
-      child: InkWell(
-        child: Container(
-          decoration: new BoxDecoration(
-            color: PrimaryColors.dark,
-            borderRadius: const BorderRadius.all(
-              const Radius.circular(2.0),
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Align(
+        child: InkWell(
+          child: Container(
+            decoration: const BoxDecoration(
+              color: PrimaryColors.carmesim,
+              borderRadius: BorderRadius.all(Radius.circular(16)),
+            ),
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: 28 * fontScale,
+            child: Text(
+              "form_button".i18n(),
+              style: TextStyles.roboto(12 * fontScale, fontWeight: FontWeight.bold),
             ),
           ),
-          alignment: Alignment.center,
-          width: double.infinity,
-          height: 28 * fontScale,
-          child: Text(
-            "form_button".i18n(),
-            style:
-                TextStyles.roboto(12 * fontScale, fontWeight: FontWeight.bold),
-          ),
+          onTap: () async {
+            await widget.sendContact();
+          },
         ),
-        onTap: () async {
-          await widget.sendContact();
-        },
       ),
     );
   }
