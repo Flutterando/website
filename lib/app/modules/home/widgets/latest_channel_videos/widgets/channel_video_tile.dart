@@ -5,15 +5,16 @@ import 'package:flutterando/app/modules/home/widgets/latest_channel_videos/lates
 import 'package:flutterando/app/utils/colors/colors.dart';
 import 'package:flutterando/app/utils/screen/screen_size.dart';
 import 'package:flutterando/app/utils/text_styles/text_styles.dart';
+import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ChannelVideoTile extends StatefulWidget {
   final ResultYoutube video;
-  ChannelVideoTile(this.video);
+  const ChannelVideoTile(this.video, {super.key});
 
   @override
-  _ChannelVideoTileState createState() => _ChannelVideoTileState();
+  State<ChannelVideoTile> createState() => _ChannelVideoTileState();
 }
 
 class _ChannelVideoTileState extends State<ChannelVideoTile> {
@@ -24,6 +25,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
@@ -32,7 +34,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
             await launchUrl(Uri.parse(widget.video.linkUrl));
           },
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: GrayColors.gray02,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
@@ -41,7 +43,7 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10),
@@ -50,14 +52,14 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                   width: constraints.maxWidth,
                   height: constraints.maxWidth * 0.57,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10),
                     ),
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage, 
+                        placeholder: kTransparentImage,
                         image: widget.video.imgUrl,
                         fit: BoxFit.cover,
                       ),
@@ -66,29 +68,23 @@ class _ChannelVideoTileState extends State<ChannelVideoTile> {
                 ),
                 SizedBox(height: constraints.maxWidth / 15),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
                     widget.video.title,
-                    maxLines:
-                        (controller.screen.isDesktopXl(context: context) ||
-                                controller.screen.isDesktopLg(context: context))
-                            ? 2
-                            : 1,
+                    maxLines: (controller.screen.isDesktopXl(context: context) || controller.screen.isDesktopLg(context: context)) ? 2 : 1,
                     style: TextStyles.roboto(
                       fontSize(controller.screen, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: constraints.maxWidth / 20),
+                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 20),
                   width: constraints.maxWidth - 7,
                   child: SelectableText(
-                    widget.video.date,
+                    DateFormat("dd/MM/yyyy 'às' HH:mm").format(widget.video.date),
                     style: TextStyles.roboto(18, fontWeight: FontWeight.bold),
                   ),
                 ),

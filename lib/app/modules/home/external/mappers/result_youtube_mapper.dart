@@ -5,19 +5,19 @@ import 'package:flutterando/app/modules/home/domain/entities/result_youtube.dart
 class ResultYoutubeMapper {
   Map<String, dynamic> toMap(ResultYoutube resultYoutube) {
     return {
-      'imgUrl': resultYoutube.imgUrl,
+      'thumbnail': resultYoutube.imgUrl,
       'title': resultYoutube.title,
       'linkUrl': resultYoutube.linkUrl,
-      'date': resultYoutube.date,
+      'date': resultYoutube.date.toIso8601String(),
     };
   }
 
   static ResultYoutube fromMap(Map<String, dynamic> map) {
     return ResultYoutube(
-      imgUrl: map['imgUrl'],
+      imgUrl: map['thumbnail'],
       title: map['title'],
       linkUrl: map['linkUrl'],
-      date: map['date'],
+      date: DateTime.parse(map['date']),
     );
   }
 

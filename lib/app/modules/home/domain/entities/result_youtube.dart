@@ -2,7 +2,7 @@ class ResultYoutube {
   final String imgUrl;
   final String title;
   final String linkUrl;
-  final String date;
+  final DateTime date;
 
   ResultYoutube({
     required this.imgUrl,

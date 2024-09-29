@@ -7,6 +7,8 @@ import 'package:flutterando/app/utils/text_styles/text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavbarWidget extends StatefulWidget {
+  const NavbarWidget({super.key});
+
   @override
   _NavbarWidgetState createState() => _NavbarWidgetState();
 }
@@ -20,6 +22,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final screen = controller.screen;
     final fontScale = screen.fontScale(context);
@@ -35,29 +38,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(7 * fontScale),
-                child: Image(
+                child: const Image(
                   fit: BoxFit.fitHeight,
                   alignment: Alignment.centerLeft,
                   image: AssetImage(ImageUrls.logoHorizontal),
                 ),
-              ),
-            ),
-            TextButton(
-              onPressed: () async {
-                await launchUrl(Uri.parse('https://forms.gle/6BoxwQLLBE2vZeMk6'));
-              },
-              child: Text(
-                'Seja um palestrante',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
-              ),
-            ),
-            TextButton(
-              onPressed: () async {
-                await launchUrl(Uri.parse('https://github.com/Flutterando/forum/discussions'));
-              },
-              child: Text(
-                'Forum',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(width: 2 * fontScale),
@@ -67,16 +52,6 @@ class _NavbarWidgetState extends State<NavbarWidget> {
               },
               child: Text(
                 'Masterclass',
-                style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(width: 2 * fontScale),
-            TextButton(
-              onPressed: () async {
-                await launchUrl(Uri.parse('https://linktr.ee/flutterando'));
-              },
-              child: Text(
-                'Links Úteis',
                 style: TextStyles.roboto(11 * fontScale, fontWeight: FontWeight.bold),
               ),
             ),

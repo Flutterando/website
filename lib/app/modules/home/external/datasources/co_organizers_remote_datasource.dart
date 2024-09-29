@@ -19,7 +19,6 @@ class CoOrganizersRemoteDatasource implements CoOrganizersDatasource {
     if (response.statusCode == 200) {
       var jsonList = jsonDecode(response.data) as List;
       var listCoOrganizers = jsonList.map((e) => ResultCoOrganizersMapper.fromMap(e)).toList();
-      listCoOrganizers.shuffle();
       return listCoOrganizers;
     }
 

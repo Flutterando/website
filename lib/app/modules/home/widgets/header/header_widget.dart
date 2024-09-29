@@ -8,7 +8,7 @@ class HeaderWidget extends StatefulWidget {
   const HeaderWidget({super.key});
 
   @override
-  _HeaderWidgetState createState() => _HeaderWidgetState();
+  State<HeaderWidget> createState() => _HeaderWidgetState();
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
@@ -28,8 +28,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     return Container(
       padding: EdgeInsets.only(
         top: 60 * fontScale,
-        left: (screenWidth / 15) * fontScale,
-        right: (screenWidth / 15) * fontScale,
+        //     left: (screenWidth / 15) * fontScale,
+        //    right: (screenWidth / 15) * fontScale,
       ),
       alignment: Alignment.center,
       child: Stack(

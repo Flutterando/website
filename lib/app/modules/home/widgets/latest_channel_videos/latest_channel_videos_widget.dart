@@ -14,7 +14,7 @@ class LatestChannelVideosWidget extends StatefulWidget {
   const LatestChannelVideosWidget({super.key});
 
   @override
-  _LatestChannelVideosWidgetState createState() => _LatestChannelVideosWidgetState();
+  State<LatestChannelVideosWidget> createState() => _LatestChannelVideosWidgetState();
 }
 
 class _LatestChannelVideosWidgetState extends State<LatestChannelVideosWidget> {

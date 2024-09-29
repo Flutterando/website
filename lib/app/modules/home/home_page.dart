@@ -44,17 +44,19 @@ class _HomePageState extends State<HomePage> {
             children: [
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Column(children: [
-                  const HeaderWidget(),
-                  const LatestMeetupsWidget(),
-                  const LatestChannelVideosWidget(),
-                  const CoOrganizers(),
-                  PackagesWidget(),
-                  const BrazilianCasesWidget(),
-                  PartnerCommunitiesWidget(),
-                  PartnersWidget(),
-                  Footer()
-                ]),
+                child: Column(
+                  children: [
+                    const HeaderWidget(),
+                    const LatestMeetupsWidget(),
+                    const LatestChannelVideosWidget(),
+                    const CoOrganizers(),
+                    PackagesWidget(),
+                    const BrazilianCasesWidget(),
+                    PartnerCommunitiesWidget(),
+                    PartnersWidget(),
+                    Footer()
+                  ],
+                ),
               ),
               Align(
                 alignment: Alignment.topCenter,
