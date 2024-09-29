@@ -72,8 +72,8 @@ class _LatestMeetupsWidgetState extends State<LatestMeetupsWidget> {
                     Container(
                       width: 150,
                       decoration: const BoxDecoration(
-                        color: PrimaryColors.dark,
-                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        color: PrimaryColors.carmesim,
+                        borderRadius: BorderRadius.all(Radius.circular(16)),
                       ),
                       height: 22 * fontScale,
                       child: TextButton(

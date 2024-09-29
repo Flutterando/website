@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PrimaryColors {
-  static const Color darkest = Color(0xFF232A3A);
-  static const Color dark = Color(0xFF075B9A);
+  static const Color darkest = Color(0xff13191C);
+  static const Color carmesim = Color(0xFFC02647);
   static const Color pure = Color(0xFF1389FD);
   static const Color light = Color(0xFFA0DFFA);
 }

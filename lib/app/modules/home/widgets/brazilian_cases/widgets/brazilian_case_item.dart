@@ -76,8 +76,8 @@ class _BrazilianCaseItemState extends State<BrazilianCaseItem> {
               const Spacer(),
               Container(
                 decoration: const BoxDecoration(
-                  color: PrimaryColors.dark,
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
+                  color: PrimaryColors.carmesim,
+                  borderRadius: BorderRadius.all(Radius.circular(16)),
                 ),
                 height: 36 * fontScale,
                 child: TextButton(

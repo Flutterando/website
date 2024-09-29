@@ -74,6 +74,7 @@ flutter:
     - assets/images/brazilian_cases/
     - assets/lang/
     - assets/images/icons/svgs/
+    - assets/images/background/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

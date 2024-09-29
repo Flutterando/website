@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.bottomCenter,
                 child: Column(children: [
                   const HeaderWidget(),
-                  LatestMeetupsWidget(),
+                  const LatestMeetupsWidget(),
                   const LatestChannelVideosWidget(),
                   const CoOrganizers(),
                   PackagesWidget(),

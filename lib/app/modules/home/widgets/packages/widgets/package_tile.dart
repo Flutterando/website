@@ -11,7 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class PackageTile extends StatefulWidget {
   final ResultPackage package;
-  PackageTile(this.package);
+  const PackageTile(this.package, {super.key});
   @override
   _PackageTileState createState() => _PackageTileState();
 }
@@ -25,6 +25,7 @@ class _PackageTileState extends State<PackageTile> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final package = widget.package;
     final screen = controller.screen;
@@ -34,7 +35,7 @@ class _PackageTileState extends State<PackageTile> {
         final maxWidth = constraints.maxWidth;
         return Container(
           alignment: Alignment.topLeft,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: GrayColors.gray02,
             borderRadius: BorderRadius.all(Radius.circular(2)),
           ),
@@ -92,10 +93,15 @@ class _PackageTileState extends State<PackageTile> {
                 child: Container(
                   height: maxWidth / 8 * fontScale,
                   width: double.infinity,
-                  color: PrimaryColors.dark,
+                  decoration: const BoxDecoration(
+                    color: PrimaryColors.carmesim,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16),
+                    ),
+                  ),
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith((states) => PrimaryColors.dark),
+                      backgroundColor: WidgetStateProperty.resolveWith((states) => PrimaryColors.carmesim),
                     ),
                     // color: PrimaryColors.dark,
                     onPressed: () async {

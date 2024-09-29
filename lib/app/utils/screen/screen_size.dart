@@ -30,16 +30,16 @@ class ScreenSize {
 
   double fontScale(BuildContext context) {
     if (isDesktopXl(context: context)) {
-      return 1.7;
+      return 1.5;
     } else if (isDesktopLg(context: context)) {
-      return 1.2;
+      return 1.0;
     } else if (isTablet(context: context) || isMobile(context: context)) {
-      return 1;
+      return 0.8;
     } else if (isWatch(context: context)) {
-      return 0.9;
+      return 0.7;
     }
 
-    return 1;
+    return 0.7;
   }
 
   int numberGridRowItems(
